@@ -18,8 +18,8 @@ in public spaces...the reasons....vast. From a group of friends
 meeting up for lunch to a poltical rally in a less than friendly 
 area...
 
-So as not so spin the stack up to the moon and get nothing done this 
-document will set goal based on some sort of reasoned measure.
+So as not to spin the stack up to the moon and get nothing done this 
+document will set goals based on some sort of reasoned measure.
 
 Phase 0 - Gather base code for RPi Distro
 
