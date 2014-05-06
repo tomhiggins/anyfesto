@@ -4,4 +4,7 @@ having a secure chat system on the Anyfesto boxen.
 
 
 -Cyptocat - https://github.com/cryptocat/cryptocat
+    - server side -  https://github.com/cryptocat/cryptocat/wiki/Server-Deployment-Instructions
 
+
+- Pidgin with OTR plugin
