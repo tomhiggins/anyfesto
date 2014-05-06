@@ -50,4 +50,8 @@ Phase y - Secure backhaul to the intertubes (gsm, cell, wifi, etc)
           scales and not absolutes) as needed. 
 
 Phase z - Roll all things learned into an Anyfesto Distro. Propigate
-          and maintain. 
+          and maintain a stable build. 
+          Add new methods, fixes, security updates  and features in small 
+           increments. Spin up  test builds. Test. Test again. 
+          Build new stable.  Repeat Phase z until the heat death of the 
+          universe. 
