@@ -2,56 +2,27 @@
 ..        ANYFESTO - A platform from which to speak      ..
 ..-------------------------------------------------------..
 
+[ ] - Gather base code for RPi Distro
 
-The idea of this project is to use the low cost RaspberryPi as device that 
-allows you to speak. Tools and methods will be added to the RPi.
-These tools give the operator the ability to broadcast over FM 
-(prerecorded and mic input), to share files over  wifi, to communicate 
-with others via several methods (wifi, bluetooth, display)..
+[ ] - Customise PiFM and Piratebox into the distro
 
-These tools should be easy to config and run. Best case, an easy setup 
-script via https or ssh. Everything included should be configurable 
-from this. At best, no one HAS to go monkey in the code. The option
-will always be there to do that...lets face it..that is how I like it.
-But this is not just for me. 
+[ ] - Secure msging (need a good crypted msgs service here) 
 
-In my mind this would be used at rallies, gatherings, meetups and  
-in public spaces...the reasons....vast. From a group of friends 
-meeting up for lunch to a poltical rally in a less than friendly 
-area...
+[ ] - Service discovery (avahi, ssid, fm, display)
 
-So as not to spin the stack up to the moon and get nothing done this 
-document will set goals based on some sort of reasoned measure.
 
-Phase 0 - Gather base code for RPi Distro
-
-Phase 1 - Customise PiFM and Piratebox into the distro
-
-Phase 2 - Secure msging (need a good crypted msgs service here) 
-          Service discovery (avahi, ssid, fm, display)
-
-Phase 3 - Prove the use of what we have so far. Get interest in it.
-          At this point the user facing website and GUI aspects should
-          be worked on. 
-
-Phase 4 - Meshing. Use of a second wifi device to mesh with other Anyfesto
+[ ]  - Meshing. Use of a second wifi device to mesh with other Anyfesto
           boxen. Two flavors - Open and Trusted. 
 	    Open - no auth needed
             Trusted - use of keys and/or CoT 
           Add mutual links to Piratebox shares, fm freqs and the 
           ability to pass msgs. 
 
-Phase x - Hardware. Making a case and battery solution that is 
+[ ] - Hardware. Making a case and battery solution that is 
           inexpensive yet reliable. Include such things as a 
           GPIO based kill switch (shutdown, reboot clean, scrub).
 
-Phase y - Secure backhaul to the intertubes (gsm, cell, wifi, etc)
+[ ]  - Secure backhaul to the intertubes (gsm, cell, wifi, etc)
           It should be as secure and anonymous (they are both realtive
           scales and not absolutes) as needed. 
 
-Phase z - Roll all things learned into an Anyfesto Distro. Propigate
-          and maintain a stable build. 
-          Add new methods, fixes, security updates  and features in small 
-           increments. Spin up  test builds. Test. Test again. 
-          Build new stable.  Repeat Phase z until the heat death of the 
-          universe. 
