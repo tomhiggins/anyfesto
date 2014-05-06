@@ -27,13 +27,19 @@ Phase 0 - Gather base code for RPi Distro
 
 Phase 1 - Customise PiFM and Piratebox into the distro
 
-Phase 2 - Secure msging
+Phase 2 - Secure msging (need a good crypted msgs service here) 
+          Service discovery (avahi, ssid, fm, display)
 
 Phase 3 - Prove the use of what we have so far. Get interest in it.
           At this point the user facing website and GUI aspects should
           be worked on. 
 
-
+Phase 4 - Meshing. Use of a second wifi device to mesh with other Anyfesto
+          boxen. Two flavors - Open and Trusted. 
+	    Open - no auth needed
+            Trusted - use of keys and/or CoT 
+          Add mutual links to Piratebox shares, fm freqs and the 
+          ability to pass msgs. 
 
 Phase x - Hardware. Making a case and battery solution that is 
           inexpensive yet reliable. Include such things as a 
