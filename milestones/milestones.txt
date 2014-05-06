@@ -1,0 +1,34 @@
+-----Ayfesto
+--------A platform from which to speak from
+
+The idea of this project is to use the low cost RaspberryPi to host
+tools that allow you to speak. these tools will include the ability
+to broadcast over FM (prerecorded and mic input), to share files over 
+wifi, to communicate with others via several methods (wifi, bluetooth, 
+display)..
+
+These tools should be easy to config and run. 
+
+In my mind this would be used at rallies, gatherings, meetups and  
+in public spaces...the reasons....vast. From a group of friends 
+meeting up for lunch to a poltical rally in a less than friendly 
+area...
+
+So as not so spin the stack up to the moon and get nothing done this 
+document will set goal based on some sort of reasoned measure.
+
+Phase 0 - Gather base code for RPi Distro
+
+Phase 1 - Customise PiFM and Piratebox into the distro
+
+Phase 2 - Secure msging
+
+
+
+Phase x - Hardware. Making a case and battery solution that is 
+          inexpensive yet reliable.
+
+Phase y - Secure backhaul to the intertubes (gsm, cell, wifi, etc)
+          It should be as secure and anonymous (they are both realtive
+          scales and not absolutes) as needed. 
+
