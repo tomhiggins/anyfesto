@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Pirate Radio
 # Author: Wynter Woods (Make Magazine)
+# Modified for Anyfesto: Tom Higgins
 
 import os
 import sys
@@ -20,6 +21,7 @@ shuffle = False
 repeat_all = False
 merge_audio_in = False
 play_stereo = True
+media_storage = "/radio"
 
 music_pipe_r,music_pipe_w = os.pipe()
 microphone_pipe_r,microphone_pipe_w = os.pipe()
@@ -39,7 +41,7 @@ def main():
 
 def build_file_list():
 	file_list = []
-	for root, folders, files in os.walk("/pirateradio"):
+	for root, folders, files in os.walk(media_storage):
 		folders.sort()
 		files.sort()
 		for filename in files:
@@ -82,15 +84,16 @@ def read_config():
 	global play_stereo
 	try:
 		config = configparser.ConfigParser()
-		config.read("/pirateradio/pirateradio.config")
+		config.read("/radio/radio.config")
 		
 	except:
 		print("Error reading from config file.")
 	else:
-		play_stereo = config.get("pirateradio", 'stereo_playback', fallback=True)
-		frequency = config.get("pirateradio",'frequency')
-		shuffle = config.getboolean("pirateradio",'shuffle',fallback=False)
-		repeat_all = config.getboolean("pirateradio",'repeat_all', fallback=False)
+		play_stereo = config.get("radio", 'stereo_playback', fallback=True)
+		frequency = config.get("radio",'frequency')
+		shuffle = config.getboolean("radio",'shuffle',fallback=False)
+		repeat_all = config.getboolean("radio",'repeat_all', fallback=False)
+		media_stoare = config.get("radio", 'media_storage')
 
 def parse_pls(src, titleindex):
 	# breaking up the pls file in separate strings
