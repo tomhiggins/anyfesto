@@ -1,0 +1,31 @@
+
+Computer-
+-------------------
+Raspberry Pi Model B 512MB - 		http://www.adafruit.com/product/998
+8GB SD card
+
+
+Network-
+-------------------
+USB wifi (802.11b/g/n) with antenna  - 	http://www.adafruit.com/product/1030
+
+Power-
+---------------------
+  Portable
+     USB Battery Pack 10000mAh -        http://www.adafruit.com/products/1566
+     USB Battery Pack  4400mAh -        http://www.adafruit.com/product/1565USB 
+     4xAA Battey holder w/switch- 	http://www.adafruit.com/products/830 
+
+  Wall Power
+     5v 1A USB port power supply - 	http://www.adafruit.com/product/501
+     USB cable -          		http://www.adafruit.com/product/592
+
+
+Sound-
+--------------------
+Speaker
+Mic
+
+
+Display- 
+--------------------
