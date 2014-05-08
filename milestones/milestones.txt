@@ -12,6 +12,8 @@
 
 [X] - IRCd-Hybrid server installed and configured into the distro
 
+[ ] - Video streaming to the local net (multicast, http, rtsp) with a frontend
+
 [ ] - Service discovery (avahi, ssid, fm, display)
 
 
