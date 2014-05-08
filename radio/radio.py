@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # Pirate Radio
 # Author: Wynter Woods (Make Magazine)
+# Moded : Tom Higgins  (Anyfesto Project https://github.com/tomhiggins/anyfesto)
+
 
 import os
 import sys
