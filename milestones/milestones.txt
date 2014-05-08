@@ -2,11 +2,15 @@
 ..        ANYFESTO - A platform from which to speak      ..
 ..-------------------------------------------------------..
 
-[ ] - Gather base code for RPi Distro
+[X] - Gather base code for RPi Distro
 
-[ ] - Customise PiFM and Piratebox into the distro
+[X] - Customise PiFM into the distro
+
+[ ] - Customise Pirate/Librarybox into the distro
 
 [ ] - Secure msging (need a good crypted msgs service here) 
+
+[X] - IRCd-Hybrid server installed and configured into the distro
 
 [ ] - Service discovery (avahi, ssid, fm, display)
 
