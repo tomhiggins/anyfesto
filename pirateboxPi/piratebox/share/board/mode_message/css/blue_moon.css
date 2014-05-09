@@ -1,0 +1,410 @@
+html {
+	padding: 0px;
+	margin: 0px;
+	background-color: #6B7B8D;
+}
+body {
+	padding: 8px;
+	margin: 0px;
+	background-color: #6B7B8D;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", serif;
+}
+a {
+	color:#AFB9C5;
+}
+a:visited {
+	color:#9DA6B0;
+}
+a:hover {
+	color:#EEEEEE;
+}
+form {
+	margin: 0px;
+}
+ol ul, ul ol, ul ul, ol ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+ol p:first-child, ul p:first-child {
+	margin-top: 0;
+}
+ol p:last-child, ul p:last-child {
+	margin-bottom: 0;
+}
+.aa {
+	font-family: Mona,'MS PGothic' !important; 
+}
+
+
+
+.outerbox, .backlogpage #threads {
+	background-color: #49525D;
+	color: #EEEEEE;
+	padding: 4px;
+	clear: both;
+}
+#titlebox {
+	-moz-border-radius: 6px 6px 0 0;
+}
+h1 {
+	color: #EEEEEE;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
+#titlebox {
+	position: relative;
+}
+#titlebox .threadnavigation {
+	position: absolute;
+	right: 12px;
+	top: 4px;
+	float: right;
+}
+#titlebox div>.threadnavigation {     
+        right: 4px;
+}
+#rules, #threadbox .innerbox {
+	background-color: inherit;
+	font-size: .8em;
+	margin: 3px;
+	margin-bottom: 1em;
+	padding: 3px;
+}
+#stylebox {
+	padding: 1px 9px;
+	margin: -1px 0;
+}
+#threadbox {
+	margin-bottom: 2em;
+	-moz-border-radius: 0 0 6px 6px;
+}
+#threadbox .threadlink {
+	padding-right: 0.5em;
+}
+#threadlinks {
+	text-align: right;
+	font-weight: bold;
+}
+#createbox {
+	-moz-border-radius: 4px;
+}
+#createbox h2 {
+	background-color: #49525D;
+	font-size: 1.2em;
+	color: #EEEEEE;
+	font-weight: bold;
+	margin: 0px 0px .3em 1em;
+	padding: 0px;
+}
+#createbox form {
+	background-color: #8C9FB4;
+	color: #49525D;
+	font-weight: bold;
+	font-size: .8em;
+	margin: 3px;
+	padding: 3px;
+	-moz-border-radius: 4px;
+	font-weight: bold;
+}
+#createbox input, #createbox textarea {
+	background-color: #EEEEEE;
+	border-top: 1px solid #49525D;
+	border-bottom: 1px solid #B6C2CF;
+	border-left: 1px solid #49525D;
+	border-right: 1px solid #B6C2CF;
+}
+#createbox input[type=submit], #createbox input[type=button] {
+	background-color: #000000;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#createbox textarea {
+	-moz-border-radius: 4px;
+}
+.threadcaptcha {
+	color: #000000;
+}
+
+
+
+#posts {
+}
+#posts .thread {
+	background-color: #49525D;
+	padding: 4px;
+	margin-bottom: 2em;
+	clear: both;
+	-moz-border-radius: 6px;
+}
+#posts .sagethread
+{
+	background-color: #D6E0F0;
+	padding: 4px;
+	margin-bottom: 2em;
+	clear: both;
+	-moz-border-radius: 6px;
+}
+#posts h2 {
+	float: left;
+	background-color: inherit;
+	font-size: 1.2em;
+	color: #EEEEEE;
+	font-weight: bold;
+	margin: 0px 0px .3em 1em;
+	padding: 0px;
+}
+#posts h2 a {
+	color: #EEEEEE;
+	text-decoration: none;
+}
+#posts h2 a:hover {
+	text-decoration: underline;
+}
+#posts h2 small {
+	font-weight: normal;
+	font-size: .7em;
+}
+#posts .threadnavigation {
+	float: right;
+}
+.threadnavigation a {
+	text-decoration: none;
+	font-weight: bold;
+}
+#posts .replies {
+	clear: both;
+}
+#posts .allreplies, #posts .firstreply, #posts .finalreplies {
+	background-color: #DDDDDD;
+	color: #000080;
+	/*font-family: serif;*/
+	font-size: .8em;
+	margin: 3px;
+	padding: 3px;
+	-moz-border-radius: 4px;
+}
+#posts .allreplies a:link, #posts .firstreply a:link, #posts .finalreplies a:link {
+	color: #49525D;
+}
+#posts .allreplies a:visited, #posts .firstreply a:visited, #posts .finalreplies a:visited {
+	color: #2B3037;
+}
+#posts .allreplies a:hover, #posts .firstreply a:hover, #posts .finalreplies a:hover {
+	color: #8C9FB4;
+}
+#posts .allreplies a:active, #posts .firstreply a:active, #posts .finalreplies a:active {
+	color: #8C9FB4;
+}
+#posts .repliesomitted {
+}
+
+
+#posts .reply {
+	clear: both;
+}
+#posts .deletedreply {
+	clear: both;
+	padding-bottom: 1em;
+}
+#posts h3 {
+	/*font-size: .9em;*/
+	font-size: 1em;
+	color: #000000;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+#posts .deletedreply h3 {
+	color: #AFAFAF;
+	font-weight: bold;
+}
+#posts h3 .replynum {
+	color: #999999;
+	font-weight: bold;
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+}
+#posts h3 .replynum a {
+	color: #999999;
+	text-decoration: none;
+}
+#posts h3 .replynum a:hover {
+	color:#EEEEEE;
+}
+#posts h3 .postername {
+	color: #2B3037;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+#posts h3 .postertrip {
+	color: #49525D;
+	font-style: italic;
+	font-size: 1.2em;
+}
+#posts .deletebutton {
+	position: absolute;
+	right: 1.5em;
+	font-size: small;
+}
+#posts img.thumb, #posts a img {
+	border: 1px solid #49525D;
+	float: left;
+	margin: 0.5em 2em 0.5em 1em;
+}
+#posts .nothumbnail {
+	float: left;
+	display: inline; /* stupid IE bug */
+	background: #eeeeee;
+	border: 2px dashed #cccccc;
+	text-align: center;
+	padding: 1em 0.5em 1em 0.5em;
+	margin: 0.5em 2em 0.5em 2em;
+}
+.replytext > :first-child {
+	margin-top: 0em;
+}
+.replytext > :last-child {
+	margin-bottom: 0em;
+}
+.replytext:after {
+	content: "";
+	display: block;
+	height: 0.1px;
+	clear: both;
+	margin: 0px;
+}
+.replytext {
+	margin: 3px;
+	padding: 3px;
+	background-color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	-moz-border-radius: 4px;
+}
+.replytext blockquote {
+	margin-left: 0em;
+	color: #697685;
+}
+#posts .replyabbrev {
+	color: #228854;
+	margin-left: 3px;
+	margin-bottom: 0.5em;
+}
+
+
+
+#posts form {
+	background-color: #99A9BA;
+	color: #49525D;
+	/*font-family: serif;*/
+	font-weight: bold;
+	font-size: .8em;
+	margin: 3px;
+	padding: 3px;
+	-moz-border-radius: 4px;
+}
+#posts form a:link, #createbox form a:link {
+	color: #49525D;
+}
+#posts form a:visited, #createbox form a:visited {
+	color: #2B3037;
+}
+#posts form a:hover, #createbox form a:hover {
+	color: #EEEEEE;
+}
+#posts form a:active, #createbox form a:active {
+	color: #FFFFFF;
+}
+#posts input, #posts textarea {
+	background-color: #EEEEEE;
+	border-top: 1px solid #49525D;
+	border-bottom: 1px solid #B6C2CF;
+	border-left: 1px solid #49525D;
+	border-right: 1px solid #B6C2CF;
+}
+#posts textarea {
+	-moz-border-radius: 4px;
+}
+#posts input[type=submit], #posts input[type=button] {
+	background-color: #000000;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#posts form .replytext, #createbox form .replytext {
+	margin: 0.5em 0;
+	color: #000080;
+	font-weight: normal;
+	border: 6px solid #DDDDDD;
+}
+.postcaptcha {
+	color: #000000;
+}
+
+
+
+#navigation {
+	margin: 0.3em 0.3em 1em 1em;
+	font-size: small;
+	float: left;
+	white-space: nowrap;
+	background-color: #49525D;
+	padding: 3px 0px 3px 0px;
+	border: 1px solid #49525D;
+	-moz-border-radius: 4px;
+}
+#navigation strong {
+	background-color: #49525D;
+	padding: 3px;
+	color: #EEEEEE;
+	font-weight: bold;
+}
+
+#navigation a {
+	padding: 3px;
+}
+
+
+
+#oldthreadlist {
+	width: 100%;
+	background-color: #FFFFFF;
+	color: #49525D;
+	font-family: serif;
+	padding: 6px;
+	-moz-border-radius: 4px;
+	margin: 0 auto;
+}
+#oldthreadlist a {
+	color: #49525D;
+}
+#oldthreadlist a:hover {
+	color:#6B7480;
+}
+#oldthreadlist th {
+	text-align: left;
+}
+#oldthreadlist .line0 {
+	background: #FFFFFF;
+}
+#oldthreadlist .line1 {
+	background: #E7E7FF;
+}
+#oldthreadlist a {
+	display: block;
+}
+
+
+
+#footer {
+        text-align: center;
+        font-size: 0.8em;
+}
+
+
+
+.errorpage h1, .errorpage h2 {
+	text-align: center;
+}
