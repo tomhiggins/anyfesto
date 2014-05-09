@@ -1,0 +1,110 @@
+.qwebirc .colourline .Xc0 {
+  color: white;
+}
+.qwebirc .colourline .Xc1 {
+  color: black;
+}
+.qwebirc .colourline .Xc2 {
+  color: darkBlue;
+}
+.qwebirc .colourline .Xc3 {
+  color: darkGreen;
+}
+.qwebirc .colourline .Xc4 {
+  color: red;
+}
+.qwebirc .colourline .Xc5 {
+  color: darkRed;
+}
+.qwebirc .colourline .Xc6 {
+  color: purple;
+}
+.qwebirc .colourline .Xc7 {
+  color: orange;
+}
+.qwebirc .colourline .Xc8 {
+  color: yellow;
+}
+.qwebirc .colourline .Xc9 {
+  color: green;
+}
+.qwebirc .colourline .Xc10 {
+  color: teal;
+}
+.qwebirc .colourline .Xc11 {
+  color: cyan;
+}
+.qwebirc .colourline .Xc12 {
+  color: blue;
+}
+.qwebirc .colourline .Xc13 {
+  color: fuchsia;
+}
+.qwebirc .colourline .Xc14 {
+  color: darkGray;
+}
+.qwebirc .colourline .Xc15 {
+  color: gray;
+}
+.qwebirc .colourline .Xbc0 {
+  background-color: white;
+}
+.qwebirc .colourline .Xbc1 {
+  background-color: black;
+}
+.qwebirc .colourline .Xbc2 {
+  background-color: darkBlue;
+}
+.qwebirc .colourline .Xbc3 {
+  background-color: darkGreen;
+}
+.qwebirc .colourline .Xbc4 {
+  background-color: red;
+}
+.qwebirc .colourline .Xbc5 {
+  background-color: darkRed;
+}
+.qwebirc .colourline .Xbc6 {
+  background-color: purple;
+}
+.qwebirc .colourline .Xbc7 {
+  background-color: orange;
+}
+.qwebirc .colourline .Xbc8 {
+  background-color: yellow;
+}
+.qwebirc .colourline .Xbc9 {
+  background-color: green;
+}
+.qwebirc .colourline .Xbc10 {
+  background-color: teal;
+}
+.qwebirc .colourline .Xbc11 {
+  background-color: cyan;
+}
+.qwebirc .colourline .Xbc12 {
+  background-color: blue;
+}
+.qwebirc .colourline .Xbc13 {
+  background-color: fuchsia;
+}
+.qwebirc .colourline .Xbc14 {
+  background-color: darkGray;
+}
+.qwebirc .colourline .Xbc15 {
+  background-color: gray;
+}
+.qwebirc .colourline .Xb {
+  font-weight: bold;
+}
+.qwebirc .colourline .Xu {
+  text-decoration: underline;
+}
+
+.qwebirc .warncolour {
+  background-color: #ff9090;
+}
+
+.qwebirc .infocolour {
+  background-color: #9090ff;
+}

@@ -1,0 +1,251 @@
+/**************** LOGIN BOX *******************/
+
+.qwebirc-centrebox {
+  height: 100%;
+  width: 100%;
+}
+
+.qwebirc-centrebox table {
+  width: 100%;
+}
+
+.qwebirc-centrebox table table {
+  width: auto;
+}
+.qwebirc-loginbox .tr1 td {
+  width: 100%;
+  text-align: center;
+}
+
+.qwebirc-loginbox .tr2 td {
+  vertical-align: top;
+}
+
+.qwebirc-loginbox .tr2 table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/**************** CONFIRM LOGIN BOX *******************/
+.qwebirc-confirmbox {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.qwebirc-confirmbox .tr1 td {
+  width: 100%;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.qwebirc-confirmbox .tr2 td {
+  width: 100%;
+  vertical-align: top;
+  text-align: center;
+}
+
+/**************** ABOUT PANE *******************/
+.qwebirc-aboutpane {
+  font-size: 1em !important;
+}
+
+.qwebirc-aboutpane .mainbody {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px;
+}
+
+.qwebirc-aboutpane table {
+  display: inline-block;
+}
+
+.qwebirc-aboutpane div.header {
+  padding-top: 5px;
+}
+
+.qwebirc-aboutpane .header {
+  background: white;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+.qwebirc-aboutpane .header .title {
+  font-size: 3em;
+}
+
+.qwebirc-aboutpane .header .subtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.qwebirc-aboutpane .skipmargin {
+  margin-top: 0px;
+}
+
+/**************** EMBEDDED WIZARD *******************/
+ div.qwebirc-embeddedwizard {
+  padding-left: 5px;
+  padding-top: 2px;
+}
+
+.qwebirc-embeddedwizard input.text {
+  width: 300px;
+}
+
+.qwebirc-embeddedwizard input.iframetext {
+  width: 95%;
+}
+
+.qwebirc-embeddedwizard div.wizardcontrols {
+}
+
+.qwebirc-embeddedwizard .wizardcontrols input {
+  width: 70px;
+}
+
+/**************** PRIVACY POLICY PANE *******************/
+.qwebirc-privacypolicypane {
+  font-size: 1em !important;
+}
+
+.qwebirc-privacypolicypane .mainbody {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px;
+}
+
+.qwebirc-privacypolicypane table {
+  display: inline-block;
+}
+
+.qwebirc-privacypolicypane div.header {
+  padding-top: 5px;
+}
+
+.qwebirc-privacypolicypane .header {
+  background: white;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+.qwebirc-privacypolicypane .header .title {
+  font-size: 3em;
+}
+
+.qwebirc-privacypolicypane .header .subtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.qwebirc-privacypolicypane .monospace {
+  font-family: Consolas, "Lucida Console", monospace;
+}
+
+/****** FEEDBACK ***********/
+.qwebirc-feedbackpane {
+  font-size: 1em !important;
+}
+
+.qwebirc-feedbackpane .mainbody {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px;
+}
+
+.qwebirc-feedbackpane table {
+  display: inline-block;
+}
+
+.qwebirc-feedbackpane div.header {
+  padding-top: 5px;
+}
+
+.qwebirc-feedbackpane .header {
+  background: white;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+.qwebirc-feedbackpane .header .title {
+  font-size: 3em;
+}
+
+.qwebirc-feedbackpane .header .subtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.qwebirc-feedbackpane .monospace {
+  font-family: Consolas, "Lucida Console", monospace;
+}
+
+/************* FAQ *****************/
+
+.qwebirc-faqpane {
+  font-size: 1em !important;
+}
+
+.qwebirc-faqpane .mainbody {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.qwebirc-faqpane table {
+  display: inline-block;
+}
+
+.qwebirc-faqpane div.header {
+  padding-top: 5px;
+}
+
+.qwebirc-faqpane .header {
+  background: white;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+}
+
+.qwebirc-faqpane .header .title {
+  font-size: 3em;
+}
+
+.qwebirc-faqpane .header .subtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.qwebirc-faqpane .monospace {
+  font-family: Consolas, "Lucida Console", monospace;
+}
+
+.qwebirc .loading {
+  padding-left: 4px;
+  padding-top: 3px;
+  font-size: 0.8em;
+}
+
+/************* OPTIONS *****************/
+
+.qwebirc-optionspane div.hue-slider {
+  border: 0px solid black;
+  width: 360px;
+  height: 8px;
+  background-image: url(../images/hue.png);
+}
+
+.qwebirc-optionspane div.hue-slider .knob {
+  width: 8px;
+  height: 16px;
+  top: -5px;
+  opacity: 0.75;
+  background: grey;
+  border: 1px solid black;
+}
+
