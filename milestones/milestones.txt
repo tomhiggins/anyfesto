@@ -7,15 +7,25 @@
 [X] - Customise PiFM into the distro
 
 [ ] - Customise Pirate/Librarybox into the distro
-
+     
+     [X] First, get it working on the RPi. Fix Hostapd issues
+     [ ] Mod the theme, graphics, etc.
+      
 [ ] - Secure msging (need a good crypted msgs service here) 
 
 [X] - IRCd-Hybrid server installed and configured into the distro
 
-[ ] - Video streaming to the local net (multicast, http, rtsp) with a frontend
+[X] - Video streaming to the local net (multicast, http, rtsp)
 
 [ ] - Service discovery (avahi, ssid, fm, display)
 
+[ ] - Create a unified web front end for configuration and running all of the above
+     
+       [ ] - Theme, Banners, Headers and Footers
+       [ ] - Radio Control (on/off, freq, shuffle, repeat, mic, add links/files)
+       [ ] - IRCd Control  (on/off, klines)
+       [ ] - IRC User Web page (webbased irc)
+       [ ] - Video Streming Control (on/off. repeat, playlist)
 
 [ ]  - Meshing. Use of a second wifi device to mesh with other Anyfesto
           boxen. Two flavors - Open and Trusted. 
