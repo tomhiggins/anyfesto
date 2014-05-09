@@ -17,6 +17,7 @@ NOUNS
 - Piratebox
 - Local content
 - SSIDmsg 
+- IRC
 - microphone
 - speaker
 - soldering iron
@@ -36,7 +37,7 @@ ADJECTIVES
 - encrypted
 - secure
 - self-destructing
-- license type
+- Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 VERBS
 - broadcast FM
@@ -53,3 +54,4 @@ VERBS
 - browse localcontent
 - chat private
 - chat public
+- stream video
