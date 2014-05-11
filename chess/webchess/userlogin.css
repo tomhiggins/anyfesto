@@ -1,0 +1,182 @@
+/* $Id: userlogin.css,v 1.2 2010/08/14 16:57:54 sandking Exp $ */
+
+/*
+    This file is part of WebChess. http://webchess.sourceforge.net
+	Copyright 2010 Jonathan Evraire, Rodrigo Flores, Dadi Jonsson
+
+    WebChess is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    WebChess is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with WebChess.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color : #333;
+	background-color : #FFF;
+	font-size : 11px;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+#header {
+	margin:0;
+	margin-top:10px;
+	padding: 0 0 0 10px;
+	height:5%;
+	height: 35px;
+	width: auto;
+	border-style:solid;
+	border-color:black;
+	border-width:0px 0px 1px 0px;
+	background-color:#353C91;
+	color: white;
+}
+
+#heading {
+	font-family: Verdana, helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.5;
+}
+
+#break {
+	height: 50px;
+}
+
+form {
+    margin: 0px;
+}
+
+.button {
+	border : solid 1px #cccccc;
+	background: #E9ECEF;
+	color : #666666;
+	font-weight : bold;
+	font-size : 11px;
+	padding: 4px;
+	margin: 3px;
+}
+
+.login {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6em;
+	padding: 15px;
+	border: 1px solid #cccccc;
+	width: 429px;
+	background: #F1F3F5;
+}
+
+.login h1 {
+	color: #333;
+	margin: 0px;
+	height: 50px;
+	padding: 15px 4px 0 50px;
+ 	text-align: left;
+	font-size: 1.5em;
+}
+
+.preferences {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 6em;
+	padding: 15px;
+	border: 1px solid #cccccc;
+	width: 600px;
+	background: #F1F3F5;
+}
+
+.preferences h1 {
+	color: #333;
+	margin: 0px;
+	height: 50px;
+	padding: 15px 4px 0 50px;
+ 	text-align: left;
+	font-size: 1.5em;
+}
+
+.login p {
+	padding: 0 1em 0 1em;
+	}
+
+.form-block {
+	border: 1px solid #cccccc;
+	background: #E9ECEF;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+.login-form {
+	text-align: left;
+	float: right;
+	width: 60%;
+}
+
+.preferences-form {
+	text-align: left;
+	float: right;
+	width: 70%;
+}
+
+.login-text {
+	text-align: left;
+	width: 25%;
+	float: left;
+}
+
+.inputlabel {
+	font-weight: bold;
+	text-align: left;
+	}
+
+.inputbox {
+	width: 150px;
+	margin: 0 0 1em 0;
+	border: 1px solid #ccc;
+	}
+
+.remember {
+	margin: 0 0 1em 0;
+	}
+
+.clr {
+    clear:both;
+    }
+
+.ctr {
+	text-align: center;
+}
+
+.warning {
+	color: #f00;
+	margin:0;
+	margin-bottom: 10px;
+	font-size:1.2em;
+}
+
+.instruction {
+	color: #000;
+	margin:0;
+	margin-bottom: 10px;
+	font-size:1.2em;
+}
+
+.version {
+	font-size: 0.8em;
+}
+
+.footer {
+
+}

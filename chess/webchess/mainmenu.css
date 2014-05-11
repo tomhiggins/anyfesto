@@ -1,0 +1,307 @@
+/* $Id: mainmenu.css,v 1.6 2010/08/14 16:57:54 sandking Exp $ */
+
+/*
+    This file is part of WebChess. http://webchess.sourceforge.net
+	Copyright 2010 Jonathan Evraire, Rodrigo Flores
+
+    WebChess is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    WebChess is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with WebChess.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+A:visited, :link {text-decoration: underline}
+A:link {color : navy}
+A:link:hover, :visited:hover {text-decoration: none}
+A:visited {color: navy}
+A:link:active, :visited:active {color: green}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color : #333;
+	background-color: #fff;
+	font-size : 11px;
+	font-family : Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin: 0px;
+}
+
+.button {
+	border : solid 1px #ccc;
+	background: #E9ECEF;
+	color : #666;
+	font-weight : bold;
+	font-size : 11px;
+	padding: 4px;
+	margin: 3px;
+}
+
+.inputlabel {
+	font-weight: bold;
+	text-align: left;
+	}
+
+.inputbox {
+	width: 150px;
+	margin: 0 0 1em 0;
+	border: 1px solid #ccc;
+	}
+
+h1 {color : navy; text-align: center}
+h2 {color : navy; text-align: center}
+h3 {font-family: arial; font-weight: bold; text-align: left; text-indent:80}
+
+hr {width: 50%}
+.fullwidth {width: 100%}
+
+#header {
+	margin:0;
+	margin-top:10px;
+	border:0;
+	padding: 0 0 0 10px;
+	height: 35px;
+	background-color:#353C91;
+	color: white;
+}
+
+#heading {
+	font-family: Verdana, helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#content {
+	margin:0;
+	padding:0;
+	border:0;
+	width:auto;
+}
+
+#rightcolumn
+{
+width: 600px;
+text-align: left;
+margin: 0 0 0 180px;
+height: auto;
+padding: 15px 0 0 5px;
+border:0;
+border-left: 1px dotted gray;
+}
+
+.preferences {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	width: 550px;
+	background: #F1F3F5;
+}
+
+.preferences h1 {
+	color: #333;
+	margin: 0px;
+	height: 50px;
+	padding: 15px 4px 0 50px;
+ 	text-align: left;
+	font-size: 1.5em;
+}
+
+.preferences-form {
+	text-align: left;
+	float: right;
+	width: 400px;
+}
+
+.login-text {
+	text-align: left;
+	width: 125px;
+	float: left;
+}
+
+.form-block {
+	border: 1px solid #ccc;
+	background: #E9ECEF;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+.viewmessage-form {
+        margin-top: 30px;
+	text-align: left;
+	float: left;
+	width: 800px;
+}
+
+.message-block {
+	border: 1px solid #ccc;
+	background: #E9ECEF;
+        margin-left: 180px;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+#personalinfo {display:none;}
+#preferences {display:none;}
+#challenge {display:none;}
+#invitations {display:none;}
+#messages {display:none;}
+#continuegame {display:block;}
+#viewgame {display:none;}
+
+.clr {
+    clear:both;
+    }
+
+.ctr {
+	text-align: center;
+}
+
+.instruction {
+	color: #000;
+	margin:0;
+	margin-bottom: 10px;
+	font-size:1.2em;
+}
+
+/* Table styles. */
+
+table {
+  border-color: #ccc;
+  border-spacing: 0px;
+  border-style: solid;
+  border-width: 1px;
+  cell-spacing: 0px;
+  border-collapse:collapse;
+}
+
+td, th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  padding: 2px;
+  /*white-space: nowrap;*/
+}
+
+td.numeric {
+  text-align: right;
+}
+
+th {
+  background-color: #c0c0c0;
+}
+
+th.mainHeader {
+  background-color: #808080;
+  color: #fff;
+  text-align: left;
+}
+
+th a {
+  color: #000080;
+  text-decoration: none;
+}
+
+th a:visited {
+  color: #000080;
+}
+
+th a:active, th a:hover {
+  color: #800000;
+  text-decoration: underline;
+}
+
+tr.alternateRow {
+  background-color: #e0e0e0;
+}
+
+td.sortedColumn {
+  background-color: #f0f0f0;
+}
+
+th.sortedColumn {
+  background-color: #b0b0b0;
+}
+
+tr.alternateRow td.sortedColumn {
+  background-color: #d0d0d0;
+}
+
+/* Menu definitions */
+
+#navcontainer
+{
+	position: absolute;
+	z-index: 10;
+	top: 70px;
+	left:15px;
+	width: 160px;
+	height: 100%;
+	margin: 0;
+	margin-top: 0px;
+	padding: 0;
+	border: 0;
+	background: #F1F3F5;
+	font-family: georgia, serif;
+	font-size: 13px;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+ul#navlist
+{
+text-align: left;
+list-style: none;
+padding: 0;
+margin: 0 auto;
+width: 90%;
+}
+
+ul#navlist li
+{
+display: block;
+margin: 0;
+padding: 0;
+}
+
+ul#navlist li a
+{
+display: block;
+width: 100%;
+padding: 0.5em 0 0.5em 1em;
+border-width: 1px;
+border-color: #ffe #aaab9c #ccc #fff;
+border-style: solid;
+color: #777;
+text-decoration: none;
+background: #E9ECEF;
+}
+
+#navcontainer>ul#navlist li a { width: auto; }
+
+ul#navlist li#active a
+{
+background: #DDDFF3;
+color: #800000;
+}
+
+ul#navlist li a:hover, ul#navlist li#active a:hover
+{
+color: #F1F3F5;
+background: #353C91;
+border-color: #aaab9c #fff #fff #ccc;
+}

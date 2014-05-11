@@ -1,0 +1,39 @@
++------------+--------------+------+-----+---------------------+----------------+
+| Field      | Type         | Null | Key | Default             | Extra          |
++------------+--------------+------+-----+---------------------+----------------+
+| commID     | smallint(6)  |      | PRI | NULL                | auto_increment |
+| gameID     | smallint(6)  | YES  |     | NULL                |                |
+| fromID     | mediumint(9) | YES  |     | NULL                |                |
+| toID       | mediumint(9) | YES  |     | NULL                |                |
+| title      | varchar(255) | YES  |     | NULL                |                |
+| text       | longtext     | YES  |     | NULL                |                |
+| postDate   | datetime     |      |     | 0000-00-00 00:00:00 |                |
+| expireDate | datetime     | YES  |     | 0000-00-00 00:00:00 |                |
+| ack        | tinyint(4)   | YES  |     | 0                   |                |
+| commType   | smallint(6)  | YES  |     | 0                   |                |
++------------+--------------+------+-----+---------------------+----------------+
+
+
+CREATE TABLE communication (
+  commID smallint(6) NOT NULL auto_increment,
+  gameID smallint(6) default NULL,
+  fromID mediumint(9) default NULL,
+  toID mediumint(9) default NULL,
+  title varchar(255) default NULL,
+  text longtext,
+  postDate datetime NOT NULL default '0000-00-00 00:00:00',
+  expireDate datetime default '0000-00-00 00:00:00',
+  ack tinyint(4) default '0',
+  commType smallint(6) default '0',
+  PRIMARY KEY  (commID)
+);
+
+
+
+INSERT INTO communication
+(gameID,fromID,toID,title,text,postDate,expireDate,ack,commType)
+VALUES (NULL,NULL,NULL,'Database Upgrade tSuccessfull','If you see this message
+then the communication table was created successfully... this will allow players
+and admins to communicate with each other by posting
+messages.',NOW(),'0000-00-00 00:00:00','0','0');
+
