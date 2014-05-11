@@ -1,0 +1,16 @@
+Field Report
+--------------
+
+Loaded the Alpha.02 img onto a fresh SD card, clipped a medium wire to Pin 4, slotted in the USB WIfi
+with antenna module in (http://www.adafruit.com/products/1030) and hooked up a USB power supply/battery.
+
+Went for a drive. 
+
+FM clear in car while dirivng and the Ap was easily full bars and accesable.
+Parked with car closed up...
+
+FM - 30 feet until drop off
+
+Wifi - 2 blocks
+
+Future testing...gear out of closed car....better FM antenna
