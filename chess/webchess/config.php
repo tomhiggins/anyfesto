@@ -29,17 +29,11 @@
 	$CFG_SESSIONTIMEOUT = 900;		/* session times out if user doesn't interact after 900 secs (15 mins) */
 	$CFG_EXPIREGAME = 14;			/* number of days before untouched games expire */
 	$CFG_MINAUTORELOAD = 5;			/* min number of secs between automatic reloads reloads */
-						/* email notification requires PHP to be properly configured for */
-	/* NOTE: in chessutils.php a line is commented containing:
-	$headers .= "To: ".$msgTo."\r\n";
-	Some MTAs may require for you to uncomment such line. Do so if mail notification doesn't work */
+
 	$CFG_USEEMAILNOTIFICATION = false;	/* SMTP operations.  This flag allows you to easily activate
 						   or deactivate this feature.  It is highly recommended you test
 						   it before putting it into production */
 						/* email address people see when receiving WebChess generated mail */
-	$CFG_MAILADDRESS = "WebChess@webchess.org";
-	/* This URL is displayed in the email notices */
-	$CFG_MAINPAGE = "http://webchess.sourceforge.net/webchess/";
 
 	$CFG_MAXUSERS = 50;
 	$CFG_MAXACTIVEGAMES = 50;
