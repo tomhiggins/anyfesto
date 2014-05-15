@@ -1,0 +1,10 @@
+This project draws on the work of many great projects.
+---------------------------------------------------------
+
+WebChess  - 	http://sourceforge.net/apps/mediawiki/webchess/
+PIrateRadio - 	https://github.com/Make-Magazine/PirateRadio
+PirateBox PI- 	http://piratebox.aod-rpg.de/dokuwiki/doku.php/raspberry
+VLC - 		https://github.com/videolan/vlc
+IRCd-Hybrib - 	http://www.ircd-hybrid.org/
+Qwebirc -	http://qwebirc.org/
+Raspbian Linux-	http://www.raspbian.org/
