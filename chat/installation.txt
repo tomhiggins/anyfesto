@@ -16,5 +16,17 @@ python-zope.interface python-openssl javascript-common libjs-jquery python-simpl
 
 install qwebirc
 
+mkdir /opt/qwebirc
 wget http://qwebirc.org/download-stable-zip
+unzip into /opt/qwebirc
+cd /opt/qwebirc
+cp config.py.example config.py             #edit it to fit your network's setup.
 
+python  compile.py                         #note that warnings are just warnings, you can ignore them!
+
+python run.py 
+
+(if you get an error about the select reactor being already registered just run it again) 
+-- note run.py has lots of arguments, you can see them with --help.
+
+Browse to http://yourmachine:9090/
