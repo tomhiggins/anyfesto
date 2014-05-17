@@ -1,51 +1,17 @@
-<html>
+
+<!doctype html>  
 <head>
-<meta http-equiv="cache-control" content="no-cache">
-<LINK rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta charset="utf-8">
+
+    <title>Anyfesto</title>
+    
+            <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="all.css" />
     <title>Anyfesto - A platform from which to speak. </title>
 
-<style type="text/css">
-<!--
-* {margin: 0; padding: 0;}
-body {text-align: left; font-size: 1.0em; font-family: sans-serif;}
-.box {padding-top:10px; padding-bottom:0px;}
-#message {text-align: left; width: 310px;}
-#sending {display: none;}
-#wrapform {height: 40px;}
-#progress {display: inline;  border-collapse: separate; empty-cells: show;
-           border-spacing: 10px 0; padding: 0; vertical-align: bottom;}
-#progress td {height: 10px; width: 13px; background-color: #eee;
-              border: 1px solid #aaa; padding: 0px;}
+</head>
 
-#station {font-size: 50%; }
-
-
-.shoutbox_content {
-   border-top: 1px solid black;
-   border-bottom: 1px solid black;
-   margin-top:   1%;
-   position:   relative;
-   text-align: left;
-   width: 50%;
-   min-height:  50px;
-   height:      25%;
-   max-height:  300px;
-   overflow: hidden;
-}
-
-
-
-date            { font-size: 10pt; color: #666666; font-family:Tahoma }
-name        { font-weight: bold; font-family:Tahoma }
-data            { font-family: Tahoma }
-data.def        { color: #000000 }
-data.blue       { color: #0000FF }
-data.green      { color: #008000 }
-data.orange     { color: #FF8040 }
-data.red        { color: #FF0000 }
-
-
---></style>
 
 <!--piratebox.lan-->
 
@@ -111,11 +77,21 @@ data.red        { color: #FF0000 }
 <body>
 <center>
 
-<div class="box"><img src="/piratebox-logo-small.png"/></div>
+<div class="box"><img src="logosmall.jpg"/></div>
 <div id="message" class="box">
-<b>1.</b> Learn more about the project <a href="/.READ.ME.htm" target="_parent"><b>here</b></a>.<p>
-<b>2.</b> Click button below to begin sharing.</p>
-<b>3.</b> Browse and download files <a href="/Shared" target="_parent"><b>here</b></a>.<br>
+Welcome to this instance of Anyfesto. <br>
+You are now part of a local network made up only of people
+in close proximity to you.<br>
+There are several things you can do from here.....
+<br>
+<b>[ ]</b> Browse and download files on <a href="/Shared" target="_parent"><b>this network</b></a>.<br>
+<b>[ ]</b> Chat with others on <a href="/about.html" target="_parent">this netowrk</a>.<br>
+<b>[ ]</b> Listen to some sounds on<a href="/fm.html" target="_parent">this netowrk</a>.<br>
+<b>[ ]</b> Watch video on <a href="/video.html" target="_parent">this netowrk</a>.<br>
+
+
+<b>[ ]</b> Learn more about <a href="/about.html" target="_parent">this netowrk</a>.<p>
+
 <div id="forum_link"></div>
 <div id="forban_link"></div>
 </div>
@@ -124,21 +100,7 @@ data.red        { color: #FF0000 }
 <iframe  width='650' frameBorder='0' src='http://piratebox.lan:8080'>Your browser does not supprt Iframes.. If you want to upload something, follow this <a href='http://piratebox.lan:8080'>Link</a></iframe>
  <br />
 
-<div>
-<form method="POST" name="psowrte" id="sb_form" >
-Name:<input type="text" value="anonymous" name="name" size="10">&nbsp;&nbsp; Message:<input type="text" name="data" size="20" id='sb_form_text' >&nbsp;&nbsp;
-<br /><b>Color:</b> Default<input type="radio" value="def" name="color" checked> |
-<font color="#0000FF">Blue</font><input type="radio" value="blue" name="color">
-| <font color="#008000">Green</font><input type="radio" value="green" name="color">
-| <font color="#FF8040">Orange</font><input type="radio" value="orange" name="color">
-| <font color="#FF0000">Red</font><input type="radio" value="red" name="color"></p>
-<input type="submit" value="Send" name="submit"  /><br>
-</form>
 
-</div>
-
-
-<div class="shoutbox_content" id="shoutbox"></div>
 
 
 <div id="station"></div>
