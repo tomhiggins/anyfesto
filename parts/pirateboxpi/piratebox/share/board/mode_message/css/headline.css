@@ -1,0 +1,356 @@
+html {
+	padding: 0px;
+	margin: 0px;
+	background: #FFFFFF;
+}
+
+body {
+	padding: 8px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #000000;
+}
+a {
+	color: #DD6600;
+}
+a:visited {
+	color: #DD6600;
+}
+a:hover {
+        color:#FFAA44;
+}
+form {
+	margin: 0px;
+}
+ol ul, ul ol, ul ul, ol ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+ol p:first-child, ul p:first-child {
+	margin-top: 0;
+}
+ol p:last-child, ul p:last-child {
+	margin-bottom: 0;
+}
+.aa {
+	font-family: Mona,'MS PGothic' !important; 
+}
+
+
+input, textarea {
+	border: 1px solid #000000;
+}
+input[type=submit] {
+}
+input[type="file"] > input[type="text"] {
+	border: 1px solid #000000;
+}
+
+
+
+.outerbox, .backlogpage #threads {
+	background: #EEEEEE;
+	color: #000000;
+	font-family: sans-serif;
+	clear: both;
+	margin-bottom: 0;
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid #BBBBBB;
+}
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 2px solid #FF7700;
+	padding: 4px 4px 0px 4px;
+}
+#titlebox {
+	position: relative;
+}
+#titlebox .threadnavigation {
+	position: absolute;
+	right: 0.7em;
+	top: 0.7em;
+}
+#titlebox div>.threadnavigation {
+        right: 0.3em;
+}
+#rules {
+	padding: 0em 0.5em;
+}
+#stylebox {
+	padding: 0.5em;
+}
+#threadbox {
+	margin-bottom: 2em;
+}
+#threadbox .innerbox {
+	padding: 1em 0.5em 0.2em 0.5em;
+}
+#threadbox .threadlink, #threadlinks a {
+	padding-right: 0.5em;
+}
+#threadlinks {
+	text-align: right;
+	font-weight: bold;
+}
+
+
+
+
+#createbox h2 {
+	border-bottom: 2px solid #FF7700;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 0 0.7em 0;
+	padding: 0 0 0 3em;
+}
+
+.threadcaptcha {
+	color: #000000;
+}
+
+
+
+
+
+#posts {
+}
+#posts .thread {
+	padding: 4px;
+	margin-bottom: 2em;
+	clear: both;
+}
+#posts .sagethread {
+	background: #EEEEEE;
+	padding: 4px;
+	margin-bottom: 2em;
+	clear: both;
+}
+#posts h2 {
+	float: left;
+	background: #EEEEEE;
+	border-bottom: 2px solid #FF7700;
+	font-size: 1.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0px 0px 0.7em 0px;
+	padding: 0px 0.2em 0px 0px;
+}
+#posts h2 a {
+	color: #000000;
+	text-decoration: none;
+}
+#posts h2 a:hover {
+	color:#FFAA44;
+}
+#posts h2 small {
+	font-size: 1em;
+	font-weight: normal;
+	margin-left: 0.5em;
+}
+#posts .threadnavigation {
+	float: right;
+}
+#posts .replies {
+	clear: both;
+}
+#posts .allreplies, #posts .firstreply, #posts .finalreplies {
+}
+#posts .repliesomitted {
+	clear: both;
+	background: #EEEEEE;
+	height: 3px;
+	margin: 0em 2em 1em 2em;
+}
+
+
+
+#posts .reply, #posts .deletedreply {
+	clear: both;
+	margin-bottom: 1.2em;
+}
+#posts h3 {
+	font-size: 1em;
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 0px 0px 0px 0px;
+}
+#posts .deletedreply h3 {
+	color: #AFAFAF;
+}
+#posts h3 a {
+	color: #000000;
+}
+#posts h3 a:hover {
+	color:#FFAA44;
+}
+#posts h3 .replynum {
+	width: 1.5em;
+	font-family: sans-serif;
+	text-align: right;
+	font-weight: bold;
+	margin-right: 0.5em;
+	float: left;
+}
+#posts h3 .replynum a {
+	color: #000000;
+	text-decoration: none;
+}
+#posts h3 .replynum a:hover {
+	color:#FFAA44;
+}
+#posts h3 .postername {
+	color: #000000;
+	font-weight: bold;
+}
+#posts h3 .postertrip {
+	color: #000000;
+}
+#posts h3 small {
+	margin-left: 0.5em;
+}
+#posts .deletebutton {
+	font-size: small;
+	position: absolute;
+	right: 0.5em;
+}
+#posts .deletebutton a {
+	color: #DD6600;
+}
+#posts .deletebutton a:hover {
+	color:#FFAA44;
+}
+#posts img.thumb, #posts a img {
+	float: left;
+	border: 1px solid #000000;
+	margin: 0.5em 2em 0.5em 2em;
+}
+#posts .nothumbnail {
+	float: left;
+	display: inline; /* stupid IE bug */
+	background: #eeeeee;
+	border: 2px dashed #cccccc;
+	text-align: center;
+	padding: 1em 0.5em 1em 0.5em;
+	margin: 0.5em 2em 0.5em 2em;
+}
+.replytext {
+	margin: 0.7em 0em 1.5em 2em;
+}
+.reply .replytext > :first-child {
+	margin-top: 0em;
+}
+#posts .allreplies .reply:first-child .replytext > :first-child:first-letter,
+#posts .firstreply .reply:first-child .replytext > :first-child:first-letter,
+#createbox form .replytext > :first-child:first-letter {
+	font-size: 1.5em;
+}
+.replytext blockquote {
+	font-style: italic;
+	margin-left: 0em;
+	color: #7f7f7f;
+}
+.replytext blockquote em {
+	font-style: normal;
+}
+#posts .replyabbrev {
+	color: #707070;
+	margin-left: 3em;
+	margin-bottom: 0.5em;
+}
+h4 {
+	float: right;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+#posts form {
+	clear: both;
+	background: #EEEEEE;
+	color: #000000;
+	border-bottom: 2px solid #BBBBBB;
+	font-family: sans-serif;
+	margin: 3px;
+	padding: 3px;
+}
+#posts form .replytext, #createbox form .replytext {
+	font-family: serif;
+	border: 1px dotted #000000;
+	margin: 0.5em 0;
+	padding: 0 1em;
+	background: #ffffff;
+}
+
+.postcaptcha {
+	color: #000000;
+}
+
+
+
+#footer {
+        text-align: center;
+        font-size: 0.8em;
+}
+
+
+
+#navigation {
+	float:left;
+	white-space: nowrap;
+	background: #EEEEEE;
+	border-bottom: 2px solid #FF7700;
+	font-size: small;
+	font-family: sans-serif;
+	padding: 4px;
+	margin: 0.3em 0.3em 1em 1em;
+}
+#navigations trong {
+	font-weight: bold;
+}
+#navigation a {
+	padding: 3px;
+}
+
+
+
+#oldthreadlist {
+	width: 100%;
+	font-family: sans-serif;
+	padding: 0 1em;
+	margin-bottom: 7px;
+	margin: 0 auto;
+}
+#oldthreadlist th {
+	text-align: left;
+	border-bottom: 2px solid #FF7700;
+}
+#oldthreadlist .line0 {
+	background: #FFFFFF;
+}
+#oldthreadlist .line1 {
+	background: #DDDDDD;
+}
+#oldthreadlist a {
+	display: block;
+}
+
+
+
+
+.errorpage h1, .errorpage h2 {
+	clear: both;
+	text-align: center;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.errorpage h1 {
+	border: 2px dashed #aaa;
+}

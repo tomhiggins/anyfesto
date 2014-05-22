@@ -1,0 +1,96 @@
+  I've always wanted to elaborate on the installation instructions a
+little as I myself find they are not very clear.
+
+  For the steps with MySQL, you need to start up the MySQL client
+(conveniently called "mysql" which you'll find in the "bin" directory
+where mysql is installed by running "mysql -u root" (to login as root).
+You may need to type in the root password, in which case you'll need to
+run "mysql -u root -p".
+
+  Once in mysql, you'll need to create a database for WebChess to store
+it's data.  For our example here, let's call our database "WebChess".  To
+command to run from within the MySQL client is "create database WebChess".
+
+  From now on we'll be operating from within this database, so to make
+this database the active, run "use WebChess" (again from within the MySQL
+client).
+
+  Now that we have a database, we need to create the tables within it
+needed for WebChess.  To make this easier, I've already included the SQL
+statements used to create the tables.  You'll find them in the
+"docs\tables" directory.  Each .txt file in there (except
+user_permissions.txt (see below)) contains the SQL statement needed to
+create the corresponding MySQL table.  Simply copy everything starting
+with "CREATE TABLE" up to and including the parenthesis and semicolon ");"
+and paste it in the MySQL client.  (You may need to hit [Enter] after for
+the pasted command to register.)  If done successfully, you should see a
+message like this:
+  Query OK, 0 rows affected (0.05 sec)
+
+  Once you've successfully created every table, typing "show tables;"
+(don't forget the semicolon!) should reveal the following:
++--------------------------+
+| Tables_in_WebChess       |
++--------------------------+
+| games                    |
+| history                  |
+| messages                 |
+| pieces                   |
+| players                  |
+| preferences              |
++--------------------------+
+6 rows in set (0.00 sec)
+
+  Now you must create a user for WebChess to use and grant him select,
+insert, update and delete rights to the WebChess database.  By creating
+this user with limited access, you limit the rights of a would-be attacker
+using the WebChess username and password to gain access to your MySQL
+database.
+
+  For the purpose of our example, let's create a user called "WCuser" with
+password "WCpass".  We can use the example provided in the
+docs\tables\user_permissions.txt file as inspiration giving us the
+following command:
+  GRANT SELECT, INSERT, UPDATE, DELETE
+     ON WebChess.*
+     TO WCuser
+     IDENTIFIED BY 'WCpass';
+
+  Again we enter this command in the MySQL client (including the
+semicolon) and hiting [Enter].  If done successfully, we should see
+something similar to this:
+  Query OK, 0 rows affected (0.28 sec)
+
+  I would just like to point out that, in the above query, "WebChess" is
+the name we gave our database, "WCuser" is the username we chose and
+"WCpass" is the password.  Also, only password is entered between
+single-quotes.
+
+  Unfortunately, MySQL doesn't always immediately recognize user
+permissions, although it should in this case.  Type "quit" in the mysql
+client to return to the command prompt.  Now let's test our new user by
+attempting to login with the MySQL client using our newly created user and
+password.  To do this, we use the following parameters to MySQL: "mysql -u
+WCuser -p" and enter "WCpass" (without the double-quotes) when prompted
+for a password.  If all goes well, we should be greeted with the "mysql>"
+prompt, and typing "use WebChess" should give us a "Database changed"
+message.
+
+  If instead we get an error message when trying to log in or change
+database, we can try to force MySQL to reload user permissions by exiting
+to the command prompt and typing "mysqladmin -u root reload", or at the
+very worse stopping and starting the MySQL service.
+
+  Hopefully by this point we've got a database filled with all the
+necessary tables used by WebChess along with a working username and
+password for WebChess to access them.  All that's left now is to give
+WebChess the info on the database and user we just created.  Fortunately,
+this is easy to do and all it requires is editing config.php in any text
+editor.  (Note: a word processor like MS Word is >> NOT << a text editor!)
+Specifically, we need to set the $CFG_USER, $CFG_PASSWORD and
+$CFG_DATABASE settings to our situation like this:
+        $CFG_USER = "WCuser";
+        $CFG_PASSWORD = "WCpass";
+        $CFG_DATABASE = "WebChess";
+
+  And that's it!  You should be able to create a new user now!

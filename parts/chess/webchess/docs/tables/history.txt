@@ -1,0 +1,30 @@
++------------+------------------------------------------------------+------+-----+---------------------+-------+
+| Field      | Type                                                 | Null | Key | Default             | Extra |
++------------+------------------------------------------------------+------+-----+---------------------+-------+
+| timeOfMove | datetime                                             |      | PRI | 0000-00-00 00:00:00 |       |
+| gameID     | smallint(6)                                          |      | PRI | 0                   |       |
+| curPiece   | enum('pawn','bishop','knight','rook','queen','king') |      |     | pawn                |       |
+| curColor   | enum('white','black')                                |      |     | white               |       |
+| fromRow    | smallint(6)                                          |      |     | 0                   |       |
+| fromCol    | smallint(6)                                          |      |     | 0                   |       |
+| toRow      | smallint(6)                                          |      |     | 0                   |       |
+| toCol      | smallint(6)                                          |      |     | 0                   |       |
+| replaced   | enum('pawn','bishop','knight','rook','queen','king') | YES  |     | NULL                |       |
+| promotedTo | enum('pawn','bishop','knight','rook','queen','king') | YES  |     | NULL                |       |
+| isInCheck  | tinyint(1)                                           |      |     | 0                   |       |
++------------+------------------------------------------------------+------+-----+---------------------+-------+
+
+CREATE TABLE history (
+	timeOfMove DATETIME NOT NULL,
+	gameID SMALLINT NOT NULL,
+	curPiece ENUM('pawn', 'bishop', 'knight', 'rook', 'queen', 'king') NOT NULL,
+	curColor ENUM('white', 'black') NOT NULL,
+	fromRow SMALLINT NOT NULL,
+	fromCol SMALLINT NOT NULL,
+	toRow SMALLINT NOT NULL,
+	toCol SMALLINT NOT NULL,
+	replaced ENUM('pawn', 'bishop', 'knight', 'rook', 'queen', 'king') NULL,
+	promotedTo ENUM('pawn', 'bishop', 'knight', 'rook', 'queen', 'king') NULL,
+	isInCheck BOOL NOT NULL,
+	PRIMARY KEY(timeOfMove, gameID)
+);

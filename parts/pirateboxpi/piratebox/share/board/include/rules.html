@@ -1,0 +1,5 @@
+<ul>
+<li>Supported file types are: <var get_filetypes()></li>
+<li>Maximum file size allowed is <const MAX_KB> KB.</li>
+<li>Images greater than <const MAX_W>x<const MAX_H> pixels will be thumbnailed.</li>
+</ul>

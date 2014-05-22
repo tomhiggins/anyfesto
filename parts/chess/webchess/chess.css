@@ -1,0 +1,233 @@
+/* $Id: chess.css,v 1.6 2010/08/17 20:07:04 sandking Exp $ */
+
+/*
+    This file is part of WebChess. http://webchess.sourceforge.net
+	Copyright 2010 Jonathan Evraire, Rodrigo Flores, Dadi Jonsson
+
+    WebChess is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    WebChess is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with WebChess.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* Fix a silly bug in Mozilla; thanks, Carey Evans */
+html {
+	min-width: 742px;
+	}
+
+
+/* Helpers and base rules */
+img	{
+/*	display: block; */
+	border: 0;
+	}
+
+/* Primary layout divisions */
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #fff;
+	color: #000;
+	font-family: arial, helvetica, sans-serif;
+	font-size: small/1.4;
+	text-align: center;
+	}
+
+div#wrapper	{
+	color: #000;
+	background-color: #fff;
+	width: 742px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	}
+
+div#boardsection 	{
+	float: left;
+	width: 460px;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	/* False margin value for all versions of IE Win, including 6.0 */
+	margin-left: 6px;
+	background-color: #fff;
+	}
+
+html>body div#boardsection {
+	/* Correct value for browsers that don't suffer from IE Win's bugs */
+	margin-left: 12px;
+/*	min-height: 800px; */
+	}
+
+div#content	{
+	margin: 0 0 0 477px;
+	padding: 0;
+	width: 255px;
+	border: 0;
+	background-color: #fff;
+	}
+
+div#footer	{
+	clear: both;
+	border: 0;
+	background-color: #F5F5DC;
+	color: #663;
+	width: 720px;
+	padding: 5px 0;
+	margin: 10px 0 10px 12px;
+	}
+
+
+div#footer p	{
+	font-size: 11px;
+	line-height: 18px;
+	text-align: center;
+	margin: 0;
+	padding: 0 0 0 50px;
+	}
+
+/************************ *****************/
+#gamebody {
+	margin: 0;
+	padding:0;
+	border:0;
+	height:410px;
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#header {
+	margin:0 0 5px 0;
+	padding: 0 0 0 12px;
+	height:25px;
+	border-style:solid;
+	border-color:black;
+	border-width:0px 0px 1px 0px;
+	background-color:#052B69;
+	color: white;
+}
+
+#heading {
+	font-family: Verdana, helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.5;
+	text-align: left;
+}
+
+#gameid {
+	text-align:center;
+	}
+
+#players {
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	}
+
+#moveinfo {
+	width:95%;
+	padding-right:10px;
+	padding-left: 10px;
+	margin-bottom:5px;
+	background-color:#3C86F6;
+	font-weight: bold;
+	line-height: 1.5;
+	}
+
+#curmove {
+	float: left;
+	width: 45%;
+	cursor: pointer;
+	text-align: left;
+	}
+
+#curmove:hover {color:white;}
+
+#whosmove {
+	text-align: right;
+	}
+
+#captheading {
+	font-weight: bold;
+	background-color:#eee;
+	line-height: 1.5;
+	}
+
+#captures {
+	text-align:left;
+	margin-left: 10px;
+	}
+#checkmsg {
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.5;
+	background-color: #FF0B0B;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-size: small;
+	}
+
+#statusmsg {
+	font-weight: bold;
+	text-align: center;
+	font-size: small;
+	}
+
+p, td, li, ul, ol, h1, h2, h3, h4, h5, h6 {
+	font-family: arial, helvetica, sans-serif;
+	}
+
+div#boardsection {
+	font-size: small;
+	}
+
+div#gamebody {
+	font-size: small;
+	}
+
+A:visited, :link {text-decoration: underline}
+A:link {color : navy}
+A:link:hover, :visited:hover {text-decoration: none}
+A:visited {color: navy}
+A:link:active, :visited:active {color: green}
+
+.button {
+	font-size : 11px;
+}
+
+.move_header  {background-color: #F5F5DC}
+.header_enabled  {background-color: #F5F5DC; text-align: center; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #888;}
+.header_disabled {background-color: #DDDDDD; text-align: center; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #888;}
+.light_disabled {background-color: #444444; text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: #888;}
+.dark_disabled {background-color: #BBBBBB; text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: #888;}
+.light_enabled {background-color: #772222; text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: #888;}
+.dark_enabled {background-color: #CCBBBB; text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: #888;}
+.highlighted {background-color: yellow; text-align: center; font-family: Arial, sans-serif; font-weight: bold; color: #888;}
+.nowrap {white-space: nowrap}
+.wm {cursor: pointer;padding: 2px;}
+.bm {cursor: pointer;padding: 2px;}
+.mn {font-weight: bold;}
+
+H1 {color : navy; text-align: center}
+H2 {color : navy; text-align: center}
+H3 {font-family: Arial, sans-serif; font-weight: bold; text-align: left; text-indent: 80px;}
+
+HR {width: 50%}
+.fullwidth {width: 100%}
+
+.imgtitle {background-color: #800080; color: yellow}
+.shortdescription {font-size: 1em; font-family: Arial, sans-serif; font-style: italic}
+.parenthesis {font-size: 10px}
+.goback {font-size: smaller}
