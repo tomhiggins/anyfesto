@@ -1,0 +1,15 @@
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| playerID   | int(11)  |      | PRI | 0       |       |
+| preference | char(20) |      | PRI |         |       |
+| value      | char(50) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+
+
+CREATE TABLE preferences (
+	playerID INT NOT NULL,
+	preference CHAR(20) NOT NULL,
+	value CHAR(50) NULL,
+	PRIMARY KEY(playerID, preference)
+);

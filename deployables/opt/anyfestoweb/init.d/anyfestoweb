@@ -1,5 +1,5 @@
 #! /bin/sh
-# /etc/init.d/ANYFESTO
+# /etc/init.d/anyfestoweb
 
 ### BEGIN INIT INFO
 # Provides:          anyfestoweb
@@ -8,12 +8,12 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      6 1 0
 # Short-Description: All services around ANYFESTO
-# Description:       Based on /opt/anyfestoweb/conf/anyfesto.conf starts:  * DNSMASQ * HOSTAPD * DROOPY * WLAN-config 
+# Description:       Based on /opt/anyfestoweb/conf/anyfestoweb.conf starts:  * DNSMASQ * HOSTAPD * DROOPY * WLAN-config 
 ### END INIT INFO
 
-###  
+###
 #  Default start-stop script for ANYFESTO services on a laptop
-#   written by Matthias Strubel  (matthias.strubel@aod-rpg.de) 2011-02-22 
+#   written by Matthias Strubel  (matthias.strubel@aod-rpg.de) 2011-02-22
 #  licenced by gpl, feel free to improve and send me comments
 #  moded by tom higgins for anyfesto
 
@@ -31,7 +31,7 @@ PIDFILE_DNSMASQ=/var/run/anyfesto_dnsmasq.pid
 PIDFILE_LIGHTTPD=/opt/anyfestoweb/tmp/lighttpd.pid
 
 ANYFESTO=/opt/anyfestoweb
-CONF=$ANYFESTO/conf/anyfesto.conf
+CONF=$ANYFESTO/conf/anyfestoweb.conf
 CONF_APN=$ANYFESTO/conf/hostapd.conf
 
 #Some extra config files for dnsmasq
@@ -87,7 +87,7 @@ case "$1" in
     if [ "$PROBE_INTERFACE" = yes ] ; then
       log_daemon_msg "  Probing wlan"
       #Setting up WLAN Interface
-      ANYFESTO_setup_wlan.sh  $CONF probe
+      anyfesto_setup_wlan.sh  $CONF probe
     fi
      if  [ $? -ne 0 ] ;  then
        log_failure_msg "failed probe Interface"
@@ -103,7 +103,7 @@ case "$1" in
       if [ "$DO_IFCONFIG" = yes ] ; then
 	log_daemon_msg "  Setting up wlan"
         #Setting up WLAN Interface
-        anyfesto_setup_wlan.sh  $CONF start
+        $ANYFESTO/bin/anyfesto_setup_wlan.sh  $CONF start
         if  [ $? -ne 0 ] ;  then
           log_failure_msg "failed setting up Interface"
 	  exit 99
@@ -184,7 +184,7 @@ case "$1" in
     fi
 
      if [ "$DO_IFCONFIG" = yes ] ; then
-       ANYFESTO_setup_wlan.sh $CONF stop
+       $ANYFESTO/bin/anyfesto_setup_wlan.sh $CONF stop
      fi
 
      if [ "$DO_IW" = "yes" ] ; then
@@ -199,7 +199,7 @@ case "$1" in
          log_end_msg $?
      fi
 
-      $ANYFESTO/bin/hooks/hook_ANYFESTO_stop_done.sh  "$CONF"
+      $ANYFESTO/bin/hooks/hook_anyfesto_stop_done.sh  "$CONF"
 
 
     ;;
