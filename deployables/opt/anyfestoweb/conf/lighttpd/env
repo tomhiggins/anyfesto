@@ -1,0 +1,1 @@
+setenv.add-environment = ( "PYTHONPATH" => "/opt/anyfestoweb/python_lib:/opt/anyfestoweb/python_lib")
