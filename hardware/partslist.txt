@@ -14,7 +14,11 @@ Power-
   Portable
      USB Battery Pack 10000mAh -        http://www.adafruit.com/products/1566
      USB Battery Pack  4400mAh -        http://www.adafruit.com/product/1565USB 
+
+   DIY Portable 
      4xAA Battey holder w/switch- 	http://www.adafruit.com/products/830 
+     PowerBoost 500 Basic - 		https://www.adafruit.com/product/1903
+     
 
   Wall Power
      5v 1A USB port power supply - 	http://www.adafruit.com/product/501
