@@ -17,16 +17,19 @@
 
 [X] - Video streaming to the local net (multicast, http, rtsp)
 
-[ ] - Service discovery (avahi, ssid, fm, display)
+[X] - Service discovery (avahi, ssid, fm, display)
 
 [ ] - Create a unified web front end for configuration and running all of the above
-     
+       [x] - Bootstrap framework 
        [ ] - Theme, Banners, Headers and Footers
        [ ] - Radio Control (on/off, freq, shuffle, repeat, mic, add links/files)
        [ ] - IRCd Control  (on/off, klines)
        [ ] - IRC User Web page (webbased irc)
        [ ] - Video Streming Control (on/off. repeat, playlist)
-
+       [ ] - Landing page for the captive portal
+            (need to think about doing a config page to set this page up
+               so it can be reconfiged on the fly for specific events)
+   
 [ ]  - Meshing. Use of a second wifi device to mesh with other Anyfesto
           boxen. Two flavors - Open and Trusted. 
 	    Open - no auth needed
