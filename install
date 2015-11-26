@@ -76,7 +76,8 @@ Setup VLC to run an startup and hook into PiFM
         #!/bin/sh
         VLC_PORT=43822
         VLC_USER=vlc
-        sudo -u vlc cvlc --http-port ${VLC_PORT} --sout '#http{mux=ffmpeg{mux=flv},dst=:8085/}' --loop  /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
+        VLC_PASWD=changeme
+        sudo -u vlc cvlc -I http --http-password ${VLC_PSWD} --http-port ${VLC_PORT} --sout '#http{mux=ffmpeg{mux=flv},dst=:8085/}' --loop  /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
  # sudo chmod a+rx /etc/vlc/start.sh  
  # sudo nano /etc/rc.local
       /etc/vlc/start.sh &
