@@ -1,0 +1,74 @@
+Manual Install
+These steps will walk you through  setting up an Anyfestobox 
+
+Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
+Install Raspberry  https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access)
+Login (default user/pssword is pi/raspberry)
+If the gui starts close to command line
+Run Raspi-Config   sudo raspi-config
+    Enable SSH Server via raspberry-config
+    Change Password
+    Expand the File System 
+ Finish & Reboot
+
+Install needed packages and prepare some stuff:
+
+ # sudo apt-get update
+ # sudo apt-get upgrade
+ # sudo apt-get -y install vlc
+ #
+ # sudo apt-get -y install lighttpd
+ # sudo /etc/init.d/lighttpd stop
+ # sudo update-rc.d lighttpd remove
+ # sudo apt-get -y install dnsmasq 
+ # sudo /etc/init.d/dnsmasq  stop
+ # sudo update-rc.d dnsmasq remove 
+ # sudo apt-get -y  install hostapd
+ # sudo /etc/init.d/hostapd  stop
+ # sudo update-rc.d hostapd remove 
+ # sudo apt-get -y install iw
+ # sudo rm /bin/sh
+ # sudo ln /bin/bash /bin/sh
+ # sudo chmod a+rw /bin/sh
+
+Install Webmin
+  sudo nano /etc/apt/sources.list
+    Add these two lines at the bottom of the list
+      deb http://download.webmin.com/download/repository sarge contrib
+      deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
+    Close and save sources.list
+    wget http://www.webmin.com/jcameron-key.asc 
+    sudo apt-key add jcameron-key.asc
+    sudo apt-get update
+    sudo apt-get install webmin
+    
+Edit network config file /etc/network/interfaces
+ auto lo
+ 
+ iface lo inet loopback
+ iface eth0 inet dhcp
+ 
+ iface wlan0 inet manual
+ ### disalbed for PirateBox
+ #allow-hotplug wlan0
+ #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+ #iface default inet dhcp
+
+
+Fetch and copy over PirateBox Source
+ # wget  http://downloads.piratebox.de/piratebox-ws_current.tar.gz
+ # tar xzf piratebox-ws_current.tar.gz
+ # cd piratebox
+ # sudo mkdir -p  /opt
+ # sudo cp -rv  piratebox /opt
+ # cd /opt/piratebox
+ # sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
+ # sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
+ # sudo update-rc.d piratebox  defaults 
+ # sudo /etc/init.d/piratebox start
+
+:!: After this, the PirateBox should be run on default-startup. 
+    PirateBox works only on Wifi-Access with redirect. 
+    Network on Ethernet-Port is a normal “dhcp-client”, so no interference
+     with your home network :!:
