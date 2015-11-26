@@ -60,12 +60,23 @@ Fetch and copy over PirateBox Source
 
 Setup VLC to run an startup and hook into PiFM
  # cd ~
- # sudo mkdir /etc/vlc
+ # sudo nano /usr/share/vlc/lua/http/.hosts
+    ::1
+    127.0.0.1
+    fc00::/7
+    fec0::/10
+    10.0.0.0/8
+    192.0.0.0/8
+ # sudo mkdir /etc/vlc 
+ # sudo cd /usr/share/vlc/lua/http/ 
+ # sudo mv .hosts /etc/vlc 
+ # sudo ln -s /etc/vlc/.hosts .hosts
+ # cd ~
  # sudo nano /etc/vlc/start.sh
         #!/bin/sh
         VLC_PORT=43822
         VLC_USER=vlc
-        sudo -u vlc cvlc --http-port ${VLC_PORT} /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
+        sudo -u vlc cvlc --http-port ${VLC_PORT} --sout '#http{mux=ffmpeg{mux=flv},dst=:8085/}' --loop  /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
  # sudo chmod a+rx /etc/vlc/start.sh  
  # sudo nano /etc/rc.local
       /etc/vlc/start.sh &
@@ -73,6 +84,8 @@ Setup VLC to run an startup and hook into PiFM
  # cd /home/pi/Radio
  # wget https://archive.org/download/OTE_20060427_How_Radio_Was_Done_1/OTE_20060427_How_Radio_Was_Done_1.mp3
  # cd ~
+ 
+
  
 Update hostapd
  # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
