@@ -1,5 +1,5 @@
 Manual Install
-These steps will walk you through  setting up an Anyfestobox 
+These steps will walk you through  setting up an AnyfestoBox on a RaspberryPi using an Adafruit usb wifi adapter
 
 Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
 Install Raspberry  https://www.raspberrypi.org/documentation/installation/installing-images/README.md
@@ -64,6 +64,13 @@ Update hostapd
  # sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
  # sudo mv hostapd /usr/sbin
  # sudo chmod 755 /usr/sbin/hostapd
+ # sudo nano /etc/hostapd/hostapd.conf
+    interface=wlan0
+    driver=rtl871xdrv
+    ssid=AnyfestoBox
+    hw_mode=g
+    channel=1
+
 
 
 Install Webmin
