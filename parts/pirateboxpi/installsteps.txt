@@ -1,23 +1,20 @@
-From http://piratebox.aod-rpg.de/dokuwiki/doku.php/raspberry
-
 Manual install
-The following steps describes the procedure, 
-  if you want to store your files on the SD-Card. 
-Additional steps are required, if you want you uploaded data on a USB drive.
 
-Download: Raspbian “wheezy” http://www.raspberrypi.org/downloads
-Install Raspberry as normal: http://elinux.org/RPi_Easy_SD_Card_Setup
-Boot as normal with a Monitor, Keyboard & connected LAN (DHCP with Internet access) :!:
+Download: Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
+Install Raspberry as normal: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+Boot as normal with a Monitor, Keyboard & connected LAN (DHCP with Internet access)
 Do the following steps in Raspi-Config
 Enable SSH Server via raspberry-config
 change Password
 Expand FS
-Finish & reboot now
-Wait until reboot is finished- needs a while because the OS is resizing 
-   the filesystem during this reboot
+Finish & Reboot
+
 Install needed packages and prepare some stuff:
 
  # sudo apt-get update
+ # sudo apt-get upgrade
+ # sudo apt-get -y install vlc
+ #
  # sudo apt-get -y install lighttpd
  # sudo /etc/init.d/lighttpd stop
  # sudo update-rc.d lighttpd remove
