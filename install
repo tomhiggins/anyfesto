@@ -18,7 +18,7 @@ Install needed packages and prepare some stuff:
  # sudo apt-get update
  # sudo apt-get upgrade
  # sudo apt-get -y install vlc
- #
+ # sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
  # sudo apt-get -y install lighttpd
  # sudo /etc/init.d/lighttpd stop
  # sudo update-rc.d lighttpd remove
@@ -58,6 +58,22 @@ Fetch and copy over PirateBox Source
  # sudo update-rc.d piratebox  defaults 
  # sudo /etc/init.d/piratebox start
 
+Setup VLC to run an startup and hook into PiFM
+ # cd ~
+ # sudo mkdir /etc/vlc
+ # sudo nano /etc/vlc/start.sh
+        #!/bin/sh
+        VLC_PORT=43822
+        VLC_USER=vlc
+        sudo -u vlc cvlc --http-port ${VLC_PORT} /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
+ # sudo chmod a+rx /etc/vlc/start.sh  
+ # sudo nano /etc/rc.local
+      /etc/vlc/start.sh &
+ # mkdir /home/pi/Radio
+ # cd /home/pi/Radio
+ # wget https://archive.org/download/OTE_20060427_How_Radio_Was_Done_1/OTE_20060427_How_Radio_Was_Done_1.mp3
+ # cd ~
+ 
 Update hostapd
  # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
  # unzip adafruit_hostapd_14128.zip
