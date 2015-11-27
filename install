@@ -1,5 +1,7 @@
 Manual Install
 These steps will walk you through  setting up an AnyfestoBox on a RaspberryPi using an Adafruit usb wifi adapter
+(N.B. PiFM does not work with the newer models of the Pi and I am removing it from this project. 
+  I will be looking for alternatives including the adafruit fm module)
 
 Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
 Install Raspberry  https://www.raspberrypi.org/documentation/installation/installing-images/README.md
@@ -77,13 +79,10 @@ Setup VLC to run an startup and hook into PiFM
         VLC_PORT=43822
         VLC_USER=vlc
         VLC_PASWD=changeme
-        sudo -u vlc cvlc -I http --http-password ${VLC_PSWD} --http-port ${VLC_PORT} --sout '#http{mux=ffmpeg{mux=flv},dst=:8085/}' --loop  /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3 > /dev/null
+        sudo -u vlc cvlc -I http --http-password ${VLC_PSWD} --http-port ${VLC_PORT} --sout '#http{mux=ffmpeg{mux=flv},dst=:8085/}' --loop  /home/pi/Radio/OTE_20060427_How_Radio_Was_Done_1.mp3
  # sudo chmod a+rx /etc/vlc/start.sh  
  # sudo nano /etc/rc.local
       /etc/vlc/start.sh &
- # mkdir /home/pi/Radio
- # cd /home/pi/Radio
- # wget https://archive.org/download/OTE_20060427_How_Radio_Was_Done_1/OTE_20060427_How_Radio_Was_Done_1.mp3
  # cd ~
  
 
