@@ -22,6 +22,7 @@ Install needed packages and prepare some stuff:
  # sudo apt-get -y install vlc
  # sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
  # sudo usermod -G audio,pi vlc
+ # sudo usermod -d /media/usb vlc
  # sudo apt-get -y install lighttpd
  # sudo /etc/init.d/lighttpd stop
  # sudo update-rc.d lighttpd remove
