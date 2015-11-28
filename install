@@ -60,7 +60,7 @@ Fetch and copy over PirateBox Source
  # sudo update-rc.d piratebox  defaults 
  # sudo /etc/init.d/piratebox start
 
-Setup VLC to run an startup and hook into PiFM
+Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Control of VLC  can be done via browser
  # cd ~
  # sudo nano /usr/share/vlc/lua/http/.hosts
     ::1
@@ -114,3 +114,8 @@ Install Webmin
    # sudo apt-get update
    # sudo apt-get install webmin
 
+Customize
+
+Put in your own grfx and text in the pirate box web pages
+Set up the shared content directories and sym link them
+Add a USB drive
