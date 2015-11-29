@@ -118,12 +118,17 @@ Install Webmin
    # sudo apt-get update
    # sudo apt-get install webmin
 
+Install Calibre
+   # sudo apt-get install calibre
+   # calibre-server --with-library=/home/pi/calibre/myLibrary --daemonize
+   
+
 Customize
 
 Put in your own grfx and text in the pirate box web pages
 Set up the shared content directories and sym link them
 Add a USB drive
 
-I have added these two lines to /etc/vlc/start.sh because reasons, mostly it works this way all of the time without fail. ymmmv
+I have added these two lines to /etc/vlc/start.sh because reasons, mostly it works this way all of the time without fail. I should really add these to cron maybe? ymmmv
   sudo service hostapd start 
   sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
