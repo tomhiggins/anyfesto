@@ -2,58 +2,35 @@
 ..        ANYFESTO - A platform from which to speak      ..
 ..-------------------------------------------------------..
 
-The Raspberry Pi as total communication device: FM broadcaster, file server, p2p communicator and more.  All rolled into one ready to run release with powerful configuration options.
-
-Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication.  Anyfesto is the toolbox to make that happen.
-
-Watch our dust!
-
-
-NOUNS
-- Raspberry Pi
-- Battery power
-- Antenna
-- PiFM
-- Piratebox
-- Local content
-- SSIDmsg 
-- IRC
-- microphone
-- speaker
-- soldering iron
-- solder
-- case
-- Tom Higgins (Lead)
-- Trevor Blake (Advisor)
+Anyfesto is a shared information/communications platform  built on low cost hardware and free open source software. 
 - github  https://github.com/tomhiggins/anyfesto
 - website http://anyfesto.com
-
-
-ADJECTIVES
-- low power
-- low cost
-- free software
-- anonymous
-- encrypted
-- secure
-- self-destructing
 - Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
-VERBS
+
+Things needed 
+- Raspberry Pi
+- SD card
+- USB Wifi
+- US storage (optional)
+- Battery oack and charger (optional)
+- Speaker (optinal)
+- Mic (optional)
+
+Tasks it can do
+- browse localcontent
+- chat public
+- download file
+- stream video
+- stream audio
+- admin the streams via a web browser
+- admin the systemvia a web browser
+
+Tasks it will do
 - broadcast FM 
 - broadcast bluetooth
-- broadcast wifi
 - upload file
-- download file
-- copy file
-- rename file
-- delete file
-- send msg
-- read msg
-- forward msg
-- browse localcontent
 - chat private
-- chat public
-- stream video
-- read textfile
-- read system stats
+
+
+
