@@ -1,0 +1,13 @@
+Working with the ne Raspberrian Jessie... Everything listed in the Install doc is working sav for the PIFM module. PiFM does not work with the multicore PIs.
+
+Testing out a few FM  replacements including the Fm  Transmitter  board sold by Adafruit.
+No clear winner yet.
+
+Calibre is a bit of a CPU hog. Looking at another solution  ( https://github.com/seblucas/cops)
+
+Webmin is a damn handy  thing to have on board. I am seeing this as a way to do maintence  tasks wither  first hand or by others who are not shell ready. 
+
+VLC as audio streamer is golden. Lattest build works  well, can deal with multiple connections and so far has been up and streaming for 2 days with no noticable burps.
+
+Added a 2tb USB drive to the test rig. Mounting via fstab caused it to  crash at times, running the mount in a startup script works all the time.
+
