@@ -121,8 +121,23 @@ Install Webmin
 Install Calibre
    # sudo apt-get install calibre
    # calibre-server --with-library=/home/pi/calibre/myLibrary --daemonize
-   
 
+Or Install COPS (Calibre OPDS/HTML PHP Server)
+   # sudo apt-get install php5-gd php5-sqlite
+   # sudo mkdir /opt/cops
+   # cd /opt/cops
+   # sudo wget https://github.com/seblucas/cops/releases/download/1.0.0RC3/cops-1.0.0RC3.zip
+   # sudo unzip cops-1.0.0RC3.zip
+   # sudo ln -s /opt/cops/ /opt/piratebox/www/cops 
+   # cp config_local.php.example config_local.php  
+   # sudo nano config_local.php
+      $config['calibre_directory'] : Path to your Calibre directory.
+      $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
+   # sudo chmod -R  755 *
+   
+   
+   
+   
 Customize
 
 Put in your own grfx and text in the pirate box web pages
