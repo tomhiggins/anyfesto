@@ -77,14 +77,14 @@ Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Co
  # sudo ln -s /etc/vlc/.hosts .hosts
  # cd ~
  # sudo nano /etc/vlc/start.sh
-        #!/bin/sh
-        sudo service hostapd start 
-        sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
-        VLC_PORT=43822
-        VLC_USER=vlc
-        VLC_IP=127.0.0.1
-        VLC_PASWD=changeme
-        sudo -u vlc cvlc -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout='#duplicate{dst=standard{access=http,mux=flv,dst=10.11.25.116:8085},dst=display}'  --loop  /home/pi/Radio/OTE_200427_How_Radio_Was_Done_1.mp3
+    #!/bin/sh
+    sudo service hostapd start
+    sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
+    VLC_PORT=8088
+    VLC_USER=vlc
+    VLC_IP=192.168.77.1
+    VLC_PASWD=goodhello
+    sudo -u vlc cvlc -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout='#duplicate{dst=standard{access=http,mux=ts,dst=:8085},dst=display}'  --loop  /home/pi/Radio/welcome.mp3
  # sudo chmod a+rx /etc/vlc/start.sh  
  # sudo nano /etc/rc.local
       /etc/vlc/start.sh &
