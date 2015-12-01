@@ -118,13 +118,8 @@ Install Webmin
    # sudo apt-get update
    # sudo apt-get install webmin
 
-Install Calibre
-   # sudo apt-get install calibre
-   # calibre-server --with-library=/home/pi/calibre/myLibrary --daemonize
-
-Or Install COPS (Calibre OPDS/HTML PHP Server)
+Install COPS (Calibre OPDS/HTML PHP Server)
    # sudo apt-get install php5-gd php5-sqlite php5-cgi
-   
    # sudo mkdir /opt/piratebox/www/cops
    # cd /opt/piratebox/www/cops
    # sudo wget https://github.com/seblucas/cops/releases/download/1.0.0RC3/cops-1.0.0RC3.zip
