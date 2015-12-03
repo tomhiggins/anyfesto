@@ -3,9 +3,17 @@ These steps will walk you through  setting up an AnyfestoBox on a RaspberryPi us
 (N.B. PiFM does not work with the newer models of the Pi and I am removing it from this project. 
   I will be looking for alternatives including the adafruit fm module)
 
+Hardware Used For Testing
+  Raspberry Pi B+ https://www.adafruit.com/products/1914
+  Wifi adapter with antenna. https://www.adafruit.com/products/1030
+  USB Hub, Powered 7 port http://www.amazon.com/AmazonBasics-Port-USB-Power-Adapter/dp/B00DQFGJR4
+  Speaker, USB Powered
+  2TB USB Drive http://www.amazon.com/gp/product/B00EAS89AG (optional)
+  16GB SD Card
+
 Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
-Install Raspberry  https://www.raspberrypi.org/documentation/installation/installing-images/README.md
-Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access)
+Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access) (Jessie boots up with SSH enabled so that can shell in without need for a seperate Keyabord/Monitor)
 Login (default user/pssword is pi/raspberry)
 If the gui starts close to command line
 Run Raspi-Config   
