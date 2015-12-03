@@ -22,11 +22,11 @@
 [ ] - Create a unified web front end for configuration and running all of the above
        [x] - Bootstrap framework 
        [ ] - Theme, Banners, Headers and Footers
-       [ ] - Radio Control (on/off, freq, shuffle, repeat, mic, add links/files)
-       [ ] - IRCd Control  (on/off, klines)
-       [ ] - IRC User Web page (webbased irc)
-       [ ] - Video Streming Control (on/off. repeat, playlist)
-       [ ] - Landing page for the captive portal
+       [X] - Radio Control (on/off, freq, shuffle, repeat, mic, add links/files)
+       [X] - IRCd Control  (on/off, klines)
+       [X] - IRC User Web page (webbased irc)
+       [X] - Video Streming Control (on/off. repeat, playlist)
+       [X] - Landing page for the captive portal
             (need to think about doing a config page to set this page up
                so it can be reconfiged on the fly for specific events)
    
