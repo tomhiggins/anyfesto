@@ -1,8 +1,8 @@
 
 Computer-
 -------------------
-Raspberry Pi Model B 512MB - 		http://www.adafruit.com/product/998
-8GB SD card
+Raspberry Pi Model B+ 512MB - 		https://www.adafruit.com/products/1914
+16GB SD card
 
 
 Network-
@@ -17,7 +17,7 @@ Power-
 
    DIY Portable 
      4xAA Battey holder w/switch- 	http://www.adafruit.com/products/830 
-     PowerBoost 500 Basic - 		https://www.adafruit.com/product/1903
+     PowerBoost 1000 Charger Rechargeable 5V Lipo USB Boost @ 1A - 		https://www.adafruit.com/products/2465
      
 
   Wall Power
@@ -33,3 +33,5 @@ Mic
 
 Display- 
 --------------------
+PiTFT - Assembled 320x240 2.8" TFT+Touchscreen for Raspberry Pi  - https://www.adafruit.com/products/1601
+Cheap/Old Android Phone with Wifi as a Remote Shell/ Web Browser - 
