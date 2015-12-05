@@ -16,15 +16,15 @@ Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installat
 Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access) (Jessie boots up with SSH enabled so that can shell in without need for a seperate Keyabord/Monitor)
 Login (default user/pssword is pi/raspberry)
 If the gui starts close to command line
-Run Raspi-Config   
+
+==Run Raspi-Config   
     #sudo raspi-config
        Enable SSH Server via raspberry-config
        Change Password
        Expand the File System 
        Finish & Reboot
 
-Install needed packages and prepare some stuff:
-
+==Install needed packages and prepare some stuff:
  # sudo apt-get update
  # sudo apt-get upgrade
  # sudo apt-get -y install vlc
@@ -45,7 +45,7 @@ Install needed packages and prepare some stuff:
  # sudo ln /bin/bash /bin/sh
  # sudo chmod a+rw /bin/sh
 
-Edit network config file /etc/network/interfaces
+==Edit network config file /etc/network/interfaces
  auto lo
  
  iface lo inet loopback
@@ -58,7 +58,7 @@ Edit network config file /etc/network/interfaces
  #iface default inet dhcp
 
 
-Fetch and copy over PirateBox Source
+==Fetch and copy over PirateBox Source
  # wget  http://downloads.piratebox.de/piratebox-ws_current.tar.gz
  # tar xzf piratebox-ws_current.tar.gz
  # cd piratebox
@@ -70,7 +70,7 @@ Fetch and copy over PirateBox Source
  # sudo update-rc.d piratebox  defaults 
  # sudo /etc/init.d/piratebox start
 
-Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Control of VLC  can be done via browser
+==Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Control of VLC  can be done via browser
  # cd ~
  # sudo nano /usr/share/vlc/lua/http/.hosts
     ::1
@@ -100,7 +100,7 @@ Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Co
  
 
  
-Update hostapd
+==Update hostapd
  # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
  # unzip adafruit_hostapd_14128.zip
  # sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
@@ -115,7 +115,7 @@ Update hostapd
 
 
 
-Install Webmin
+==Install Webmin
   #sudo nano /etc/apt/sources.list
     Add these two lines at the bottom of the list
       deb http://download.webmin.com/download/repository sarge contrib
@@ -126,7 +126,7 @@ Install Webmin
    # sudo apt-get update
    # sudo apt-get install webmin
 
-Install COPS (Calibre OPDS/HTML PHP Server)
+==Install COPS (Calibre OPDS/HTML PHP Server)
    # sudo apt-get install php5-gd php5-sqlite php5-cgi
    # sudo mkdir /opt/piratebox/www/cops
    # cd /opt/piratebox/www/cops
@@ -159,6 +159,27 @@ Install COPS (Calibre OPDS/HTML PHP Server)
    
    
    
+==Replace Shoutbox with a Hybrid ircd and a Web Fronted 
+   This will replace the shoutbox chat system from piratebox with a local IRCd server and a web 
+front end for the users. The web frontend will be featured on the landing page each user will
+be redirected to when they connect. 
+
+  # sudo apt-get install ircd-hybrid
+
+  # sudo apt-get install python python-twisted python-twisted-bin python-twisted-core python-twisted-runner python-twisted-names python-twisted-mail python-twisted-words python-twisted-web python-zope.interface python-openssl javascript-common libjs-jquery python-simplejson wwwconfig-common
+
+  # sudo mkdir /opt/qwebirc
+  # sudo wget http://qwebirc.org/download-stable-zip
+  # sudo unzip into /opt/qwebirc
+  # cd /opt/qwebirc
+  # sudo cp config.py.example config.py             #edit it to fit your network's setup.
+  # sudo python  compile.py                         #note that warnings are just warnings, you can ignore them!
+  # python run.py 
+
+(if you get an error about the select reactor being already registered just run it again) 
+-- note run.py has lots of arguments, you can see them with --help.
+
+Browse to http://yourmachine:9090/
    
 Customize
 
