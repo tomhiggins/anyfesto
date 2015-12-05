@@ -114,6 +114,7 @@ If the gui starts close to command line
     channel=1
  # sudo nano /etc/default/hostapd
     Find the line #DAEMON_CONF="" and edit it so it says DAEMON_CONF="/etc/hostapd/hostapd.conf"
+ # sudo update-rc.d hostapd start
  # sudo update-rc.d hostapd enable
 
 
