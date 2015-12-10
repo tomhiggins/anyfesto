@@ -1,0 +1,4 @@
+1) decompress webchess in a web-accessible directory
+2) create the WebChess MySQL database, a user (similar to the sample user_permissions.txt in the tables folder) and the WebChess tables (using the SQL statements found in the tables folder) and give the WebChess user select, insert, update and delete priviledges
+3) update the database settings in config.php to reflect the newly created MySQL database
+4) update other settings in config.php as desired

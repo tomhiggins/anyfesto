@@ -1,0 +1,17 @@
++--------+------------------------------------------------------+------+-----+---------+-------+
+| Field  | Type                                                 | Null | Key | Default | Extra |
++--------+------------------------------------------------------+------+-----+---------+-------+
+| gameID | smallint(6)                                          |      |     | 0       |       |
+| color  | enum('white','black')                                |      |     | white   |       |
+| piece  | enum('pawn','rook','knight','bishop','queen','king') |      |     | pawn    |       |
+| col    | smallint(6)                                          |      |     | 0       |       |
+| row    | smallint(6)                                          |      |     | 0       |       |
++--------+------------------------------------------------------+------+-----+---------+-------+
+
+CREATE TABLE pieces (
+	gameID SMALLINT NOT NULL,
+	color ENUM('white','black') NOT NULL,
+	piece ENUM('pawn','rook','knight','bishop','queen','king') NOT NULL,
+	col SMALLINT NOT NULL,
+	row SMALLINT NOT NULL
+);

@@ -1,0 +1,16 @@
+#desktop {
+  visibility: visible;
+}
+
+#ircui .input {
+  background: #FFF;
+}
+
+.mochaToolbarWrapper {
+  background: #FFF;
+}
+
+.hidenewwin {
+  visibility: hide;
+  opacity: 0;
+}
