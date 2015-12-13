@@ -13,7 +13,8 @@ Hardware Used For Testing
 
 Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
 Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installation/installing-images/README.md
-Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access) (Jessie boots up with SSH enabled so that can shell in without need for a seperate Keyabord/Monitor)
+Boot  with a Monitor, Keyboard & connected LAN (DHCP with Internet access) 
+OR Jessie boots up with SSH enabled so that you  can shell in via ethernet. Connect the Pi to your homenet. 
 Login (default user/pssword is pi/raspberry)
 If the gui starts close to command line
 
@@ -45,17 +46,29 @@ If the gui starts close to command line
  # sudo ln /bin/bash /bin/sh
  # sudo chmod a+rw /bin/sh
 
+==Update hostapd
+ # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
+ # unzip adafruit_hostapd_14128.zip
+ # sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
+ # sudo mv hostapd /usr/sbin
+ # sudo chmod 755 /usr/sbin/hostapd
+ # sudo /etc/init.d/hostapd  stop
+ # sudo update-rc.d hostapd remove 
+
+
+
 ==Edit network config file /etc/network/interfaces
- auto lo
+ # sudo nano /etc/network/interfaces
+       auto lo
  
- iface lo inet loopback
- iface eth0 inet dhcp
+      iface lo inet loopback
+      iface eth0 inet dhcp
  
- iface wlan0 inet manual
- ### disalbed for PirateBox
- #allow-hotplug wlan0
- #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
- #iface default inet dhcp
+      iface wlan0 inet manual
+      ### disalbed for PirateBox
+      #allow-hotplug wlan0
+      #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+      #iface default inet dhcp
 
 
 ==Fetch and copy over PirateBox Source
@@ -68,6 +81,16 @@ If the gui starts close to command line
  # sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
  # sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
  # sudo update-rc.d piratebox  defaults 
+ # sudo ln -s /mnt/(USBDRIVE) /opt/piratebox/share
+ # sudo nano /opt/piratebox/conf/piratebox.conf        # Define services, IP numbers, ranges, etc
+ # sudo nano /opt/piratebox/conf/hostapd.conf
+    interface=wlan0
+    driver=rtl871xdrv
+    ssid=AnyfestoBox
+    hw_mode=g
+    channel=1
+ # sudo nano /etc/default/hostapd
+    Find the line #DAEMON_CONF="" and edit it so it says DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"
  # sudo /etc/init.d/piratebox start
 
 ==Setup VLC to run on startup both to the  3.5 audio jack and as a http stream. Control of VLC  can be done via browser
@@ -91,7 +114,7 @@ If the gui starts close to command line
     VLC_PORT=8088
     VLC_USER=vlc
     VLC_IP=192.168.77.1
-    VLC_PASWD=goodhello
+    VLC_PASWD=changeme
     sudo -u vlc cvlc -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout='#duplicate{dst=standard{access=http,mux=ts,dst=:8085},dst=display}'  --loop  /home/pi/Radio/welcome.mp3
  # sudo chmod a+rx /etc/vlc/start.sh  
  # sudo nano /etc/rc.local
@@ -100,22 +123,6 @@ If the gui starts close to command line
  
 
  
-==Update hostapd
- # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
- # unzip adafruit_hostapd_14128.zip
- # sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
- # sudo mv hostapd /usr/sbin
- # sudo chmod 755 /usr/sbin/hostapd
- # sudo nano /etc/hostapd/hostapd.conf
-    interface=wlan0
-    driver=rtl871xdrv
-    ssid=AnyfestoBox
-    hw_mode=g
-    channel=1
- # sudo nano /etc/default/hostapd
-    Find the line #DAEMON_CONF="" and edit it so it says DAEMON_CONF="/etc/hostapd/hostapd.conf"
- # sudo update-rc.d hostapd start
- # sudo update-rc.d hostapd enable
 
 
 ==Install Webmin
