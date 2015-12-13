@@ -109,6 +109,8 @@ If the gui starts close to command line
  # sudo mv .hosts /etc/vlc 
  # sudo ln -s /etc/vlc/.hosts .hosts
  # cd ~
+ # mkdir Radio
+  copy an mp3 file and rename it to welcome.mp3 This will play/stream on boot up and loop till other hings are added.
  # sudo nano /etc/vlc/start.sh
     #!/bin/sh
     sudo service hostapd start
@@ -123,7 +125,14 @@ If the gui starts close to command line
       /etc/vlc/start.sh &
  # cd ~
  
-
+------------------------------------------------------------------------------------------------------------------
+Troubleshooting
+------------------------------------------------------------------------------------------------------------------
+DNSmasq keeps taking over the Piratebox setup!
+ Solution 1 - Beat it over the head with the Piratebox DNSmasq config
+   # sudo rm /etc/dnsmasq.conf
+   # sudo cp /opt/piratebox/conf/dnsmasq_generated.conf /etc/dnsmasq.conf
+ Solution 2 - Be kind and link instead of copy
  
 -------------------------------------------------------------------------------------------------------------------
 Optional
