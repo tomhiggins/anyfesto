@@ -71,7 +71,7 @@ If the gui starts close to command line
       #iface default inet dhcp
 
 
-==Fetch and copy over PirateBox Source
+==Install and Config Piratebox
  # wget  http://downloads.piratebox.de/piratebox-ws_current.tar.gz
  # tar xzf piratebox-ws_current.tar.gz
  # cd piratebox
@@ -83,10 +83,12 @@ If the gui starts close to command line
  # sudo update-rc.d piratebox  defaults 
  # sudo ln -s /mnt/(USBDRIVE) /opt/piratebox/share
  # sudo nano /opt/piratebox/conf/piratebox.conf        # Define services, IP numbers, ranges, etc
+      HOST="piratebox.lan"   #change to your hostname of choice (ie anyfesto.lan )
+      NET=192.168.77         #change to your choice of IP range. If you run multiple boxes make sure they are diferent
  # sudo nano /opt/piratebox/conf/hostapd.conf
     interface=wlan0
     driver=rtl871xdrv
-    ssid=AnyfestoBox
+    ssid=AnyfestoBox         #change to what you would like. 
     hw_mode=g
     channel=1
  # sudo nano /etc/default/hostapd
@@ -103,17 +105,17 @@ If the gui starts close to command line
     10.0.0.0/8
     192.0.0.0/8
  # sudo mkdir /etc/vlc 
- # sudo cd /usr/share/vlc/lua/http/ 
+ # cd /usr/share/vlc/lua/http/ 
  # sudo mv .hosts /etc/vlc 
  # sudo ln -s /etc/vlc/.hosts .hosts
  # cd ~
  # sudo nano /etc/vlc/start.sh
     #!/bin/sh
     sudo service hostapd start
-    sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
+    sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb                  #change to where you USB Drive is to be mounted
     VLC_PORT=8088
     VLC_USER=vlc
-    VLC_IP=192.168.77.1
+    VLC_IP=192.168.77.1                                               #change to you  servers IP
     VLC_PASWD=changeme
     sudo -u vlc cvlc -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout='#duplicate{dst=standard{access=http,mux=ts,dst=:8085},dst=display}'  --loop  /home/pi/Radio/welcome.mp3
  # sudo chmod a+rx /etc/vlc/start.sh  
@@ -123,7 +125,9 @@ If the gui starts close to command line
  
 
  
-
+-------------------------------------------------------------------------------------------------------------------
+Optional
+--------------------------------------------------------------------------------------------------------------------
 
 ==Install Webmin
   #sudo nano /etc/apt/sources.list
