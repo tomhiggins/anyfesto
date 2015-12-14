@@ -85,7 +85,7 @@ If the gui starts close to command line
  # sudo update-rc.d piratebox  defaults 
  # sudo ln -s /media/usb /opt/piratebox/share/Shared/Archives   #change Archives to whatever you want.
  # sudo nano /opt/piratebox/conf/piratebox.conf        # Define services, IP numbers, ranges, etc
-      HOST="piratebox.lan"   #change to your hostname of choice (ie anyfesto.lan )
+      HOST="anyfesto.lan"   #change to your hostname of choice (ie anyfesto.lan )
       NET=192.168.77         #change to your choice of IP range. If you run multiple boxes make sure they are diferent
  # sudo nano /opt/piratebox/conf/hostapd.conf
     interface=wlan0
@@ -112,7 +112,9 @@ If the gui starts close to command line
  # sudo ln -s /etc/vlc/.hosts .hosts
  # cd ~
  # mkdir Radio
-  copy an mp3 file and rename it to welcome.mp3 This will play/stream on boot up and loop till other hings are added.
+ # cd Radio
+   copy an mp3 file here  and rename it to welcome.mp3 This will play/stream on boot up and loop till other things are added.
+ # cd ~
  # sudo nano /etc/vlc/start.sh
     #!/bin/sh
     sudo service hostapd start
@@ -127,6 +129,7 @@ If the gui starts close to command line
       /etc/vlc/start.sh &
  # cd ~
  
+ # sudo reboot
 ------------------------------------------------------------------------------------------------------------------
 Troubleshooting
 ------------------------------------------------------------------------------------------------------------------
