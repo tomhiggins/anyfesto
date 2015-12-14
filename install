@@ -187,10 +187,7 @@ Optional
    
    
    
-==Replace Shoutbox with a Hybrid ircd and a Web Fronted 
-   This will replace the shoutbox chat system from piratebox with a local IRCd server and a web 
-   front end for the users. The web frontend will be featured on the landing page each user will
-   be redirected to when they connect. 
+==Hybrid ircd and QWeb as a fronted  
 
   # sudo apt-get install ircd-hybrid
   # sudo nano /etc/ircd-hybrid/ircd.conf            # edit it to fit your network's setup.
@@ -208,6 +205,7 @@ Optional
 
    Browse to http://yourmachine:9090/
    
+-------------------------------------------------------------------------------------------------------------------------------   
 Customize
 
 Put in your own grfx and text in the pirate box web pages
