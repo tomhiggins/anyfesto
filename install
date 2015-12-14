@@ -31,7 +31,6 @@ If the gui starts close to command line
  # sudo apt-get -y install vlc
  # sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
  # sudo usermod -G audio,pi vlc
- # sudo usermod -d /media/usb vlc
  # sudo apt-get -y install lighttpd
  # sudo /etc/init.d/lighttpd stop
  # sudo update-rc.d lighttpd remove
@@ -47,7 +46,8 @@ If the gui starts close to command line
  # sudo chmod a+rw /bin/sh
  # sudo mkdir /media/usb                                             #change to where you USB Drive is to be mounted
  # sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb                  #change /dev/sda1 to point to your device
-
+ # sudo usermod -d /media/usb vlc                                    #this will make sure user vlc can see the goodies
+ 
 ==Update hostapd
  # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
  # unzip adafruit_hostapd_14128.zip
