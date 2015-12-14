@@ -45,6 +45,8 @@ If the gui starts close to command line
  # sudo rm /bin/sh
  # sudo ln /bin/bash /bin/sh
  # sudo chmod a+rw /bin/sh
+ # sudo mkdir /media/usb                                             #change to where you USB Drive is to be mounted
+ # sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb                  #change /dev/sda1 to point to your device
 
 ==Update hostapd
  # wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
@@ -81,7 +83,7 @@ If the gui starts close to command line
  # sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
  # sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
  # sudo update-rc.d piratebox  defaults 
- # sudo ln -s /mnt/(USBDRIVE) /opt/piratebox/share
+ # sudo ln -s /media/usb /opt/piratebox/share/Shared/Archives   #change Archives to whatever you want.
  # sudo nano /opt/piratebox/conf/piratebox.conf        # Define services, IP numbers, ranges, etc
       HOST="piratebox.lan"   #change to your hostname of choice (ie anyfesto.lan )
       NET=192.168.77         #change to your choice of IP range. If you run multiple boxes make sure they are diferent
