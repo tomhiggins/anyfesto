@@ -189,25 +189,24 @@ Optional
    
 ==Replace Shoutbox with a Hybrid ircd and a Web Fronted 
    This will replace the shoutbox chat system from piratebox with a local IRCd server and a web 
-front end for the users. The web frontend will be featured on the landing page each user will
-be redirected to when they connect. 
+   front end for the users. The web frontend will be featured on the landing page each user will
+   be redirected to when they connect. 
 
   # sudo apt-get install ircd-hybrid
-
+  # sudo nano /etc/ircd-hybrid/ircd.conf            # edit it to fit your network's setup.
+  # sudo nano /etc/ircd-hybrid/ircd.motd            # mod to reflect you stunning irc credo
   # sudo apt-get install python python-twisted python-twisted-bin python-twisted-core python-twisted-runner python-twisted-names python-twisted-mail python-twisted-words python-twisted-web python-zope.interface python-openssl javascript-common libjs-jquery python-simplejson wwwconfig-common
-
+  # sudo apt-get install nullidentd
   # sudo mkdir /opt/qwebirc
-  # sudo wget http://qwebirc.org/download-stable-zip
-  # sudo unzip into /opt/qwebirc
+  # wget http://qwebirc.org/download-stable-zip
+  # mv download-stable-zip qwebirc.zip
+  # sudo unzip qwebirc.zip /opt/qwebirc
   # cd /opt/qwebirc
-  # sudo cp config.py.example config.py             #edit it to fit your network's setup.
-  # sudo python  compile.py                         #note that warnings are just warnings, you can ignore them!
-  # python run.py 
+  # sudo cp config.py.example config.py             # edit it to fit your network's setup.
+  # sudo python  compile.py                         # note that warnings are just warnings, you can ignore them!
+  # sudo python run.py 
 
-(if you get an error about the select reactor being already registered just run it again) 
--- note run.py has lots of arguments, you can see them with --help.
-
-Browse to http://yourmachine:9090/
+   Browse to http://yourmachine:9090/
    
 Customize
 
