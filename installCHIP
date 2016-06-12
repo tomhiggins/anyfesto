@@ -19,10 +19,14 @@ sudo usermod -G audio,chip vlc
 sudo apt-get -y install lighttpd
 sudo /etc/init.d/lighttpd stop
 sudo update-rc.d lighttpd remove
-
+sudo apt-get -y install dnsmasq 
+sudo /etc/init.d/dnsmasq  stop
+sudo update-rc.d dnsmasq remove 
+sudo apt-get -y  install hostapd
+sudo /etc/init.d/hostapd  stop
+sudo update-rc.d hostapd remove 
 sudo apt-get -y install git
-sudo apt-get -y install sox libsox-fmt-all libav-tools
-
+sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
@@ -33,6 +37,11 @@ sudo usermod -d /home/chip/content/Radio vlc
 
 
 
+
+
+
+
+----------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
 sudo apt-get install mumble-server
 sudo dpkg-reconfigure mumble-server
