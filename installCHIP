@@ -1,8 +1,9 @@
-http://docs.getchip.com/chip.html
+
+Manual Install
+These steps will walk you through setting up an AnyfestoBox on a CHIP http://docs.getchip.com/chip.html
 Anyfesto on a CHIP 9$ computer
-
 ----------------------------------------
-
+Flash your CHIP with a Debian (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 
 sudo apt-get -y install vlc
 sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
