@@ -2,3 +2,22 @@ http://docs.getchip.com/chip.html
 Anyfesto on a CHIP 9$ computer
 
 ----------------------------------------
+
+
+sudo apt-get -y install vlc
+sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
+sudo usermod -G audio,chip vlc
+sudo apt-get -y install lighttpd
+sudo /etc/init.d/lighttpd stop
+sudo update-rc.d lighttpd remove
+
+sudo apt-get -y install git
+sudo apt-get -y install sox libsox-fmt-all libav-tools
+
+sudo rm /bin/sh
+sudo ln /bin/bash /bin/sh
+sudo chmod a+rw /bin/sh
+
+mkdir /home/chip/content
+mkdir /home/chip/content/Radio
+sudo usermod -d /home/chip/content/Radio vlc
