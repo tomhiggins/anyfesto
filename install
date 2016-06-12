@@ -211,6 +211,19 @@ Optional
 
    Browse to http://yourmachine:9090/
    
+===Optional - Add Mumble Server for secure voip and chat
+sudo apt-get install mumble-server
+sudo dpkg-reconfigure mumble-server
+   Autostart:  Yes
+   High Priority: No
+   SuperUser: Set the admin password
+sudo nano /etc/mumble-server.ini
+    Find welcomeText and update to whatever you would like displayed when a user joins
+    Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
+sudo /etc/init.d/mumble-server restart  
+
+   
+   
 -------------------------------------------------------------------------------------------------------------------------------   
 Customize
 
