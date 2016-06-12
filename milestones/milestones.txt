@@ -9,9 +9,9 @@
 [ ] - Customise Pirate/Librarybox into the distro
      
      [X] First, get it working on the RPi. Fix Hostapd issues
-     [ ] Mod the theme, graphics, etc.
+     [X] Mod the theme, graphics, etc.
       
-[ ] - Secure msging (need a good crypted msgs service here) 
+[X] - Secure msging (need a good crypted msgs service here) 
 
 [X] - IRCd-Hybrid server installed and configured into the distro
 
@@ -37,11 +37,13 @@
           Add mutual links to Piratebox shares, fm freqs and the 
           ability to pass msgs. 
 
-[ ] - Hardware. Making a case and battery solution that is 
+[X] - Hardware. Making a case and battery solution that is 
           inexpensive yet reliable. Include such things as a 
           GPIO based kill switch (shutdown, reboot clean, scrub).
 
 [ ]  - Secure backhaul to the intertubes (gsm, cell, wifi, etc)
           It should be as secure and anonymous (they are both realtive
           scales and not absolutes) as needed. 
+          
+          
 
