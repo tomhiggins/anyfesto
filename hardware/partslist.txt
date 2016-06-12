@@ -1,12 +1,12 @@
 
 Computer-
 -------------------
-Raspberry Pi 3 Model B 1GB ram - 		https://www.adafruit.com/products/3055                 $35.00
-Raspberry Pi Zero v1.3              https://www.adafruit.com/products/2885                 $ 5.00
-  Tiny USB OTG Adapter              https://www.adafruit.com/products/2910                 $ 2.95
+Raspberry Pi 3 Model B 1GB ram  https://www.adafruit.com/products/3055                 $35.00
+Raspberry Pi Zero v1.3          https://www.adafruit.com/products/2885                 $ 5.00
+  Tiny USB OTG Adapter          https://www.adafruit.com/products/2910                 $ 2.95
 
 
-16GB Micro SD card                                                                         $ 5.00 - 10.00
+16GB Micro SD card                                                                     $ 5.00 - 10.00
 
 
 Network-
@@ -36,7 +36,7 @@ FM Transmiter
 --------------
 StereoFM Transmitter w/RDS/RBDS Breakout  https://www.adafruit.com/products/               $19.95 
 CZERF 76-108MHz 1W FM Transmitter/power supply/antenna 
-                https://www.amazon.com/CZERF-76-108MHz-Transmitter-station-Professional    $53.89
+  https://www.amazon.com/CZERF-76-108MHz-Transmitter-station-Professional/dp/B00S26BKM6/   $53.89
 
 Sound-
 --------------------
