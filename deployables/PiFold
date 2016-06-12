@@ -154,7 +154,7 @@ git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
 sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh) ==Reboot
 sudo sync 
 sudo reboot
- 
+--------------------------------------------------------------------------------------------- 
 Trouble Shooting
 DNSmasq keeps taking over the Piratebox setup!
 
@@ -166,7 +166,10 @@ HostAP sometimes wont start
 
 Solution  - I have added this line to /etc/vlc/start.sh because reasons, mostly it works this way all of the time without fail. I should really add these to init scripts.. maybe?  
  sudo service hostapd start
-Optional - Install Webmin
+ ----------------------------------------------------------------------------------------------
+ 
+ 
+===Optional - Install Webmin
 sudo nano /etc/apt/sources.list
     Add these two lines at the bottom of the list
       deb http://download.webmin.com/download/repository sarge contrib
@@ -176,7 +179,9 @@ wget http://www.webmin.com/jcameron-key.asc
 sudo apt-key add jcameron-key.asc
 sudo apt-get update 
 sudo apt-get install webmin
-Optional - Install COPS (Calibre OPDS/HTML PHP Server)
+
+
+===Optional - Install COPS (Calibre OPDS/HTML PHP Server)
 sudo apt-get install php5-gd php5-sqlite php5-cgi
 sudo mkdir /opt/piratebox/www/cops
 cd /opt/piratebox/www/cops
@@ -206,7 +211,9 @@ sudo /etc/php5/cgi-bin/php.ini
          doc_root = "" 
       Change To 
          doc_root = "/opt/piratebox/www" 
-Optional - Add Hybrid IRCd and QWeb as a frontend
+
+
+===Optional - Add Hybrid IRCd and QWeb as a frontend
 sudo apt-get install ircd-hybrid
 sudo nano /etc/ircd-hybrid/ircd.conf            
 # edit it to fit your network's setup.
@@ -224,9 +231,10 @@ sudo cp config.py.example config.py
 sudo python  compile.py                         
 # note that warnings are just warnings, you can ignore them!
 sudo python run.py 
+  # Add a link in /opt/piratebox/www/index.html to http://pifold.lan:9090
 
- # Add a link in /opt/piratebox/www/index.html to http://pifold.lan:9090
-Optional - Add Mumble Server for secure voip and chat
+
+===Optional - Add Mumble Server for secure voip and chat
 sudo apt-get install mumble-server
 sudo dpkg-reconfigure mumble-server
    Autostart:  Yes
