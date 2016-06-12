@@ -2,6 +2,13 @@ WIP- Not Finished
 Manual Install
 These steps will walk you through setting up an AnyfestoBox on a CHIP http://docs.getchip.com/chip.html
 Anyfesto on a CHIP 9$ computer
+=======================================================================================
+Parts List
+   CHIP - https://getchip.com/pages/store - $ 9.00
+   USB Stick 32GB or Bigger - Many Sources - $20.00 - upward
+   LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
+   5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
+
 ----------------------------------------
 Flash your CHIP with a Debian (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 
