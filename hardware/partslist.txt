@@ -1,13 +1,17 @@
 
 Computer-
 -------------------
-Raspberry Pi Model B+ 512MB - 		https://www.adafruit.com/products/1914
-16GB SD card
+Raspberry Pi 3 Model B 1GB ram - 		https://www.adafruit.com/products/3055                 $35.00
+Raspberry Pi Zero v1.3              https://www.adafruit.com/products/2885                 $ 5.00
+  Tiny USB OTG Adapter              https://www.adafruit.com/products/2910                 $ 2.95
+
+
+16GB Micro SD card                                                                         $ 5.00 - 10.00
 
 
 Network-
 -------------------
-USB wifi (802.11b/g/n) with antenna  - 	http://www.adafruit.com/product/1030
+USB wifi (802.11b/g/n) with antenna  - 	http://www.adafruit.com/product/1030               $19.95 
 
 Power-
 ---------------------
@@ -16,14 +20,23 @@ Power-
      USB Battery Pack  4400mAh -        http://www.adafruit.com/product/1565USB 
 
    DIY Portable 
-     4xAA Battey holder w/switch- 	http://www.adafruit.com/products/830 
-     PowerBoost 1000 Charger Rechargeable 5V Lipo USB Boost @ 1A - 		https://www.adafruit.com/products/2465
+     Lithium Ion Battery Pack - 3.7V 6600mAh   https://www.adafruit.com/products/353       $29.50
+     4xAA Battey holder w/switch- 	http://www.adafruit.com/products/830                   $ 2.95   
+     PowerBoost 1000 Charger 5V Lipo  -https://www.adafruit.com/products/2465              $19.95
      
 
   Wall Power
-     5v 1A USB port power supply - 	http://www.adafruit.com/product/501
-     USB cable -          		http://www.adafruit.com/product/592
+     5V 2.4A 6' MicroUSB Cable 	https://www.adafruit.com/products/1995                     $ 7.95 
+     
+  Powered USB Hub
+     USB 2.0 Powered/7 Ports/5V 2A Power Supply https://www.adafruit.com/products/961      $21.95 
+    
 
+FM Transmiter
+--------------
+StereoFM Transmitter w/RDS/RBDS Breakout  https://www.adafruit.com/products/               $19.95 
+CZERF 76-108MHz 1W FM Transmitter/power supply/antenna 
+                https://www.amazon.com/CZERF-76-108MHz-Transmitter-station-Professional    $53.89
 
 Sound-
 --------------------
