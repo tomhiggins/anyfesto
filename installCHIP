@@ -10,7 +10,8 @@ Parts List
    5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
 
 ----------------------------------------
-Flash your CHIP with a Debian (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
+CHIP comes with a preinstalled Debain based OS with desktop and apps. If you want something slimmer flash 
+your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 
 sudo apt-get -y install vlc
 sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
@@ -29,3 +30,17 @@ sudo chmod a+rw /bin/sh
 mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
+
+
+
+Optional - Add Mumble Server for secure voip and chat
+sudo apt-get install mumble-server
+sudo dpkg-reconfigure mumble-server
+   Autostart:  Yes
+   High Priority: No
+   SuperUser: Set the admin password
+sudo nano /etc/mumble-server.ini
+    Find welcomeText and update to whatever you would like displayed when a user joins
+    Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
+sudo /etc/init.d/mumble-server restart 
+# Add a link in /opt/piratebox/www/index.html to service and clients
