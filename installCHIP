@@ -101,6 +101,16 @@ sudo /etc/init.d/piratebox start
 sudo sync 
 sudo reboot
 
+-------------
+Adding a USB Drive
+  Connect the usb drive to the usb port
+sudo mkdir /drives
+sudo mount /dev/sda1 /drives
+sudo nano /etc/fstab                     #add the following  and save
+   /dev/sda1 /drives vfat defaults 0 0
+sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
+
+
 ----------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
 sudo apt-get install mumble-server
