@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>AnyfestoCHIP </title>
+	<script src="jquery.min.js"></script>
+	<script src="scripts.js"></script>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+</head>
+<body id="main-index">
+
+<header id="header">
+	<div class="container">
+		<div id="logo">
+			<h1>
+				<a href="/"><img src="logo.jpg" height="200" width="200">
+				</a>
+			</h1>
+		</div>
+		<div id="menu-icon"><img src="menu.png" alt="Menu"></div>
+		<nav id="top-nav">
+			<ul>
+				<li><a href="http://10.11.99.1:8085">Listen To The Stream   </a></li>
+				<li><a href="/Shared/Archives/Radio/">Browse The Files   </a></li>
+				<li><a href="#about">What This Is About</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<section id="content">
+	<div class="container">
+		<div id="welcome">
+			<div id="greeting" class="card">
+				<h2>Welcome to the Network</h2>
+				<p> AnyfestoCHIP is CHIP based local networking content server . It is in the pocket of someone somwhere close to you.</p>
+                                <p> AnyfestoCHIP  offers ebooks, files and  many hours of audio as shared files and as  streaming audio. 
+</br>
+To see what audio is being shared please head on over to the Files section.
+</br>
+If you would like to listen to the audio being streamed live please have your audio streaming app of choice point to 10.11.99.1 port 8085. A popular app that runs on Linux, Windows, Mac, Android and iOS is VLC.
+</br>
+This is an off-line network, there is no connection to the greater Internet. No activity is being loged
+ </p> 
+                                <p> Smile if you enjoy the offerings. </p>
+				<input id="thanks" class="button" type="submit" value="Thanks">
+			</div>
+		</div>
+		<div id="sidebar">
+		</div>
+
+		<div id="main">
+			<div id="chat" class="card">
+				<h2>Chat</h2>
+				<div id="shoutbox" class="shoutbox_content"></div>
+				<form method="POST" name="psowrte" id="sb_form" >
+					<div id="shoutbox-input">
+						<input class="nickname" type="text" 	name="name" 	value="Anonymous" placeholder="Nickname">
+						<input class="message" 	type="text" 	name="data" 	placeholder="Message...">
+						<input class="button" 	type="submit" 	name="submit" 	value="Send">
+					</div>
+					<div id="shoutbox-options">
+						<h3>Text Color:</h3>
+						<label for="def" 	class="bg-black">	<input name="color" type="radio" value="def" 	id="def" checked>Default</label>
+						<label for="red" 	class="bg-red">		<input name="color" type="radio" value="red" 	id="red"		>Red</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer id="about">
+	<div class="container">
+		<div id="details">
+			<p class="to-top"><a href="#header">Back to top</a></p>
+			<h2>About AnyfestoCHIP</h2>
+			<p>AnyfestoCHIP is a  handy CHIP based server that fits in a pocket. It is battery powered and uses wifi to let others connect to it. AnyfestoCHIP uses  Anyfesto, a variant of Library/PirateBox, to serve up ebooks and files via a web interface plus audio streaming via VLC. Inspired by pirate radio and the free culture movement, it uses Free, Libre and Open Source software (FLOSS) to create a mobile wireless file sharing network where users can anonymously share images, video, audio, documents, and other digital content.</p>
+			<p>Anyfesto is designed to be safe and secure. No logins are required and no user data is logged. The system is purposely not connected to the Internet in order to prevent tracking and preserve user privacy. AnyfestoCHIP is built using  LibraryBox, PirateBox, VLC, Lighttp, and runs on Debian Linux</p>
+                        <p>If you would like to build your own AnyfestoCHIP go to <a href="https://github.com/tomhiggins/anyfesto/blob/master/installCHIP">this page on GitHub</a> to learn how.</p>    
+			<small>AnyfestoCHIP is licensed under GPLv3.</small>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
