@@ -110,6 +110,14 @@ sudo nano /etc/fstab                     #add the following  and save
    /dev/sda1 /drives vfat defaults 0 0
 sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
 
+Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
+sudo ln -s /drives/(NameOfDirectory)/ /home/chip/content/
+
+Example - for my test setup 
+  sudo ln -s /drives/SpokenWord/ /home/chip/content/
+  sudo ln -s /drives/Books/ /home/chip/content/
+  sudo ln -s /drives/Audio/ /home/chip/content/
+
 
 ----------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
@@ -136,6 +144,6 @@ sudo mkdir /drives/kiwix
 cd /drives/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
 sudo nano /etc/vlc/start.sh                                           # add at the bottom of the file and save
-   home/chip/kiwix-serve --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim 
+   home/chip/kiwix-server --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim 
 sudo sync
 sudo reboot
