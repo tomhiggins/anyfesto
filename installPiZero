@@ -164,9 +164,9 @@ sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh)
 sudo sync 
 sudo reboot
  
-
+------------------------------------------------------------------------------------------
 Optional - Install Webmin
-
+------------------------------------------------------------------------------------------
 sudo nano /etc/apt/sources.list
     Add these two lines at the bottom of the list
       deb http://download.webmin.com/download/repository sarge contrib
@@ -177,8 +177,9 @@ sudo apt-key add jcameron-key.asc
 sudo apt-get update 
 sudo apt-get install webmin
 
+------------------------------------------------------------------------------------------
 Optional - Install COPS (Calibre OPDS/HTML PHP Server)
-
+------------------------------------------------------------------------------------------
 sudo apt-get install php5-gd php5-sqlite php5-cgi
 sudo mkdir /opt/piratebox/www/cops
 cd /opt/piratebox/www/cops
@@ -209,9 +210,9 @@ sudo /etc/php5/cgi-bin/php.ini
       Change To 
          doc_root = "/opt/piratebox/www" 
 
-
+------------------------------------------------------------------------------------------
 Optional - Add Hybrid IRCd and QWeb as a frontend
-
+------------------------------------------------------------------------------------------
 sudo apt-get install ircd-hybrid
 sudo nano /etc/ircd-hybrid/ircd.conf            
 # edit it to fit your network's setup.
@@ -231,9 +232,9 @@ sudo python  compile.py
 sudo python run.py 
    # Add a link in /opt/piratebox/www/index.html to http://pifold.lan:9090
  
-
+------------------------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
-
+------------------------------------------------------------------------------------------
 sudo apt-get install mumble-server
 sudo dpkg-reconfigure mumble-server
    Autostart:  Yes
@@ -245,8 +246,23 @@ sudo nano /etc/mumble-server.ini
 sudo /etc/init.d/mumble-server restart  
      # Add a link in /opt/piratebox/www/index.html to the service and maybe links to the clients that you can host local
 
-
-
+------------------------------------------------------------------------------------------
+Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
+------------------------------------------------------------------------------------------
+cd ~
+wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
+bzip2 -d kiwix-server-arm.tar.bz2 
+tar xvf kiwix-server-arm.tar
+rm kiwix-server-arm.tar
+sudo cp kiwix-serve /usr/bin/kiwix-serve
+sudo mkdir /home/pi/content/kiwix
+     # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
+cd /home/pi/content/kiwix
+sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
+sudo nano /etc/rc.local                                           # add the line and save
+   /usr/bin/kiwix-serve --daemon --port=8099 /home/pi/content/kiwix/wikipedia_en_for-schools.zim
+sudo sync
+sudo reboot
 ====================================================================================================================
 Trouble Shooting
 
