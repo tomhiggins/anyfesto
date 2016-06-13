@@ -93,7 +93,7 @@ sudo nano /etc/rc.local                           #Add the follwing and save
       /etc/vlc/start.sh &
 cd /opt/piratebox/www
 rm index.html
-wget https://github.com/tomhiggins/anyfesto/blob/master/deployables/AnyfestoCHiP-index.html -O index.html
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 
 
 sudo /etc/init.d/piratebox start
