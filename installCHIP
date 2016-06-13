@@ -16,6 +16,8 @@ Parts List
 CHIP comes with a preinstalled Debain based OS with desktop and apps. If you want something slimmer flash 
 your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get -y install vlc
 sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
 sudo usermod -G audio,chip vlc
@@ -91,22 +93,27 @@ sudo nano /etc/vlc/start.sh                        #Add the follwing and save
 sudo chmod a+rx /etc/vlc/start.sh  
 sudo nano /etc/rc.local                           #Add the follwing and save    
       /etc/vlc/start.sh &
+
 cd /opt/piratebox/www
-rm index.html
+sudo rm index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+sudo rm /opt/piratebox/www/favicon.ico
+sudo rm /opt/piratebox/www/Shared/HEADER.txt
+sudo rm /opt/piratebox/www/Shared/README.txt
 
 sudo /etc/init.d/piratebox start
 
 sudo sync 
 sudo reboot
 
--------------
+----------------------------------------------------------------------------
 Adding a USB Drive
+----------------------------------------------------------------------------
   Connect the usb drive to the usb port
 sudo mkdir /drives
 sudo mount /dev/sda1 /drives
-sudo nano /etc/fstab                     #add the following  and save
+sudo nano /etc/fstab                     #Add/Change the following and save
    /dev/sda1 /drives vfat defaults 0 0
 sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
 
@@ -121,6 +128,7 @@ Example - for my test setup
 
 ----------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
+----------------------------------------------------------------------------
 sudo apt-get install mumble-server
 sudo dpkg-reconfigure mumble-server
    Autostart:  Yes
@@ -134,6 +142,7 @@ sudo /etc/init.d/mumble-server restart
 
 ------------------------------------------------------------------------------
 Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
+------------------------------------------------------------------------------
 cd ~
 wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
 bzip2 -d kiwix-server-arm.tar.bz2 
@@ -144,7 +153,7 @@ sudo mkdir /drives/kiwix
      # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
 cd /drives/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
-sudo nano /etc/rc.local                                           # add the line and save
+sudo nano /etc/rc.local                                           #Add the following and save
    /usr/bin/kiwix-serve --daemon --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim
 sudo sync
 sudo reboot
