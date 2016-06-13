@@ -113,3 +113,12 @@ sudo nano /etc/mumble-server.ini
     Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
 sudo /etc/init.d/mumble-server restart 
 # Add a link in /opt/piratebox/www/index.html to service and clients
+
+------------------------------------------------------------------------------
+Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
+cd ~
+wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
+bzip2 -d kiwix-server-arm.tar.bz2 
+tar xvf kiwix-server-arm.tar
+rm kiwix-server-arm.tar 
+
