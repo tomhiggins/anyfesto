@@ -4,6 +4,7 @@ These steps will walk you through setting up an AnyfestoBox on a CHIP http://doc
 Anyfesto on a CHIP 9$ computer
 N.B. This set up will use CHIPs wlan1 for the captive portal,dnsmasq, etc etc. wlan0 is left free to connect to backhaul, the 
      intertubes  or whatever network you may want. No bridge has been set up by default. Lots of ideas for use of this.
+     ToDo - Add USB mount and links into the Content directory.
 =======================================================================================
 Parts List
    CHIP - https://getchip.com/pages/store - $ 9.00
