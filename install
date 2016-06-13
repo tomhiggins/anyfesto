@@ -130,26 +130,13 @@ If the gui starts close to command line
  # cd ~
  
  # sudo reboot
-------------------------------------------------------------------------------------------------------------------
-Troubleshooting
-------------------------------------------------------------------------------------------------------------------
-=DNSmasq keeps taking over the Piratebox setup!
- Solution 1 - Beat it over the head with the Piratebox DNSmasq config
-   # sudo rm /etc/dnsmasq.conf
-   # sudo cp /opt/piratebox/conf/dnsmasq_generated.conf /etc/dnsmasq.conf
- Solution 2 - Be kind and link instead of copy
-
-=HostAP sometimes wont start AND usb drives will not mount the via fstab
-  Solution 1 - I have added these two lines to /etc/vlc/start.sh because reasons, mostly it works this way all of the time 
-  without fail. I should really add these to init scripts.. maybe? ymmmv
-   # sudo service hostapd start 
-   # sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
  
 -------------------------------------------------------------------------------------------------------------------
-Optional
+Optional Installs
 --------------------------------------------------------------------------------------------------------------------
-
-==Install Webmin
+------------------------------------------------------------------------------------------
+Install Webmin
+------------------------------------------------------------------------------------------
   #sudo nano /etc/apt/sources.list
     Add these two lines at the bottom of the list
       deb http://download.webmin.com/download/repository sarge contrib
@@ -160,7 +147,9 @@ Optional
    # sudo apt-get update
    # sudo apt-get install webmin
 
-==Install COPS (Calibre OPDS/HTML PHP Server)
+------------------------------------------------------------------------------------------
+Install COPS (Calibre OPDS/HTML PHP Server)
+------------------------------------------------------------------------------------------
    # sudo apt-get install php5-gd php5-sqlite php5-cgi
    # sudo mkdir /opt/piratebox/www/cops
    # cd /opt/piratebox/www/cops
@@ -192,8 +181,9 @@ Optional
          doc_root = "/opt/piratebox/www" 
    
    
-   
-==Hybrid ircd and QWeb as a fronted  
+------------------------------------------------------------------------------------------
+   Hybrid ircd and QWeb as a fronted  
+------------------------------------------------------------------------------------------
 
   # sudo apt-get install ircd-hybrid
   # sudo nano /etc/ircd-hybrid/ircd.conf            # edit it to fit your network's setup.
@@ -210,8 +200,10 @@ Optional
   # sudo python run.py 
 
    Browse to http://yourmachine:9090/
-   
-===Optional - Add Mumble Server for secure voip and chat
+------------------------------------------------------------------------------------------
+Optional - Add Mumble Server for secure voip and chat
+------------------------------------------------------------------------------------------
+
 sudo apt-get install mumble-server
 sudo dpkg-reconfigure mumble-server
    Autostart:  Yes
@@ -222,11 +214,42 @@ sudo nano /etc/mumble-server.ini
     Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
 sudo /etc/init.d/mumble-server restart  
 
-   
+
+------------------------------------------------------------------------------------------
+Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
+------------------------------------------------------------------------------------------
+cd ~
+wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
+bzip2 -d kiwix-server-arm.tar.bz2 
+tar xvf kiwix-server-arm.tar
+rm kiwix-server-arm.tar
+sudo cp kiwix-serve /usr/bin/kiwix-serve
+sudo mkdir /media/usb/kiwix
+     # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
+cd /media/usb/kiwix
+sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
+sudo nano /etc/rc.local                                           # add the line and save
+   /usr/bin/kiwix-serve --daemon --port=8099 /media/usb/kiwix/wikipedia_en_for-schools.zim
+sudo sync
+sudo reboot
    
 -------------------------------------------------------------------------------------------------------------------------------   
 Customize
 
 Put in your own grfx and text in the pirate box web pages
 
+------------------------------------------------------------------------------------------------------------------
+Troubleshooting
+------------------------------------------------------------------------------------------------------------------
+=DNSmasq keeps taking over the Piratebox setup!
+ Solution 1 - Beat it over the head with the Piratebox DNSmasq config
+   # sudo rm /etc/dnsmasq.conf
+   # sudo cp /opt/piratebox/conf/dnsmasq_generated.conf /etc/dnsmasq.conf
+ Solution 2 - Be kind and link instead of copy
+
+=HostAP sometimes wont start AND usb drives will not mount the via fstab
+  Solution 1 - I have added these two lines to /etc/vlc/start.sh because reasons, mostly it works this way all of the time 
+  without fail. I should really add these to init scripts.. maybe? ymmmv
+   # sudo service hostapd start 
+   # sudo mount -o uid=pi,gid=pi /dev/sda1 /media/usb
 
