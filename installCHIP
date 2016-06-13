@@ -144,7 +144,7 @@ sudo mkdir /drives/kiwix
      # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
 cd /drives/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
-sudo nano /etc/vlc/start.sh                                           # add at the bottom of the file and save
-   sudo /usr/bin/kiwix-serve --daemon --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim
+sudo nano /etc/rc.local                                           # add the line and save
+   /usr/bin/kiwix-serve --daemon --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim
 sudo sync
 sudo reboot
