@@ -91,6 +91,11 @@ sudo nano /etc/vlc/start.sh                        #Add the follwing and save
 sudo chmod a+rx /etc/vlc/start.sh  
 sudo nano /etc/rc.local                           #Add the follwing and save    
       /etc/vlc/start.sh &
+cd /opt/piratebox/www
+rm index.html
+wget https://github.com/tomhiggins/anyfesto/blob/master/deployables/AnyfestoCHiP-index.html -O index.html
+
+
 sudo /etc/init.d/piratebox start
 
 sudo sync 
