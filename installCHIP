@@ -94,8 +94,7 @@ sudo nano /etc/rc.local                           #Add the follwing and save
 cd /opt/piratebox/www
 rm index.html
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
-
-
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
 sudo /etc/init.d/piratebox start
 
 sudo sync 
