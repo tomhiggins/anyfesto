@@ -1,12 +1,14 @@
-WIP- Not Finished
+
 Manual Install
 These steps will walk you through setting up an AnyfestoBox on a CHIP http://docs.getchip.com/chip.html
 Anyfesto on a CHIP 9$ computer
+N.B. This set up will use CHIPs wlan1 for the captive portal,dnsmasq, etc etc. wlan0 is left free to connect to backhaul, the 
+     intertubes  or whatever network you may want. No bridge has been set up by default. Lots of ideas for use of this.
 =======================================================================================
 Parts List
    CHIP - https://getchip.com/pages/store - $ 9.00
    USB Stick 32GB or Bigger - Many Sources - $20.00 - upward
-   LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
+   LIon Battery 3.7V 2500mA - https://www.adafruit.com/products/328 - $29.50
    5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
 
 ----------------------------------------
@@ -35,11 +37,63 @@ mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
 
+==Install and Config Piratebox Base
+
+wget  http://downloads.piratebox.de/piratebox-ws_current.tar.gz
+tar xzf piratebox-ws_current.tar.gz
+cd piratebox
+sudo mkdir -p  /opt
+sudo cp -rv  piratebox /opt
+cd /opt/piratebox
+sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
+sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
+sudo update-rc.d piratebox  defaults 
+sudo ln -s /home/pi/content /opt/piratebox/share/Shared/Archives   
+sudo nano /opt/piratebox/conf/piratebox.conf     #Change the following and save
+      HOST="anyfestochip.lan"
+      INTERFACE="wlan1"
+      DNSMASQ_INTERFACE="wlan1"
+      NET=10.11.99    
+
+sudo nano /opt/piratebox/conf/hostapd.conf       #Add/Change the following and save
+      interface=wlan1
+      driver=nl80211
+      ssid=AnyfestoCHIPCommunityNetworking
+      channel=1
+      ctrl_interface=/var/run/hostapd
+      
+sudo nano /etc/default/hostapd                   #Change the following and save
+    DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"
 
 
+sudo nano /usr/share/vlc/lua/http/.hosts           #Add/Change the following and save
+    ::1
+    127.0.0.1
+    fc00::/7
+    fec0::/10
+    10.0.0.0/8
+    192.0.0.0/8
+sudo mkdir /etc/vlc 
+cd /usr/share/vlc/lua/http/ 
+sudo mv .hosts /etc/vlc 
+sudo ln -s /etc/vlc/.hosts .hosts
+cd /home/pi/content/Radio
+wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
+sudo nano /etc/vlc/start.sh                        #Add the follwing and save   
+    #!/bin/sh
+    sudo service hostapd start
+    VLC_PORT=8088
+    VLC_USER=vlc
+    VLC_IP=10.11.99.1
+    VLC_PASWD=changeme
+    sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  --loop  /home/chip/content/Radio/welcome.mp3
+sudo chmod a+rx /etc/vlc/start.sh  
+sudo nano /etc/rc.local                           #Add the follwing and save    
+      /etc/vlc/start.sh &
+sudo /etc/init.d/piratebox start
 
-
-
+sudo sync 
+sudo reboot
 
 ----------------------------------------------------------------------------
 Optional - Add Mumble Server for secure voip and chat
