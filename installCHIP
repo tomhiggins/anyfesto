@@ -48,7 +48,7 @@ cd /opt/piratebox
 sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
 sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
 sudo update-rc.d piratebox  defaults 
-sudo ln -s /home/pi/content /opt/piratebox/share/Shared/Archives   
+sudo ln -s /home/chip/content /opt/piratebox/share/Shared/Archives   
 sudo nano /opt/piratebox/conf/piratebox.conf     #Change the following and save
       HOST="anyfestochip.lan"
       INTERFACE="wlan1"
