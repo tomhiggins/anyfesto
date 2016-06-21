@@ -224,12 +224,18 @@ bzip2 -d kiwix-server-arm.tar.bz2
 tar xvf kiwix-server-arm.tar
 rm kiwix-server-arm.tar
 sudo cp kiwix-serve /usr/bin/kiwix-serve
+sudo cp kiwix-manage /usr/bin/kiwix-manage
 sudo mkdir /media/usb/kiwix
      # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
 cd /media/usb/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
+# If you want to add several zims  wget them to /media/usb/kiwix and then use kiwiz-manage to create a libray file
+# For each zim add it to the library
+sudo kiwix-manage /media/usb/kiwix/library.xml /media/usb/kiwix/NameOfZimFile.zim 
 sudo nano /etc/rc.local                                           # add the line and save
    /usr/bin/kiwix-serve --daemon --port=8099 /media/usb/kiwix/wikipedia_en_for-schools.zim
+   # If you are using multiple zim files use this line
+   /usr/bin/kiwix-serve --daemon --port=8099 --library /media/usb/kiwix/library.xml
 sudo sync
 sudo reboot
    
