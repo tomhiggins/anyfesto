@@ -255,14 +255,24 @@ bzip2 -d kiwix-server-arm.tar.bz2
 tar xvf kiwix-server-arm.tar
 rm kiwix-server-arm.tar
 sudo cp kiwix-serve /usr/bin/kiwix-serve
+sudo cp kiwix-manage /usr/bin/kiwix-manage
 sudo mkdir /home/pi/content/kiwix
      # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
 cd /home/pi/content/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
+# If you want to add several zims  wget them to /home/pi/content/kiwix and then use kiwiz-manage to create a libray file
+# For each zim add it to the library
+sudo kiwix-manage /home/pi/content/kiwix/library.xml /home/pi/content/kiwix/NameOfZimFile.zim 
 sudo nano /etc/rc.local                                           # add the line and save
    /usr/bin/kiwix-serve --daemon --port=8099 /home/pi/content/kiwix/wikipedia_en_for-schools.zim
+   # If you are using multiple zim files use this line
+   /usr/bin/kiwix-serve --daemon --port=8099 --library /home/pi/content/kiwix/library.xml
 sudo sync
 sudo reboot
+
+
+
+
 ====================================================================================================================
 Trouble Shooting
 
