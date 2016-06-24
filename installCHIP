@@ -80,7 +80,7 @@ sudo mkdir /etc/vlc
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
 sudo ln -s /etc/vlc/.hosts .hosts
-cd /home/pi/content/Radio
+cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo nano /etc/vlc/start.sh                        #Add the follwing and save   
     #!/bin/sh
