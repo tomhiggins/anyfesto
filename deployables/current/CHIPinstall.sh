@@ -77,21 +77,20 @@ sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 
-#########################
-sudo nano /etc/vlc/start.sh                        #Add the follwing and save   
-    #!/bin/sh
-    sudo service hostapd start
-    VLC_PORT=8088
-    VLC_USER=vlc
-    VLC_IP=10.11.99.1
-    VLC_PASWD=changeme
-    sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  -LZ /home/chip/content/*/./*.mp3
-#########################
+##### Create /etc/vlc/start.sh
+sudo echo "#!/bin/sh  " > /etc/vlc/start.sh                        #Add the follwing and save   
+sudo echo "sudo service hostapd start" >> /etc/vlc/start.sh
+sudo echo "VLC_PORT=8088" >> /etc/vlc/start.sh
+sudo echo "VLC_USER=vlc" >> /etc/vlc/start.sh
+sudo echo "VLC_IP=10.11.99.1" >> /etc/vlc/start.sh
+sudo echo "VLC_PASWD=changeme" >> /etc/vlc/start.sh    
+sudo echo "sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  -LZ /home/chip/content/*/./*.mp3" >> /etc/vlc/start.sh        
     
 sudo chmod a+rx /etc/vlc/start.sh  
 sudo nano /etc/rc.local                           #Add the follwing and save    
       /etc/vlc/start.sh &
 
+# Get default web pages and clean up the piratebox install
 cd /opt/piratebox/www
 sudo rm index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
