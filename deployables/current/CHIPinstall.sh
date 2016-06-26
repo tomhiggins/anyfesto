@@ -6,6 +6,8 @@
 # Upgrae your base install
 sudo apt-get -y update
 sudo apt-get -y upgrade
+sudo apt-get -y install locales
+sudo locale-gen en_US en_US.UTF-8
 
 # Start installing the services
 sudo apt-get -y install vlc
