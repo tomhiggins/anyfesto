@@ -4,8 +4,8 @@
 # CC 2016 by tomwsmf
 
 # Upgrae your base install
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
 # Start installing the services
 sudo apt-get -y install vlc
@@ -49,27 +49,27 @@ sudo nano /opt/piratebox/conf/piratebox.conf     #Change the following and save
       INTERFACE="wlan1"
       DNSMASQ_INTERFACE="wlan1"
       NET=10.11.99    
-
-sudo nano /opt/piratebox/conf/hostapd.conf       #Add/Change the following and save
-      interface=wlan1
-      driver=nl80211
-      ssid=AnyfestoCHIPCommunityNetworking
-      channel=1
-      ctrl_interface=/var/run/hostapd
-      
-sudo nano /etc/default/hostapd                   #Change the following and save
-    DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"
-
-sudo nano /usr/share/vlc/lua/http/.hosts           #Add/Change the following and save
-    ::1
-    127.0.0.1
-    fc00::/7
-    fec0::/10
-    10.0.0.0/8
-    192.0.0.0/8
 #########################
 
+# Setup hostapd configs in /opt/piratebox/conf/hostapd.conf       
+sudo echo "interface=wlan1" >/opt/piratebox/conf/hostapd.conf
+sudo echo "driver=nl80211" >>/opt/piratebox/conf/hostapd.conf
+sudo echo "ssid=AnyfestoCHIPCommunityNetworking" >>/opt/piratebox/conf/hostapd.conf
+sudo echo "channel=1" >>/opt/piratebox/conf/hostapd.conf
+sudo echo "ctrl_interface=/var/run/hostapd" >>/opt/piratebox/conf/hostapd.conf
+      
+# Setup hostapd configs in /etc/default/hostapd                  
+sudo echo 'DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"' >/opt/default/hostapd
 
+# Setup allowed hosts for vlc servers in  /usr/share/vlc/lua/http/.hosts
+sudo echo "::1" > /usr/share/vlc/lua/http/.hosts
+sudo echo "127.0.0.1" >> /usr/share/vlc/lua/http/.hosts
+sudo echo "fc00::/7" >> /usr/share/vlc/lua/http/.hosts
+sudo echo "fec0::/10" >> /usr/share/vlc/lua/http/.hosts
+sudo echo "10.0.0.0/8" >> /usr/share/vlc/lua/http/.hosts
+sudo echo "192.0.0.0/8" >> /usr/share/vlc/lua/http/.hosts
+
+# Setuo vlc server and put in a default file for streaming
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -77,7 +77,7 @@ sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 
-##### Create /etc/vlc/start.sh
+# Create /etc/vlc/start.sh
 sudo echo "#!/bin/sh  " > /etc/vlc/start.sh                        #Add the follwing and save   
 sudo echo "sudo service hostapd start" >> /etc/vlc/start.sh
 sudo echo "VLC_PORT=8088" >> /etc/vlc/start.sh
@@ -91,10 +91,9 @@ sudo nano /etc/rc.local                           #Add the follwing and save
       /etc/vlc/start.sh &
 
 # Get default web pages and clean up the piratebox install
-cd /opt/piratebox/www
-sudo rm index.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+sudo rm /opt/piratebox/www/index.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O /opt/piratebox/www/index.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O /opt/piratebox/www/logo.jpg
 sudo rm /opt/piratebox/www/favicon.ico
 sudo rm /opt/piratebox/www/Shared/HEADER.txt
 sudo rm /opt/piratebox/www/Shared/README.txt
