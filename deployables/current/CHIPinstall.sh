@@ -58,7 +58,7 @@ sudo echo "channel=1" >>/opt/piratebox/conf/hostapd.conf
 sudo echo "ctrl_interface=/var/run/hostapd" >>/opt/piratebox/conf/hostapd.conf
       
 # Setup hostapd configs in /etc/default/hostapd                  
-sudo echo 'DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"' >/opt/default/hostapd
+sudo echo 'DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"' >/etc/default/hostapd
 
 # Setup allowed hosts for vlc servers in  /usr/share/vlc/lua/http/.hosts
 sudo echo "::1" > /usr/share/vlc/lua/http/.hosts
