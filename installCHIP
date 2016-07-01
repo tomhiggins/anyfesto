@@ -157,7 +157,7 @@ sudo mkdir /drives/kiwix
      # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
 cd /drives/kiwix
 sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
-# If you want to add several zims  wget them to /media/usb/kiwix and then use kiwiz-manage to create a libray file
+# If you want to add several zims  wget them to /drives/kiwix and then use kiwiz-manage to create a libray file
 # For each zim add it to the library
 sudo kiwix-manage /drives/kiwix/library.xml /drives/kiwix/NameOfZimFile.zim 
 sudo nano /etc/rc.local                                           # add the line and save
