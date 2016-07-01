@@ -1,0 +1,27 @@
+(from https://hackaday.io/project/9498-pifold/log/31386-solar-charging-unit-for-pifold)
+
+Doing this projects I have refound various Adafruit parts I picked up with the best of intentions. 
+Some of these were to make a window mounted solar charging unit for charging up some of the devices I use.
+
+Parts -
+
+1 × Duct Tape
+2 × JST 2 pin cable https://www.adafruit.com/products/261
+1 × Medium 6V 2W Solar panel - 2.0 Watt - https://www.adafruit.com/products/200
+1 × USB / DC / Solar Lithium Ion/Polymer charger - https://www.adafruit.com/products/390
+1 × Lithium Ion Battery Pack - 3.7V 6600mAh - https://www.adafruit.com/products/353
+1 × PowerBoost 500 Basic - 5V USB Boost @ 500mA - https://www.adafruit.com/product/1903
+Instructions -
+
+-Assemble the Solar Charger and solder the output of the solar panel to the Solar Charger 
+  (see instructions at https://learn.adafruit.com/usb-dc-and-solar-lipoly-charger?view=all )
+-Connect the JST from the battery to the Battery JST connector of the Solar Charger
+-Join the wire ends of the 2 JST connectors to make a double headed wire, red to red black to black. Solder and seal the joins.
+-Connect one JST of the new wire to the Load connection on the Solar Charger and the other 
+    JST to the connection on the Powerboost 500
+-Solder a USB connector to the PowerBoost.
+-Freestyle duct tape parts to the back of the Solar Panel, positioning USB ports for ease of access and 
+  secure for repeated connects/reconnects
+  
+  This unit powers up from the Sun or an external source and can be used to charge most any devuce with a USB charge port.
+  
