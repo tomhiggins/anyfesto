@@ -1,1 +1,0 @@
-setenv.add-environment = ( "PYTHONPATH" => "/opt/piratebox/python_lib:/opt/piratebox/python_lib", "SHOUTBOX_GEN_HTMLFILE" => "/opt/piratebox/www/chat_content.html" , "SHOUTBOX_CHATFILE" => "/opt/piratebox/www/cgi-bin/data.pso" , )
