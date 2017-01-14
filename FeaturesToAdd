@@ -3,11 +3,12 @@ Features To Add-
 -Simple script to run for installation
 
 - SCript To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia)
+- All Logs to /dev/null  - no user info or activity
 
 -Content To Add
   - Localized Khan Academy  - http://ka-lite.readthedocs.io/en/0.16.x/index.html
   - Updated PG
   - LibriVox
   - NumberStation (run a number station to send private msgs)
-  
+  - 2nd wifi device setup for backhaul/mesh/etc
 
