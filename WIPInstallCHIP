@@ -67,12 +67,15 @@ sudo nano /etc/network/interfaces          #Add/Change the following and save
      netmask 255.255.255.0
    
 
-sudo nano /etc/hostapd.conf       #Add/Change the following and save
+sudo nano /etc/hostapd/hostapd.conf       #Add/Change the following and save
       interface=wlan1
       driver=nl80211
       ssid=AnyfestoCHIPCommunityNetworking
       channel=1
       ctrl_interface=/var/run/hostapd
+
+sudo nano /etc/default/hostapd             #Add/Change the following and save
+      DAEMON_CONF="/etc/hostapd/hostapd.conf"
       
 sudo nano /etc/hostname                #Add/Change the following and save
       AnyfestoCHIP
