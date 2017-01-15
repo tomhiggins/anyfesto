@@ -15,6 +15,7 @@ CHIP comes with a preinstalled Debain based OS with desktop and apps. If you wan
 your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 -----------------------------------------
 
+
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install locales
@@ -23,39 +24,48 @@ sudo apt-get -y install vlc
 sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
 sudo usermod -G audio,chip vlc
 sudo apt-get -y install lighttpd
-sudo /etc/init.d/lighttpd stop
-sudo update-rc.d lighttpd remove
 sudo apt-get -y install dnsmasq 
-sudo /etc/init.d/dnsmasq  stop
-sudo update-rc.d dnsmasq remove 
 sudo apt-get -y  install hostapd
-sudo /etc/init.d/hostapd  stop
-sudo update-rc.d hostapd remove 
 sudo apt-get -y install git
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
 
+==Setup the Directories
 mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
-
-==Setup Captive Portal
-sudo nano /etc/dnsmasq.conf
-      address=/#/10.11.99.1
-
 sudo ln -s /home/chip/content /var/www/html   
 cd /var/www/html
 sudo rm index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
 
+==Setup Network and Captive Portal 
 
-HOST="anyfestochip.lan"
-      INTERFACE="wlan1"
-      DNSMASQ_INTERFACE="wlan1"
-      NET=10.11.99    
+
+sudo nano /etc/dhcp/dhcpd.conf              #Add/Change the following and save       
+     authoritative;
+     subnet 10.11.99.0 netmask 255.255.255.0 {
+	range 10.11.99.20 10.11.99.200;
+	option broadcast-address 10.11.99.255;
+	option routers 10.11.99.1;
+	default-lease-time 600;
+	max-lease-time 7200;
+	option domain-name "local";
+	option domain-name-servers 10.11.99.1, 10.11.99.1;
+      }
+
+
+sudo nano /etc/dnsmasq.conf                #Add/Change the following and save
+      address=/#/10.11.99.1
+
+sudo nano /etc/network/interfaces          #Add/Change the following and save
+     iface wlan1 inet static
+     address 10.11.99.1
+     netmask 255.255.255.0
+   
 
 sudo nano /etc/hostapd.conf       #Add/Change the following and save
       interface=wlan1
@@ -63,8 +73,10 @@ sudo nano /etc/hostapd.conf       #Add/Change the following and save
       ssid=AnyfestoCHIPCommunityNetworking
       channel=1
       ctrl_interface=/var/run/hostapd
-
-
+      
+sudo nano /etc/hostname                #Add/Change the following and save
+      AnyfestoCHIP
+sudo /etc/init.d/hostname.sh
 
 ==Setup Audio Streaming using VLC
 sudo nano /usr/share/vlc/lua/http/.hosts           #Add/Change the following and save
@@ -128,7 +140,7 @@ sudo nano /etc/mumble-server.ini
     Find welcomeText and update to whatever you would like displayed when a user joins
     Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
 sudo /etc/init.d/mumble-server restart 
-# Add a link in /opt/piratebox/www/index.html to service and clients
+# ToDo - Add a link in /var/www/html/index.html to service and clients
 
 ------------------------------------------------------------------------------
 Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
@@ -153,5 +165,5 @@ sudo nano /etc/rc.local                                           # add the line
    /usr/bin/kiwix-serve --daemon --port=8099 --library /drives/kiwix/library.xml
 sudo sync
 sudo reboot
-# Add a description and link  to http://YourServersIP:8099 to the captive portal landing page so users can get to the main library page
+# ToDo - Add a description and link  to http://10.11.99.1:8099 in /var/www/html/index.html
 
