@@ -147,7 +147,9 @@ sudo reboot
 -above or by using your own method and bring down WLAN0
 
 sudo ifconfig wlan1 down        #This brings down the AP so that users will not get caught in the changes
-
+-When you are done with the changes
+sudo sync 
+sudo reboot
 ----------------------------------------------------------------------------
 Adding a USB Drive
 ----------------------------------------------------------------------------
