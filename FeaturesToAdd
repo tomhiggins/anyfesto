@@ -1,14 +1,21 @@
 Features To Add-
 ------------------------------------------------------------------------
-- Simple script to run for installation
-- SCript To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia)
-- All Logs to /dev/null  - no user info or activity
-- Make all content direcories to be ReadOnly
-   - Add an option for user Upload area away from RO content
-- 2nd wifi device setup for backhaul/mesh/etc
-- Ability to change MAC address  (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
+=Installation/ Maintenance 
+  - Simple script to run for installation
+  - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia) 
 
--Content To Add
+=Networking
+- 2nd wifi device setup for back haul/mesh/etc 
+
+=Security
+- All Logs to /dev/null  - no user info or activity 
+- Make all content directories to be ReadOnly 
+   - Add an option for user Upload area away from RO content
+- Ability to change MAC address   (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
+- An Emergency Scrub method 
+
+
+=Content To Add
   - Localized Khan Academy  - http://ka-lite.readthedocs.io/en/0.16.x/index.html
   - Updated PG
   - LibriVox
