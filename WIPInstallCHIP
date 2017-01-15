@@ -167,3 +167,73 @@ sudo sync
 sudo reboot
 # ToDo - Add a description and link  to http://10.11.99.1:8099 in /var/www/html/index.html
 
+
+------------------------------------------------------------------------------------------
+Optional - Install COPS (Calibre OPDS/HTML PHP Server)
+------------------------------------------------------------------------------------------
+sudo apt-get install php5-gd php5-sqlite php5-cgi
+sudo mkdir /var/www/cops
+cd /var/www/cops
+sudo wget https://github.com/seblucas/cops/releases/download/1.0.0RC3/cops-1.0.0RC3.zip
+sudo unzip cops-1.0.0RC3.zip
+cp config_local.php.example config_local.php  
+sudo nano config_local.php
+      $config['calibre_directory'] : Path to your Calibre directory.
+      $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
+sudo chmod -R  755 *
+sudo /etc/lighttpd/lighttpd.conf
+      Find
+            $HTTP["url"] =~ "^/cgi-bin/" {
+  	             cgi.assign = ( ".py" => "/usr/bin/python" )
+                } 
+      Add below
+           $HTTP["url"] =~ "^/" {
+  	            cgi.assign = ( ".php" => "/usr/bin/php-cgi" )
+                }   
+     Then Find
+            static-file.exclude-extensions = ( ".php",".pl", ".fcgi" , ".cgi" , ".py" ) 
+      Change To
+            static-file.exclude-extensions = ( ".pl", ".fcgi" , ".cgi" , ".py" ) 
+
+sudo /etc/php5/cgi-bin/php.ini
+     Find
+         doc_root = "" 
+      Change To 
+         doc_root = "/var/www/cops" 
+# ToDo - Add a description and link  to http://10.11.99.1:9090 in /var/www/html/index.html
+
+------------------------------------------------------------------------------------------
+Optional - Add Hybrid IRCd and QWeb as a frontend
+------------------------------------------------------------------------------------------
+sudo apt-get install ircd-hybrid
+sudo nano /etc/ircd-hybrid/ircd.conf            
+# edit it to fit your network's setup.
+sudo nano /etc/ircd-hybrid/ircd.motd            
+# mod to reflect you stunning irc credo
+sudo apt-get install python python-twisted python-twisted-bin python-twisted-core python-twisted-runner python-twisted-names python-twisted-mail python-twisted-words python-twisted-web python-zope.interface python-openssl javascript-common libjs-jquery python-simplejson wwwconfig-common
+sudo apt-get install nullidentd
+sudo mkdir /opt/qwebirc
+wget http://qwebirc.org/download-stable-zip
+mv download-stable-zip qwebirc.zip
+sudo unzip qwebirc.zip /opt/qwebirc
+cd /opt/qwebirc
+sudo cp config.py.example config.py             
+# edit it to fit your network's setup.
+sudo python  compile.py                         
+# note that warnings are just warnings, you can ignore them!
+sudo python run.py 
+# ToDo - Add a description and link  to http://10.11.99.1:9090 in /var/www/html/index.html
+
+
+------------------------------------------------------------------------------------------
+Optional - Install Webmin
+------------------------------------------------------------------------------------------
+sudo nano /etc/apt/sources.list
+    Add these two lines at the bottom of the list
+      deb http://download.webmin.com/download/repository sarge contrib
+      deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
+    Close and save sources.list
+wget http://www.webmin.com/jcameron-key.asc 
+sudo apt-key add jcameron-key.asc
+sudo apt-get update 
+sudo apt-get install webmin
