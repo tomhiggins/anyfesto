@@ -60,7 +60,11 @@ sudo nano /etc/dhcp/dhcpd.conf              #Add/Change the following and save
 
 sudo nano /etc/dnsmasq.conf                #Add/Change the following and save
       address=/#/10.11.99.1
-
+      interface=wlan1
+      interface=lo
+      #dhcp-range=10.11.99.20,10.11.99.200,255.255.255.0,12h
+      
+      
 sudo nano /etc/network/interfaces          #Add/Change the following and save
      iface wlan1 inet static
      address 10.11.99.1
