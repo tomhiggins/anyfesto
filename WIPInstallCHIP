@@ -14,8 +14,17 @@ Parts List
 CHIP comes with a preinstalled Debain based OS with desktop and apps. If you want something slimmer flash 
 your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
 -----------------------------------------
+This install assumes a fresh out of the baggie CHIP. 
 
+=Connect to the CHIP
+ -connect your chip to a usb port on your computer
+ -open a terminal
+ sudo screen $(ls -tw 1 /dev/tty* | head -1) 115200
+ - login with username: chip password: chip
+ - connect if to the wifi network of your choice
+ sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 
+=Installing the Basic Packages and Infrastructure
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install locales
