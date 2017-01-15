@@ -17,11 +17,11 @@ your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-wit
 This install assumes a fresh out of the baggie CHIP. 
 
 =Connect to the CHIP
- -connect your chip to a usb port on your computer
- -open a terminal
+ -Connect your chip to a USB port on your computer using a USB OTG cable. This will give you both power and connectivity.
+ -Open a terminal
  sudo screen $(ls -tw 1 /dev/tty* | head -1) 115200
- - login with username: chip password: chip
- - connect if to the wifi network of your choice
+ -Login to the CHIP with username: chip password: chip
+ -Connect to the wifi network of your choice
  sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 
 =Installing the Basic Packages and Infrastructure
