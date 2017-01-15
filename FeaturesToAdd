@@ -6,7 +6,7 @@ Features To Add-
 - Make all content direcories to be ReadOnly
    - Add an option for user Upload area away from RO content
 - 2nd wifi device setup for backhaul/mesh/etc
-- Change MAC address  (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
+- Ability to change MAC address  (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
 
 -Content To Add
   - Localized Khan Academy  - http://ka-lite.readthedocs.io/en/0.16.x/index.html
