@@ -43,7 +43,7 @@ sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
 
-==Setup the Directories
+==Setup the Directories and lighttpd 
 mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
@@ -52,6 +52,18 @@ cd /var/www/html
 sudo rm index*.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+cd ~
+wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
+unzip bootstrap-3.3.7-dist.zip 
+sudo cp -r bootstrap-3.3.7-dist/* /var/www/html/
+cd /var/www/html/css
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
+cd /var/www/html/js
+sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+sudo nano /etc/lighttpd/lighttpd.conf              #Add to the bottom of the file and save  
+   server.dir-listing = "enable"
+  
+
 
 ==Setup Network and Captive Portal 
 
@@ -75,7 +87,7 @@ sudo nano /etc/dhcp/dhcpd.conf                      #Add/Change the following an
 sudo nano /etc/dnsmasq.conf                #Add/Change the following and save
       address=/#/10.11.99.1
       interface=wlan1
-      interface=lo
+      #interface=lo
       #dhcp-range=10.11.99.20,10.11.99.200,255.255.255.0,12h
       
       
@@ -129,11 +141,17 @@ sudo nano /etc/rc.local                           #Add the follwing before the l
 
 sudo sync 
 sudo reboot
+------------------------------------------------------------------------------------
+
+-To add more packages, do administration or fix what needs fixing reconnect to the CHIP either via the Headless Method outlined
+-above or by using your own method and bring down WLAN0
+
+sudo ifconfig wlan1 down        #This brings down the AP so that users will not get caught in the changes
 
 ----------------------------------------------------------------------------
 Adding a USB Drive
 ----------------------------------------------------------------------------
-  Connect the usb drive to the usb port
+-Connect the usb drive to the usb port
 sudo mkdir /drives
 sudo mount /dev/sda1 /drives
 sudo nano /etc/fstab                     #Add/Change the following and save
@@ -224,22 +242,24 @@ sudo /etc/php5/cgi-bin/php.ini
 # ToDo - Add a description and link  to http://10.11.99.1:9090 in /var/www/html/index.html
 
 ------------------------------------------------------------------------------------------
-Optional - Add Hybrid IRCd and QWeb as a frontend
+Optional - Add Hybrid IRCd and QWeb as a frontend (this section needs work)
 ------------------------------------------------------------------------------------------
-sudo apt-get install ircd-hybrid
+cd ~
+sudo apt-get -y install ircd-hybrid
 sudo nano /etc/ircd-hybrid/ircd.conf            
 # edit it to fit your network's setup.
 sudo nano /etc/ircd-hybrid/ircd.motd            
 # mod to reflect you stunning irc credo
-sudo apt-get install python python-twisted python-twisted-bin python-twisted-core python-twisted-runner python-twisted-names python-twisted-mail python-twisted-words python-twisted-web python-zope.interface python-openssl javascript-common libjs-jquery python-simplejson wwwconfig-common
-sudo apt-get install nullidentd
+sudo apt-get -y install python python-twisted python-twisted-bin python-twisted-core python-twisted-runner python-twisted-names python-twisted-mail python-twisted-words python-twisted-web python-zope.interface python-openssl javascript-common libjs-jquery python-simplejson wwwconfig-common
+sudo apt-get -y install nullidentd
 sudo mkdir /opt/qwebirc
 wget http://qwebirc.org/download-stable-zip
 mv download-stable-zip qwebirc.zip
-sudo unzip qwebirc.zip /opt/qwebirc
+sudo unzip qwebirc.zip -d /opt/qwebirc
 cd /opt/qwebirc
 sudo cp config.py.example config.py             
 # edit it to fit your network's setup.
+sudo nano config.py
 sudo python  compile.py                         
 # note that warnings are just warnings, you can ignore them!
 sudo python run.py 
