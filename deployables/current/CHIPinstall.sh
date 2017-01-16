@@ -47,8 +47,6 @@ cd /var/www/html/css
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
-cd ~
-sudo echo 'server.dir-listing = "enable"'  >> /etc/lighttpd/lighttpd.conf
 
 #
 Setup Network and Captive Portal 
@@ -64,6 +62,9 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+
 
 sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
 sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
@@ -71,19 +72,13 @@ sudo mv -f hostapd /etc/default/hostapd
 sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
 sudo mv -f interfaces /etc/network/interfaces 
 sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Audio Streaming Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-
-sudo echo "::1" > /usr/share/vlc/lua/http/.hosts
-sudo echo "127.0.0.1" >> /usr/share/vlc/lua/http/.hosts
-sudo echo "fc00::/7" >> /usr/share/vlc/lua/http/.hosts
-sudo echo "fec0::/10" >> /usr/share/vlc/lua/http/.hosts
-sudo echo "10.0.0.0/8" >> /usr/share/vlc/lua/http/.hosts
-sudo echo "192.0.0.0/8" >> /usr/share/vlc/lua/http/.hosts
-
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -100,6 +95,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo echo "AnyfestoCHIP" >/etc/hostname 
+
+read -p "Press any key to reboot the CHIP."
 sudo sync 
 sudo reboot
 #
