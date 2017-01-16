@@ -95,10 +95,11 @@ sudo nano /etc/dnsmasq.conf                #Add/Change the following and save
       
       
 sudo nano /etc/network/interfaces          #Add/Change the following and save
+     auto wlan1
      iface wlan1 inet static
      address 10.11.99.1
      netmask 255.255.255.0
-     #  gateway 10.11.99.1
+     gateway 10.11.99.1
 
    
 
