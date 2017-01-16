@@ -56,40 +56,21 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 
-#sudo echo 'INTERFACES="wlan1"' >/etc/default/isc-dhcp-server
+cd ~
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
 
-#sudo echo "ddns-update-style none;" >/etc/dhcp/dhcpd.conf
-#sudo echo "log-facility local7;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "authoritative;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "subnet 10.11.99.0 netmask 255.255.255.0 {" >>/etc/dhcp/dhcpd.conf
-#sudo echo "range 10.11.99.20 10.11.99.200;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "option broadcast-address 10.11.99.255;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "option routers 10.11.99.1;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "default-lease-time 600;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "max-lease-time 7200;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "option domain-name "local";" >>/etc/dhcp/dhcpd.conf
-#sudo echo "option domain-name-servers 10.11.99.1, 10.11.99.1;" >>/etc/dhcp/dhcpd.conf
-#sudo echo "}" >>/etc/dhcp/dhcpd.conf
-#sudo echo " " >>/etc/dhcp/dhcpd.conf
-
-#sudo echo "address=/#/10.11.99.1" >/etc/dnsmasq.conf
-#sudo echo "interface=wlan1" >>/etc/dnsmasq.conf
-#sudo echo "source-directory /etc/network/interfaces.d" > /etc/network/interfaces 
-#sudo echo "auto wlan1" >> /etc/network/interfaces 
-#sudo echo "iface wlan1 inet static" >> /etc/network/interfaces 
-#sudo echo "address 10.11.99.1" >> /etc/network/interfaces 
-#sudo echo "netmask 255.255.255.0" >> /etc/network/interfaces 
-#sudo echo "gateway 10.11.99.1" >> /etc/network/interfaces 
-
-#sudo echo "interface=wlan1" >/etc/hostapd/hostapd.conf 
-#sudo echo "driver=nl80211" >>/etc/hostapd/hostapd.conf 
-#sudo echo "ssid=AnyfestoCHIPCommunityNetworking" >>/etc/hostapd/hostapd.conf 
-#sudo echo "channel=1" >>/etc/hostapd/hostapd.conf 
-#sudo echo "ctrl_interface=/var/run/hostapd" >>/etc/hostapd/hostapd.conf 
-
-#sudo echo 'DAEMON_CONF="/etc/hostapd/hostapd.conf"' >/etc/default/hostapd
-
-#sudo echo "AnyfestoCHIP" >/etc/hostname 
+sudo mv -f dhcp.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.con /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfaces /etc/network/interfaces 
+sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -109,22 +90,16 @@ sudo mv .hosts /etc/vlc
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-
-# Create /etc/vlc/start.sh
-sudo echo "#!/bin/sh  " > /etc/vlc/start.sh                        #Add the follwing and save   
-#sudo echo "sudo service hostapd start" >> /etc/vlc/start.sh
-sudo echo "VLC_PORT=8088" >> /etc/vlc/start.sh
-sudo echo "VLC_USER=vlc" >> /etc/vlc/start.sh
-sudo echo "VLC_IP=10.11.99.1" >> /etc/vlc/start.sh
-sudo echo "VLC_PASWD=changeme" >> /etc/vlc/start.sh    
-sudo echo "sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  -LZ /home/chip/content/*/./*.mp3" >> /etc/vlc/start.sh        
-    
+sudo mv -f ~/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh  
+
+    
 sudo sed 's:exit 0:/etc/vlc/start.sh \&\nexit 0:' -i /etc/rc.local
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+sudo echo "AnyfestoCHIP" >/etc/hostname 
 sudo sync 
 sudo reboot
 #
