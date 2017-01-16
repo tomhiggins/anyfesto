@@ -64,6 +64,8 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
 
 
 sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
@@ -74,6 +76,8 @@ sudo mv -f interfaces /etc/network/interfaces
 sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
 sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hosts /etc/hosts
+sudo mv -f hostname /etc/hostname
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -94,8 +98,6 @@ sudo sed 's:exit 0:/etc/vlc/start.sh \&\nexit 0:' -i /etc/rc.local
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-sudo echo "AnyfestoCHIP" >/etc/hostname 
-
 read -p "Press any key to reboot the CHIP."
 sudo sync 
 sudo reboot
