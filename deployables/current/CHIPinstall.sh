@@ -21,7 +21,7 @@ sudo apt-get -y install lighttpd
 sudo apt-get -y install dnsmasq
 sudo apt-get -y install isc-dhcp-server
 sudo apt-get -y install hostapd
-sudo apt-get -y install git
+sudo apt-get -y install git zip unzip
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
