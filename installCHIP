@@ -11,13 +11,11 @@ Parts List
    LIon Battery 3.7V 2500mA - https://www.adafruit.com/products/328 - $29.50
    5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
 ----------------------------------------
-CHIP comes with a preinstalled Debain based OS with desktop and apps. If you want something slimmer flash 
-your CHIP with a Debian Server (http://docs.getchip.com/chip.html#flash-chip-with-an-os)
------------------------------------------
 This install assumes a fresh out of the baggie CHIP. If you want a bit more room and have no plans on using this CHIP for GUI purposes 
 head on ever to https://docs.getchip.com/chip.html#flash-chip-with-an-os and follow the instructions to install the Headless version 
 that is a great base for servers. 
-
+This install has been tested on a 4.4 Headless setup. YMMV
+----------------------------------------
 =Connect to the CHIP
  -Connect your chip to a USB port on your computer using a USB OTG cable. This will give you both power and connectivity.
  -I uses the Headless Connection method, other methods are available. Please consult https://docs.getchip.com/chip.html 
@@ -25,6 +23,8 @@ that is a great base for servers.
  -Open a terminal
  sudo screen $(ls -tw 1 /dev/tty* | head -1) 115200
  -Login to the CHIP with username: chip password: chip
+ -Change the default password
+ passwd
  -Connect to the wifi network of your choice
  sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 
