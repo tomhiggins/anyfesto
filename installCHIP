@@ -10,6 +10,7 @@ Parts List
    USB Stick 32GB or Bigger - Many Sources - $20.00 - upward
    LIon Battery 3.7V 2500mA - https://www.adafruit.com/products/328 - $29.50
    5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
+   USB OTG cable
 ----------------------------------------
 This install assumes a fresh out of the baggie CHIP. If you want a bit more room and have no plans on using this CHIP for GUI purposes 
 head on ever to https://docs.getchip.com/chip.html#flash-chip-with-an-os and follow the instructions to install the Headless version 
@@ -158,17 +159,17 @@ sudo reboot
 ----------------------------------------------------------------------------
 Adding a USB Drive
 ----------------------------------------------------------------------------
-  Connect the usb drive to the usb port
+-Connect the usb drive to the usb port
 sudo mkdir /drives
 sudo mount /dev/sda1 /drives
 sudo nano /etc/fstab                     #Add/Change the following and save
    /dev/sda1 /drives vfat defaults 0 0
 sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
 
-Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
+-Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
 sudo ln -s /drives/(NameOfDirectory)/ /home/chip/content/
 
-Example - for my test setup 
+-Example - for my test setup 
   sudo ln -s /drives/SpokenWord/ /home/chip/content/
   sudo ln -s /drives/Books/ /home/chip/content/
   sudo ln -s /drives/Audio/ /home/chip/content/
@@ -186,7 +187,7 @@ sudo nano /etc/mumble-server.ini
     Find welcomeText and update to whatever you would like displayed when a user joins
     Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
 sudo /etc/init.d/mumble-server restart 
-# Add a link in /opt/piratebox/www/index.html to service and clients
+# Add a link in /var/www/html/index.html to service and clients
 
 ------------------------------------------------------------------------------
 Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
@@ -211,6 +212,5 @@ sudo nano /etc/rc.local                                           # add the line
    /usr/bin/kiwix-serve --daemon --port=8099 --library /drives/kiwix/library.xml
 sudo sync
 sudo reboot
-# Add a description and link  to http://YourServersIP:8099 to the captive portal landing page so users can get to the main library page
-
+# Add a description and link  to http://10.11.99.1:8099 to /var/www/html/index.html
 
