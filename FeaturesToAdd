@@ -15,10 +15,10 @@ Features To Add-
 - An Emergency Scrub method 
 
 
-=Content To Add
+=Services/Content To Add
   - Localized Khan Academy  - http://ka-lite.readthedocs.io/en/0.16.x/index.html
   - Updated PG - https://www.gutenberg.org/wiki/Gutenberg:The_CD_and_DVD_Project
   - LibriVox - https://librivox.org/
   - NumberStation (run a number station to send private msgs) - https://linuxcoffee.com/numbers/
-
+  - Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
 
