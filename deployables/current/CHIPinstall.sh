@@ -4,6 +4,12 @@
 # CC 2017 by tomwsmf
 
 # Install the Basic Packages and Infrastructure
+
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Starting the AnyfestoCHIP Install...."
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Installing the Basic Packages and Infrastructure."
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install locales
@@ -22,6 +28,9 @@ sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
 
 # Setup the Directories and lighttpd 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up the Directories and Lighttp Web Server"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
@@ -43,7 +52,9 @@ sudo echo 'server.dir-listing = "enable"'  >> /etc/lighttpd/lighttpd.conf
 
 #
 #Setup Network and Captive Portal 
-#
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up The Network, Access Point and Captive Portal"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 
 sudo echo 'INTERFACES="wlan1"' >/etc/default/isc-dhcp-server
 
@@ -81,6 +92,10 @@ sudo echo 'DAEMON_CONF="/etc/hostapd/hostapd.conf"' >/etc/default/hostapd
 sudo echo "AnyfestoCHIP" >/etc/hostname 
 
 #Setup Audio Streaming using VLC
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up the Audio Streaming Service"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+
 sudo echo "::1" > /usr/share/vlc/lua/http/.hosts
 sudo echo "127.0.0.1" >> /usr/share/vlc/lua/http/.hosts
 sudo echo "fc00::/7" >> /usr/share/vlc/lua/http/.hosts
@@ -107,6 +122,9 @@ sudo echo "sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host
 sudo chmod a+rx /etc/vlc/start.sh  
 sudo sed 's:exit 0:/etc/vlc/start.sh \&\nexit 0:' -i /etc/rc.local
 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Installation Complete...Preparing To Reboot"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo sync 
 sudo reboot
 #
