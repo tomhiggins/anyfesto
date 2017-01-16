@@ -65,8 +65,8 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
 
-sudo mv -f dhcp.conf /etc/dhcp/dhcpd.conf
-sudo mv -f dnsmasq.con /etc/dnsmasq.conf
+sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
 sudo mv -f hostapd /etc/default/hostapd
 sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
 sudo mv -f interfaces /etc/network/interfaces 
