@@ -1,4 +1,5 @@
-Manual Install
+=======================================================================================
+
 These steps will walk you through setting up an AnyfestoBox on a CHIP http://docs.getchip.com/chip.html
 Anyfesto on a CHIP 9$ computer
 N.B. This set up will use CHIPs wlan1 for the captive portal,dnsmasq, etc etc. wlan0 is left free to connect to backhaul, the 
@@ -29,6 +30,17 @@ This install has been tested on a 4.4 Headless setup. YMMV
  -Connect to the wifi network of your choice
  sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 
+===========================================================================================
+Sripted Installation
+===========================================================================================
+
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/CHIPinstall.sh
+bash CHIPinstall.sh
+
+
+===========================================================================================
+or Manual Installation
+===========================================================================================
 =Installing the Basic Packages and Infrastructure
 sudo apt-get -y update
 sudo apt-get -y upgrade
@@ -47,7 +59,7 @@ sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
 
-==Setup the Directories and lighttpd 
+= Setup the Directories and lighttpd 
 mkdir /home/chip/content
 mkdir /home/chip/content/Radio
 sudo usermod -d /home/chip/content/Radio vlc
@@ -64,89 +76,49 @@ cd /var/www/html/css
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
-sudo nano /etc/lighttpd/lighttpd.conf              #Add to the bottom of the file and save  
-   server.dir-listing = "enable"
-  
+
+=Setup Network and Captive Portal 
+cd ~
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
 
 
-==Setup Network and Captive Portal 
+sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfaces /etc/network/interfaces 
+sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hosts /etc/hosts
+sudo mv -f hostname /etc/hostname
+sudo mv -f rclocal /etc/rc.local
 
-
-sudo nano /etc/default/isc-dhcp-server              #Add/Change the following and save  
-INTERFACES="wlan1"
-
-sudo nano /etc/dhcp/dhcpd.conf                      #Add/Change the following and save 
-     authoritative;
-     subnet 10.11.99.0 netmask 255.255.255.0 {
-	range 10.11.99.20 10.11.99.200;
-	option broadcast-address 10.11.99.255;
-	option routers 10.11.99.1;
-	default-lease-time 600;
-	max-lease-time 7200;
-	option domain-name "local";
-	option domain-name-servers 10.11.99.1, 10.11.99.1;
-      }
-
-
-sudo nano /etc/dnsmasq.conf                #Add/Change the following and save
-      address=/#/10.11.99.1
-      interface=wlan1
-      #interface=lo
-      #dhcp-range=10.11.99.20,10.11.99.200,255.255.255.0,12h
-      
-      
-sudo nano /etc/network/interfaces          #Add/Change the following and save
-     auto wlan1
-     iface wlan1 inet static
-     address 10.11.99.1
-     netmask 255.255.255.0
-     gateway 10.11.99.1
-
-   
-
-sudo nano /etc/hostapd/hostapd.conf       #Add/Change the following and save
-      interface=wlan1
-      driver=nl80211
-      ssid=AnyfestoCHIPCommunityNetworking
-      channel=1
-      ctrl_interface=/var/run/hostapd
-
-sudo nano /etc/default/hostapd             #Add/Change the following and save
-      DAEMON_CONF="/etc/hostapd/hostapd.conf"
-      
-sudo nano /etc/hostname                #Add/Change the following and save
-      AnyfestoCHIP
-
-==Setup Audio Streaming using VLC
-sudo nano /usr/share/vlc/lua/http/.hosts           #Add/Change the following and save
-    ::1
-    127.0.0.1
-    fc00::/7
-    fec0::/10
-    10.0.0.0/8
-    192.0.0.0/8
+=Setup Audio Streaming using VLC
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-sudo nano /etc/vlc/start.sh                        #Add the follwing and save   
-    #!/bin/sh
-    ifup wlan1
-    VLC_PORT=8088
-    VLC_USER=vlc
-    VLC_IP=10.11.99.1
-    VLC_PASWD=changeme
-    sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  -LZ /home/chip/content/*/./*.mp3
-    
-sudo chmod a+rx /etc/vlc/start.sh  
-sudo nano /etc/rc.local                           #Add the follwing before the line EXIT 0 and save    
-      /etc/vlc/start.sh &
-
+sudo mv -f ~/start.sh /etc/vlc/start.sh  
+sudo chmod a+rx /etc/vlc/start.sh
 
 sudo sync 
 sudo reboot
+
+
 ------------------------------------------------------------------------------------
 
 -To add more packages, do administration or fix what needs fixing reconnect to the CHIP either via the Headless Method outlined
