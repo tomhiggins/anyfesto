@@ -66,6 +66,7 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
 
 
 sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
@@ -78,6 +79,7 @@ sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
 sudo mv -f hosts /etc/hosts
 sudo mv -f hostname /etc/hostname
+sudo mv -f rclocal /etc/rc.local
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -90,10 +92,8 @@ sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo mv -f ~/start.sh /etc/vlc/start.sh  
-sudo chmod a+rx /etc/vlc/start.sh  
+sudo chmod a+rx /etc/vlc/start.sh
 
-    
-sudo sed 's:exit 0:/etc/vlc/start.sh \&\nexit 0:' -i /etc/rc.local
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
