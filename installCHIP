@@ -121,16 +121,21 @@ sudo chmod a+rx /etc/vlc/start.sh
 sudo sync 
 sudo reboot
 
-
+-You shoud now have a base Anyfesto Install. Congrats. 
+----------------------------------------------------------------------------
+Going Further
 ------------------------------------------------------------------------------------
-
 -To add more packages, do administration or fix what needs fixing reconnect to the CHIP either via the Headless Method outlined
--above or by using your own method and bring down WLAN0
+-above or by using your own method. The following will bring down your AP and reconnect you to the internet Wifi AP of your choosing.
 
-sudo ifconfig wlan1 down        #This brings down the AP so that users will not get caught in the changes
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
+sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
+-Add options, new packages, make changes. 
 -When you are done with the changes
 sudo sync 
 sudo reboot
+
 ----------------------------------------------------------------------------
 Adding a USB Drive
 ----------------------------------------------------------------------------
