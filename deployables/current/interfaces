@@ -1,8 +1,13 @@
 # interfaces(5) file used by ifup(8) and ifdown(8)
 # Include files from /etc/network/interfaces.d:
-source-directory /etc/network/interfaces.d
+#source-directory /etc/network/interfaces.d
+auto lo
+
+allow-hotplug wlan1
+
 auto wlan1
 iface wlan1 inet static
-address 10.11.99.1
-netmask 255.255.255.0
-gateway 10.11.99.1
+  address 10.11.99.1
+  netmask 255.255.255.0
+  gateway 10.11.99.1
+
