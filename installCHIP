@@ -194,3 +194,19 @@ sudo sync
 sudo reboot
 # Add a description and link  to http://10.11.99.1:8099 to /var/www/html/index.html
 
+------------------------------------------------------------------------------
+Optional - Add IRCd and Web Frontend (Hybrid ircd and KiwiIRC front end https://kiwiirc.com)
+------------------------------------------------------------------------------
+sudo apt-get install ircd-hybrid
+sudo nano /etc/ircd-hybrid/ircd.conf            
+sudo nano /etc/ircd-hybrid/ircd.motd            
+sudo apt-get install npm
+cd ~
+git clone https://github.com/prawnsalad/KiwiIRC.git && cd KiwiIRC
+npm install
+cp config.example.js config.js   # mod to point to 10.11.99.1 6667 as default server and #main as default room
+nano config.js
+./kiwi build
+./kiwi start
+# Add a link to http://10.11.99.1:7778 
+# Add kiwi start to start on boot
