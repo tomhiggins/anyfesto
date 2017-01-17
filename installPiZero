@@ -97,8 +97,6 @@ sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
 sudo mv hostapd /usr/sbin
 sudo chmod 755 /usr/sbin/hostapd
 sudo /etc/init.d/hostapd  stop
-sudo update-rc.d hostapd remove 
-
 
 =Setup Network and Captive Portal 
 cd ~
@@ -140,6 +138,9 @@ cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
+
+sudo update-rc.d hostapd enable
+sudo update-rc.d isc-dhcp-server enable 
 
 sudo sync 
 sudo reboot
@@ -266,17 +267,5 @@ sudo reboot
 
 
 ====================================================================================================================
-Trouble Shooting
 
-DNSmasq keeps taking over the Piratebox setup!
-
-Solution 1 - Beat it over the head with the Piratebox DNSmasq config 
-  sudo rm /etc/dnsmasq.conf  
-  sudo cp /opt/piratebox/conf/dnsmasq_generated.conf /etc/dnsmasq.conf 
-Solution 2 - Be kind and link instead of copy 
-
-HostAP sometimes wont start 
-
-Solution  - I have added this line to /etc/vlc/start.sh because reasons, mostly it works this way all of the time without fail. I should really add these to init scripts.. maybe?  
- sudo service hostapd start
 
