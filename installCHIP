@@ -79,6 +79,8 @@ sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
 
 =Setup Network and Captive Portal 
 cd ~
+mkdir configs
+cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
@@ -91,7 +93,8 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
-
+sudo chown root:root *
+sudo chmod a+rx *
 
 sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
 sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
@@ -112,7 +115,7 @@ sudo mv .hosts /etc/vlc
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-sudo mv -f ~/start.sh /etc/vlc/start.sh  
+sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 
 sudo sync 
