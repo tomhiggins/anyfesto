@@ -102,18 +102,18 @@ sudo /etc/init.d/hostapd  stop
 cd ~
 mkdir configs
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/dhcpd.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/dnsmasq.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostapd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/interfaces
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/isc-dhcp-server
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/start.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostname
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/rclocal
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
 sudo chown root:root *
 sudo chmod a+rx *
 
