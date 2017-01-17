@@ -198,14 +198,23 @@ sudo reboot
 Optional - Add IRCd and Web Frontend (Hybrid ircd and KiwiIRC front end https://kiwiirc.com)
 ------------------------------------------------------------------------------
 sudo apt-get install ircd-hybrid
-sudo nano /etc/ircd-hybrid/ircd.conf            
-sudo nano /etc/ircd-hybrid/ircd.motd            
+cd ~/configs
+sudo nano /etc/ircd-hybrid/ircd.conf   
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircmotd 
+sudo chown root:root *
+sudo chmod a+rx *
+sudo mv -f ircd.conf /etc/ircd-hybrid/ircd.conf 
+sudo mv -f ircdmotd /etc/ircd-hybrid/ircd.motd    
+
 sudo apt-get install npm
 cd ~
-git clone https://github.com/prawnsalad/KiwiIRC.git && cd KiwiIRC
+git clone https://github.com/prawnsalad/KiwiIRC.git
+cd KiwiIRC
 npm install
-cp config.example.js config.js   # mod to point to 10.11.99.1 6667 as default server and #main as default room
-nano config.js
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiconfig.js
+cp kiwiconfig.js config.js  
+sudo chmod a+rx config.js
 ./kiwi build
 ./kiwi start
 # Add a link to http://10.11.99.1:7778 
