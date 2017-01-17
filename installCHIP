@@ -201,9 +201,9 @@ sudo reboot
 ------------------------------------------------------------------------------
 Optional - Add IRCd and Web Frontend (Hybrid ircd and KiwiIRC front end https://kiwiirc.com)
 ------------------------------------------------------------------------------
-sudo apt-get install ircd-hybrid
-cd ~/configs
-sudo nano /etc/ircd-hybrid/ircd.conf   
+sudo apt-get -y install ircd-hybrid
+cd ~
+cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircmotd 
 sudo chown root:root *
@@ -211,7 +211,7 @@ sudo chmod a+rx *
 sudo mv -f ircd.conf /etc/ircd-hybrid/ircd.conf 
 sudo mv -f ircdmotd /etc/ircd-hybrid/ircd.motd    
 
-sudo apt-get install npm
+sudo apt-get -y install npm
 cd ~
 git clone https://github.com/prawnsalad/KiwiIRC.git
 cd KiwiIRC
