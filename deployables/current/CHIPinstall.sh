@@ -97,6 +97,8 @@ wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadi
 sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 
+sudo update-rc.d hostapd enable
+sudo update-rc.d isc-dhcp-server enable 
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
