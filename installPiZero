@@ -49,32 +49,46 @@ sudo raspi-config
        Expand the File System 
        Finish & Reboot
 
-==Install needed packages and prepare some configs:
-
-sudo apt-get update
-sudo apt-get upgrade
+===========================================================================================
+Manual Installation
+===========================================================================================
+=Installing the Basic Packages and Infrastructure
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install locales
+sudo locale-gen en_US en_US.UTF-8
 sudo apt-get -y install vlc
 sudo adduser --no-create-home --shell /bin/false --disabled-password vlc
 sudo usermod -G audio,pi vlc
 sudo apt-get -y install lighttpd
-sudo /etc/init.d/lighttpd stop
-sudo update-rc.d lighttpd remove
-sudo apt-get -y install dnsmasq 
-sudo /etc/init.d/dnsmasq  stop
-sudo update-rc.d dnsmasq remove 
-sudo apt-get -y  install hostapd
-sudo /etc/init.d/hostapd  stop
-sudo update-rc.d hostapd remove 
-sudo apt-get -y install iw
-sudo apt-get -y install git
-sudo apt-get -y install sox libsox-fmt-all libav-tools
+sudo apt-get -y install dnsmasq
+sudo apt-get -y install isc-dhcp-server
+sudo apt-get -y install hostapd
+sudo apt-get -y install git zip unzip
+sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
+
+= Setup the Directories and lighttpd 
 mkdir /home/pi/content
 mkdir /home/pi/content/Radio
-sudo usermod -d /home/pi/content/Radio vlc   
- 
+sudo usermod -d /home/pi/content/Radio vlc
+sudo ln -s /home/pi/content /var/www/html/content   
+cd /var/www/html
+sudo rm index*.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+cd ~
+wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
+unzip bootstrap-3.3.7-dist.zip 
+sudo cp -r bootstrap-3.3.7-dist/* /var/www/html/
+cd /var/www/html/css
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
+cd /var/www/html/js
+sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+
+
 ==Update hostapd
 
 wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
@@ -85,84 +99,53 @@ sudo chmod 755 /usr/sbin/hostapd
 sudo /etc/init.d/hostapd  stop
 sudo update-rc.d hostapd remove 
 
-==Edit network config file /etc/network/interfaces
 
-sudo nano /etc/network/interfaces
-      auto lo
- 
-      iface lo inet loopback
-      iface eth0 inet dhcp
- 
-      iface wlan0 inet manual
-      ### disalbed for PirateBox
-      #allow-hotplug wlan0
-      #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
-      #iface default inet dhcp
-
-==Install and Config Piratebox Base
-
-wget  http://downloads.piratebox.de/piratebox-ws_current.tar.gz
-tar xzf piratebox-ws_current.tar.gz
-cd piratebox
-sudo mkdir -p  /opt
-sudo cp -rv  piratebox /opt
-cd /opt/piratebox
-sudo sed 's:DROOPY_USE_USER="no":DROOPY_USE_USER="yes":' -i  /opt/piratebox/conf/piratebox.conf
-sudo ln -s /opt/piratebox/init.d/piratebox /etc/init.d/piratebox
-sudo update-rc.d piratebox  defaults 
-sudo ln -s /home/pi/content /opt/piratebox/share/Shared/Archives   
-sudo nano /opt/piratebox/conf/piratebox.conf     
-      HOST="pifold.lan"   
-      NET=10.11.21        
-sudo nano /opt/piratebox/conf/hostapd.conf
-    interface=wlan0
-    driver=rtl871xdrv
-    ssid=PiFold         
-    hw_mode=g
-    channel=1
-sudo nano /etc/default/hostapd
-    Find the line #DAEMON_CONF="" and edit it so it says DAEMON_CONF="/opt/piratebox/conf/hostapd.conf"
-sudo /etc/init.d/piratebox start
-
-==Setup VLC to run on startup as a http stream. Control of VLC  can be done via a remote app or browser
-
+=Setup Network and Captive Portal 
 cd ~
-sudo nano /usr/share/vlc/lua/http/.hosts
-    ::1
-    127.0.0.1
-    fc00::/7
-    fec0::/10
-    10.0.0.0/8
-    192.0.0.0/8
+mkdir configs
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/rclocal
+sudo chown root:root *
+sudo chmod a+rx *
+
+sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfaces /etc/network/interfaces 
+sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hosts /etc/hosts
+sudo mv -f hostname /etc/hostname
+sudo mv -f rclocal /etc/rc.local
+
+=Setup Audio Streaming using VLC
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
 sudo ln -s /etc/vlc/.hosts .hosts
-cd /home/pi/content/Radio
-   copy an mp3 file here  and rename it to welcome.mp3 This will play/stream on boot up and loop till other things are added.
-wget https://ia600707.us.archive.org/26/items/The_Conet_Project-1681/The_Conet_Project_-_03_-_counting_control.mp3
-mv The_Conet_Project_-_03_-_counting_control.mp3 welcome.mp3
-cd ~
-sudo nano /etc/vlc/start.sh
-    #!/bin/sh
-    sudo service hostapd start
-    VLC_PORT=8088
-    VLC_USER=vlc
-    VLC_IP=10.11.21.1
-    VLC_PASWD=changeme
-    sudo -u vlc cvlc -vvv -I http --http-password $VLC_PASWD  --http-host $VLC_IP --http-port $VLC_PORT  --sout-keep --sout='#duplicate{dst=rtp{mux=ts,dst=10.11.21.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"}'  --loop  /home/pi/content/Radio/playlist.m3u
+cd /home/chip/content/Radio
+wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
+sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
+sudo chmod a+rx /etc/vlc/start.sh
 
-sudo chmod a+rx /etc/vlc/start.sh  
-sudo nano /etc/rc.local
-      /etc/vlc/start.sh &
-cd ~
-
-==Setup PiFM
-git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
-(tie vlc output to /tmp/radio (still banging on the code))
-sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh) ==Reboot
 sudo sync 
 sudo reboot
+
+
+
  
 ------------------------------------------------------------------------------------------
 Optional - Install Webmin
@@ -271,6 +254,15 @@ sudo sync
 sudo reboot
 # Add a description and link  to http://YourServersIP:8099 to the captive portal landing page so users can get to the main library page
 
+------------------------------------------------------------------------------------------
+Optional - PiFM
+------------------------------------------------------------------------------------------
+
+git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
+(tie vlc output to /tmp/radio (still banging on the code))
+sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh) ==Reboot
+sudo sync 
+sudo reboot
 
 
 ====================================================================================================================
