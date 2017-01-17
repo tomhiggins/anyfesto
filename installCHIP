@@ -34,7 +34,7 @@ This install has been tested on a 4.4 Headless setup. YMMV
 Sripted Installation
 ===========================================================================================
 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/CHIPinstall.sh
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/CHIPinstall.sh
 bash CHIPinstall.sh
 
 
