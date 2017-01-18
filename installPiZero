@@ -102,32 +102,32 @@ sudo /etc/init.d/hostapd  stop
 cd ~
 mkdir configs
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pidhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pidnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/piinterfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/piisc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pistart.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pilighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pivlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pirclocal
 sudo chown root:root *
 sudo chmod a+rx *
 
-sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
-sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
-sudo mv -f hostapd /etc/default/hostapd
-sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
-sudo mv -f interfaces /etc/network/interfaces 
-sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
-sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
-sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
-sudo mv -f hosts /etc/hosts
-sudo mv -f hostname /etc/hostname
-sudo mv -f rclocal /etc/rc.local
+sudo mv -f pidhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f pidnsmasq.conf /etc/dnsmasq.conf
+sudo mv -f pihostapd /etc/default/hostapd
+sudo mv -f pihostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f piinterfaces /etc/network/interfaces 
+sudo mv -f piisc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f pilighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f pivlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f pihosts /etc/hosts
+sudo mv -f pihostname /etc/hostname
+sudo mv -f pirclocal /etc/rc.local
 
 =Setup Audio Streaming using VLC
 sudo mkdir /etc/vlc 
@@ -136,7 +136,7 @@ sudo mv .hosts /etc/vlc
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/chip/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
+sudo mv -f ~/configs/pistart.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 
 sudo update-rc.d hostapd enable
