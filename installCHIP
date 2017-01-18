@@ -31,7 +31,7 @@ This install has been tested on a 4.4 Headless setup. YMMV
  sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 
 ===========================================================================================
-Sripted Installation
+Scripted Installation
 ===========================================================================================
 
 wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/CHIPinstall.sh
