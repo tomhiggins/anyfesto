@@ -1,5 +1,7 @@
 #!/bin/sh  
 ifconfig wlan0 down
+ifconfig wlan1 up
+/home/chip/KiwiIRC/kiwi start
 VLC_PORT=8088
 VLC_USER=vlc
 VLC_IP=10.11.99.1
