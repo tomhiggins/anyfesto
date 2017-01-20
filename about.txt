@@ -10,27 +10,32 @@ Anyfesto is a shared information/communications platform  built on low cost hard
 
 Things needed 
 - Raspberry Pi
+  or 
+- CHIP
 - SD card
 - USB Wifi
 - US storage (optional)
-- Battery oack and charger (optional)
+- Battery pack and charger (optional)
 - Speaker (optinal)
 - Mic (optional)
 
 Tasks it can do
 - browse localcontent
-- chat public
+- chat text public
+- chat voice public
+- chat voice private
 - download file
 - stream video
 - stream audio
-- admin the streams via a web browser
+- admin the streams via a client app (vlc remote)
 - admin the systemvia a web browser
+- broadcast FM  (working with an external FM Transmitter)
+- browse Calibre libraries
 
 Tasks it will do
-- broadcast FM 
 - broadcast bluetooth
 - upload file
-- chat private
-
+- chat text private
+- stream audio via a web browser
 
 
