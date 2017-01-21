@@ -2,10 +2,10 @@
 ..        ANYFESTO - A platform from which to speak      ..
 ..-------------------------------------------------------..
 
-PRE-ALPHA [[ONE MONTH]]:
+PRE-ALPHA :
 - project idea
 
-ALPHA [[THREE MONTHS, TOTAL FOUR MONTHS]]:
+ALPHA :
 - gather existing code.
 - test existing code as-is.
 - merge code  to produce ALPHA.0.1.
@@ -14,10 +14,18 @@ ALPHA [[THREE MONTHS, TOTAL FOUR MONTHS]]:
 - test ALPHA.0.2.
 - incrimental merging and testing to ALPHA.1.0.
 
-BETA [[SIX MONTHS, TOTAL TEN MONTHS]]:
+BETA :
 - solicit interest in ALPHA.1.0. 
 - field testing.
+- fix bugs
+- reevaluate code and design
 
-GAMMA [[ONE YEAR, TOTAL 22 MONTHS]]:
-- solicit funds for nice case.
 
+DEPLOY :
+- gather interest to install in many places
+  -libraries
+  -housing with little or no internet connectivity
+  -schools
+  -community centers
+  -parks
+  
