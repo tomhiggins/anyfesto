@@ -122,14 +122,35 @@ sudo chmod a+rx config.js
 ./kiwi start
 cd ~
 
-sudo update-rc.d ircd-hybrid enable
-sudo update-rc.d hostapd enable
-sudo update-rc.d isc-dhcp-server enable 
+
+
+#Setup Kiwix WikiMedia Server
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up Kiwix Wikimedia Server 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+cd ~
+wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
+tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+chmod a+rx kiwix*
+rm kiwi*bz2
+sudo mv kiwix-serve /usr/bin/kiwix-serve
+sudo mv kiwix-manage /usr/bin/kiwix-manage
+---no usb connected device needed at this point
+mkdir /content/kiwix
+cd /home/chip/content/ kiwix
+sudo wget http://download.kiwix.org/zim/wiktionary/wiktionary_en_all_2016-12.zim
+kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_all_2016-12.zim
+chmod a+rx *
+cd ~
+
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 read -p "Press any key to reboot the CHIP."
+sudo update-rc.d ircd-hybrid enable
+sudo update-rc.d hostapd enable
+sudo update-rc.d isc-dhcp-server enable 
 sudo sync 
 sudo reboot
 #
