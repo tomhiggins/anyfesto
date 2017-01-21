@@ -53,7 +53,7 @@ sudo apt-get -y install lighttpd
 sudo apt-get -y install dnsmasq
 sudo apt-get -y install isc-dhcp-server
 sudo apt-get -y install hostapd
-sudo apt-get -y install git zip unzip
+sudo apt-get -y install git zip unzip tar bzip2
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
@@ -118,10 +118,7 @@ wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadi
 sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 
-#Setup Text Chat ircd-hybrid and kiwiirc web 
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up the Text Chat Service
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+=Setup Text Chat ircd-hybrid and kiwiirc web 
 sudo apt-get install ircd-hybrid
 cd ~
 cd configs
@@ -143,11 +140,29 @@ sudo chmod a+rx config.js
 ./kiwi start
 cd ~
 
+#Setup Kiwix WikiMedia Server
+cd ~
+wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
+tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+chmod a+rx kiwix*
+rm kiwi*bz2
+sudo mv kiwix-serve /usr/bin/kiwix-serve
+sudo mv kiwix-manage /usr/bin/kiwix-manage
+---no usb connected device needed at this point
+mkdir /content/kiwix
+cd /home/chip/content/ kiwix
+sudo wget http://download.kiwix.org/zim/wiktionary/wiktionary_en_all_2016-12.zim
+kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_all_2016-12.zim
+chmod a+rx *
+cd ~
 
+#Ready Services and Reboot
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
-
+sudo nmcli connection delete id '(your wifi network name/SSID)' 
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
 sudo sync 
 sudo reboot
 
@@ -162,8 +177,11 @@ sudo ifconfig wlan1 down
 sudo ifconfig wlan0 down
 sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 -Add options, new packages, make changes. 
--When you are done with the changes
-sudo sync 
+-When you are done with the changes 
+sudo nmcli connection delete id '(your wifi network name/SSID)' 
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
+sudo sync
 sudo reboot
 
 ----------------------------------------------------------------------------
@@ -200,29 +218,19 @@ sudo /etc/init.d/mumble-server restart
 # Add a link in /var/www/html/index.html to service and clients
 
 ------------------------------------------------------------------------------
-Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
+Optional - Install Additional Kiwix Zims
 ------------------------------------------------------------------------------
-cd ~
-wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
-bzip2 -d kiwix-server-arm.tar.bz2 
-tar xvf kiwix-server-arm.tar
-rm kiwix-server-arm.tar
-sudo cp kiwix-serve /usr/bin/kiwix-serve
-sudo cp kiwix-manage /usr/bin/kiwix-manage
-sudo mkdir /drives/kiwix
-     # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
-cd /drives/kiwix
-sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
-# If you want to add several zims  wget them to /drives/kiwix and then use kiwiz-manage to create a libray file
-# For each zim add it to the library
-sudo kiwix-manage /drives/kiwix/library.xml /drives/kiwix/NameOfZimFile.zim 
-sudo nano /etc/rc.local                                           # add the line and save
-   /usr/bin/kiwix-serve --daemon --port=8099 /drives/kiwix/wikipedia_en_for-schools.zim
-   # If you are using multiple zim files use this line
-   /usr/bin/kiwix-serve --daemon --port=8099 --library /drives/kiwix/library.xml
-sudo sync
-sudo reboot
-# Add a description and link  to http://10.11.99.1:8099 to /var/www/html/index.html
+
+--You can find a full list of wikimedia files already in the ZIM format Kiwix 
+--uses at  http://download.kiwix.org/zim/ . Copy the url of the zim(s) you want on you Anyfesto install
+cd /home/chip/content/kiwix
+--one at a time download the zim(s) you want
+sudo wget (url of zim you want to add)
+--add it to the libraxy.xml Kiwix uses as a catalog 
+kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/(name of the zim file you downloaded)
+chmod a+rx *
+
+
 
 ------------------------------------------------------------------------------------------
 Optional - Install COPS (Calibre OPDS/HTML PHP Server)
