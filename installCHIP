@@ -217,6 +217,14 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 chmod a+rx *
 sudo mv -f mumble-server.ini /etc/mumble-server.ini
 /usr/sbin/update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+chmod a+rx *
+cd ~
+
 
 ------------------------------------------------------------------------------
 Optional - Install Additional Kiwix Zims
