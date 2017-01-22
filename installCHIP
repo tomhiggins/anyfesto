@@ -14,7 +14,7 @@ Parts List
    USB OTG cable
 ----------------------------------------
 This install assumes a fresh out of the baggie CHIP. If you want a bit more room and have no plans on using this CHIP for GUI purposes 
-head on ever to https://docs.getchip.com/chip.html#flash-chip-with-an-os and follow the instructions to install the Headless version 
+go to https://docs.getchip.com/chip.html#flash-chip-with-an-os and follow the instructions to install the Headless version 
 that is a great base for servers. 
 This install has been tested on a 4.4 Headless setup. YMMV
 ----------------------------------------
@@ -211,11 +211,12 @@ sudo dpkg-reconfigure mumble-server
    Autostart:  Yes
    High Priority: No
    SuperUser: Set the admin password
-sudo nano /etc/mumble-server.ini
-    Find welcomeText and update to whatever you would like displayed when a user joins
-    Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
-sudo /etc/init.d/mumble-server restart 
-# Add a link in /var/www/html/index.html to service and clients
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+/usr/sbin/update-rc.d mumble-server enable
 
 ------------------------------------------------------------------------------
 Optional - Install Additional Kiwix Zims
