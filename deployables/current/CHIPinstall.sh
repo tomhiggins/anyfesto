@@ -135,7 +135,6 @@ chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
 sudo mv kiwix-manage /usr/bin/kiwix-manage
----no usb connected device needed at this point
 mkdir /content/kiwix
 cd /home/chip/content/ kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary/wiktionary_en_all_2016-12.zim
