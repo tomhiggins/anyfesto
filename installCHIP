@@ -164,7 +164,7 @@ cd ~
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
-sudo nmcli connection delete id '(your wifi network name/SSID)' 
+sudo nmcli connection delete id "$(nmcli c |grep wlan0 | cut -f1 -d ' ')"
 sudo ifconfig wlan1 down        
 sudo ifconfig wlan0 down
 sudo sync 
@@ -182,7 +182,7 @@ sudo ifconfig wlan0 down
 sudo nmcli device wifi connect '(your wifi network name/SSID)' password '(your wifi password)' ifname wlan0
 -Add options, new packages, make changes. 
 -When you are done with the changes 
-sudo nmcli connection delete id '(your wifi network name/SSID)' 
+sudo nmcli connection delete id "$(nmcli c |grep wlan0 | cut -f1 -d ' ')" 
 sudo ifconfig wlan1 down        
 sudo ifconfig wlan0 down
 sudo sync
