@@ -22,3 +22,6 @@ KiB Swap:        0 total,        0 used,        0 free.    32080 cached Mem
 2017-01-23 07:26:59 (4.74 MB/s) - 'CHIPinstall.sh' saved [6441/6441]
 
 5. ran script
+
+That moment at 2am when you rememeber rc.local was deaded by systemd...and oh yeah that is why 
+these services are not coming up on boot. And so... systemd time.
