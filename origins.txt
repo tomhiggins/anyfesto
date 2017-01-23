@@ -12,6 +12,7 @@ Mumble - https://wiki.mumble.info/wiki/Main_Page
 Kiwix - http://www.kiwix.org/
 KALite - https://learningequality.org/ka-lite/
 WebChess  - 	http://sourceforge.net/apps/mediawiki/webchess/
+m3uStreamPlayer - https://github.com/opi/m3uStreamPlayer
 
 Hardware
 -------------
