@@ -1,0 +1,24 @@
+Trying out the current version of the install script on a CHIP
+
+1. Did the web based FlashChip , installed Headless 4.4
+
+2. Connecting USB OTG and connected
+
+Initial State
+chip@chip:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+ubi0:rootfs     3.3G  209M  3.1G   7% /
+
+top - 00:07:50 up 7 min,  1 user,  load average: 0.09, 0.12, 0.08
+Tasks:  88 total,   1 running,  87 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:    502748 total,    81968 used,   420780 free,        0 buffers
+KiB Swap:        0 total,        0 used,        0 free.    32080 cached Mem
+
+3. Connected to home network via wifi 
+
+4. wgeted install script
+
+2017-01-23 07:26:59 (4.74 MB/s) - 'CHIPinstall.sh' saved [6441/6441]
+
+5. ran script
