@@ -101,7 +101,7 @@ sudo chmod a+rx /etc/vlc/start.sh
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Text Chat Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-sudo apt-get install ircd-hybrid
+sudo apt-get -y install ircd-hybrid
 cd ~
 cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
@@ -110,7 +110,7 @@ sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f ircd.conf /etc/ircd-hybrid/ 
 sudo mv -f ircd.motd /etc/ircd-hybrid/ircd.motd   
-sudo apt-get install npm
+sudo apt-get -y install npm
 cd ~
 git clone https://github.com/prawnsalad/KiwiIRC.git
 cd KiwiIRC
@@ -150,6 +150,8 @@ read -p "Press any key to reboot the CHIP."
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
+sudo nmcli connection delete id "$(nmcli c |grep wlan0 | cut -f1 -d ' ')"
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
 sudo sync 
 sudo reboot
-#
