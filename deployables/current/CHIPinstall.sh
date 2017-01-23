@@ -126,7 +126,7 @@ cd ~
 
 #Setup Kiwix WikiMedia Server
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up Kiwix Wikimedia Server 
+echo "Setting Up Kiwix Wikimedia Server "
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
 wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
