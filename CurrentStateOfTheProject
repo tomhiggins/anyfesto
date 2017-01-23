@@ -1,0 +1,43 @@
+January 22nd 2017
+
+Good news, if you are using the CHIP then Anyfesto has been getting near daily updates with new services, obvious fixes and 
+a few typos corrected. The automatic base install scripts are working well enough to produce a working device and the manual
+install guide is covering all manner of services and CHIP foibles to make your install go smoother.
+
+Not so good news, I have been so hunkered down on the CHIP that the PI side of the house has gotten bupkis. For that I will 
+make amends, soon....thats the plan.
+
+Is there any good news for the PIs? Much of the work done for the CHIP will easy to slide on over to the PI, so there is that.
+
+Whats working on the CHIP and soon on the PI?
+
+ () AP and Captive Portal no longer using PirateBox/Library Box. This will make things a bit less bumpy for upgrades and updates.
+ () Bootstrap is installed for the main landing web page. Those so inclined to work up their own pages will have Bootstrap to 
+    work with.
+ () Speaking of the main landing web page, the one the Captive Portal will be redirecting everyone to....I have set up a nice 
+    simple layout that scales well to mobile, links to many of the features (text chat, wikimedia, file section) are in place 
+    and spots for the features planned are in place.
+ () An audio player on the main landing page feed by an m3u playlist and javascript
+ () IRC with a Web Frontend via HybridIRC and KiwiIRC
+ () Wikimedia Server via Kiwix and wikimedia zims
+ () Mumble voice chat server is running, I just need to finalize the steps and configs
+ () Portable Khan Academy via KA-Lite is coming along but still needs some config work
+
+USB Storage is still something I am deciding on. Given that i want this to be able to be run by non tech folks I am working up a 
+script that allows folks to insert a blank USB storage device and it will format it, set up directories and even give the option
+to auto populate things like KA-lite data, Project Gutenberg, Wikimedia zims, etc etc. Also add in the automount stuffs for good
+measure.
+
+I am shooting to wrap up this phase of work on the CHIP side in the next week or so. I will make an announcement that it should
+be all clear to install and know it wont change drastically in 12 hours.
+
+I will then start the slide over to the PI side. When I am done with that I will also send up an announcement.
+
+As always follow along over at https://github.com/tomhiggins/anyfesto/ and send any corrections, feedback and typos...oh the
+typos... my way here or there.
+
+And if you have been , thanks for following this project.
+
+-tom
+https://cdn.hackaday.io/images/4313181485154480170.jpg
+"...which one is the current build?"
