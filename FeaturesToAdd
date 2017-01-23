@@ -1,7 +1,7 @@
 Features To Add-
 ------------------------------------------------------------------------
 =Installation/ Maintenance 
-  - Simple script to run for installation
+  X Simple script to run for installation
   - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia) 
 
 =Networking
@@ -20,5 +20,5 @@ Features To Add-
   - Updated PG - https://www.gutenberg.org/wiki/Gutenberg:The_CD_and_DVD_Project
   - LibriVox - https://librivox.org/
   - NumberStation (run a number station to send private msgs) - https://linuxcoffee.com/numbers/
-  - Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
+  X Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
 
