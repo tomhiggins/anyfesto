@@ -99,7 +99,7 @@ sudo chmod a+rx /etc/vlc/start.sh
 
 #Setup Text Chat ircd-hybrid and kiwiirc web 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up the Text Chat Service
+echo "Setting Up the Text Chat Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get install ircd-hybrid
 cd ~
