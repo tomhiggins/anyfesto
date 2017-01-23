@@ -68,6 +68,7 @@ cd /var/www/html
 sudo rm index*.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/stream.m3u -O stream.m3u
 cd ~
 wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip 
@@ -76,6 +77,9 @@ cd /var/www/html/css
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/m3uStreamPlayer.js
+chmod a+rx *
+
 
 =Setup Network and Captive Portal 
 cd ~
