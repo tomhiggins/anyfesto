@@ -1,1 +1,13 @@
- 
+ [Unit]
+Description=VLC Media Server
+After=network.target
+
+[Service]
+Type=forked
+User=vlc
+WorkingDirectory=/home/chip/content/
+ExecStart=/etc/vlc/start.sh
+
+
+[Install]
+WantedBy=multi-user.target
