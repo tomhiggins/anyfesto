@@ -68,7 +68,9 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/rclocal
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiirc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwix.service
 sudo chown root:root *
 sudo chmod a+rx *
 
@@ -82,7 +84,9 @@ sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
 sudo mv -f hosts /etc/hosts
 sudo mv -f hostname /etc/hostname
-sudo mv -f rclocal /etc/rc.local
+sudo mv -f vlc.service /etc/systemd/system/vlc.service
+sudo mv -f kiwiirc.service /etc/systemd/system/kiwiirc.service
+sudo mv -f kiwix.service /etc/systemd/system/kiwix.service
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -147,6 +151,10 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 read -p "Press any key to reboot the CHIP."
+sudo systemctl daemon-reload 
+sudo systemctl enable vlc.service
+sudo systemctl enable kiwix.service
+sudo systemctl enable kiwiirc.service
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
