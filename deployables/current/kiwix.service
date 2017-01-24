@@ -1,1 +1,14 @@
-tmp
+
+[Unit]
+Description=Kiwix Wikimedia Server
+After=network.target
+
+[Service]
+Type=forking
+User=chip
+WorkingDirectory=/home/chip/content/kiwix
+ExecStart=
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
