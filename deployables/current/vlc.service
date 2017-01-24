@@ -3,7 +3,7 @@ Description=VLC Media Server
 After=network.target
 
 [Service]
-Type=forked
+Type=forking
 User=vlc
 WorkingDirectory=/home/chip/content/
 ExecStart=/etc/vlc/start.sh
