@@ -112,6 +112,19 @@ Jan 26 04:56:54 AnyfestoChip kiwi[280]: Starting kiwiirc daemon...
 Jan 26 04:57:03 AnyfestoChip kiwi[280]: kiwiirc daemon started. PID: 439
 Jan 26 04:57:03 AnyfestoChip systemd[1]: Started KiwiIRC Web Frontend Server.
 
+chip@AnyfestoChip:~$ sudo systemctl -l status vlc.service
+● vlc.service - VLC Media Server
+   Loaded: loaded (/etc/systemd/system/vlc.service; enabled)
+   Active: failed (Result: exit-code) since Thu 2017-01-26 05:20:48 UTC; 19s ago
+  Process: 677 ExecStart=/etc/vlc/start.sh (code=exited, status=1/FAILURE)
+
+Jan 26 05:20:48 AnyfestoChip start.sh[677]: SIOCSIFFLAGS: Operation not permitted
+Jan 26 05:20:48 AnyfestoChip start.sh[677]: SIOCSIFFLAGS: Operation not permitted
+Jan 26 05:20:48 AnyfestoChip start.sh[677]: vlc is not in the sudoers file.  This incident will be reported.
+Jan 26 05:20:48 AnyfestoChip systemd[1]: vlc.service: control process exited, code=exited status=1
+Jan 26 05:20:48 AnyfestoChip systemd[1]: Failed to start VLC Media Server.
+Jan 26 05:20:48 AnyfestoChip systemd[1]: Unit vlc.service entered failed state.
+
 
 
 ToDO: Why is VLC not loading? Why is the web media player suddenly not reading the m3u? 
