@@ -143,7 +143,7 @@ mkdir /home/chip/content/kiwix
 cd /home/chip/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary/wiktionary_en_all_2016-12.zim
 kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_all_2016-12.zim
-chmod a+rx *
+sudo chmod a+rx *
 cd ~
 
 
