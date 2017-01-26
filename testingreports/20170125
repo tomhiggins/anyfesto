@@ -88,5 +88,30 @@ PS AX:
   572 ?        S      0:00 [kworker/0:2]
   573 ttyGS0   R+     0:00 ps ax
 
+chip@AnyfestoChip:~$ sudo systemctl status kiwix.service 
+● kiwix.service - Kiwix Wikimedia Server
+   Loaded: loaded (/etc/systemd/system/kiwix.service; enabled)
+   Active: active (running) since Thu 2017-01-26 04:56:48 UTC; 20min ago
+  Process: 278 ExecStart=/usr/bin/kiwix-serve --daemon --port=8099 --library /home/chip/content/kiwix/library.xml (code=exited, status=0/SUCCESS)
+ Main PID: 387 (kiwix-serve)
+   CGroup: /system.slice/kiwix.service
+           └─387 /usr/bin/kiwix-serve --daemon --port=8099 --library /home/ch...
+
+Jan 26 04:56:36 AnyfestoChip systemd[1]: Starting Kiwix Wikimedia Server...
+Jan 26 04:56:48 AnyfestoChip systemd[1]: Started Kiwix Wikimedia Server.
+
+● kiwiirc.service - KiwiIRC Web Frontend Server
+   Loaded: loaded (/etc/systemd/system/kiwiirc.service; enabled)
+   Active: active (running) since Thu 2017-01-26 04:57:03 UTC; 21min ago
+  Process: 280 ExecStart=/home/chip/KiwiIRC/kiwi start (code=exited, status=0/SUCCESS)
+ Main PID: 439 (kiwiirc)
+   CGroup: /system.slice/kiwiirc.service
+           └─439 kiwiirc
+
+Jan 26 04:56:54 AnyfestoChip kiwi[280]: Starting kiwiirc daemon...
+Jan 26 04:57:03 AnyfestoChip kiwi[280]: kiwiirc daemon started. PID: 439
+Jan 26 04:57:03 AnyfestoChip systemd[1]: Started KiwiIRC Web Frontend Server.
+
+
 
 ToDO: Why is VLC not loading? Why is the web media player suddenly not reading the m3u? 
