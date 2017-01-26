@@ -1,0 +1,91 @@
+Once more into the breech after fixing systemd issues
+
+1. Did the web based FlashChip , installed Headless 4.4
+
+2. Connecting USB OTG and connected
+
+Initial State
+chip@chip:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+ubi0:rootfs     3.3G  209M  3.1G   7% /
+
+top - 00:07:50 up 7 min,  1 user,  load average: 0.09, 0.12, 0.08
+Tasks:  88 total,   1 running,  87 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:    502748 total,    81968 used,   420780 free,        0 buffers
+KiB Swap:        0 total,        0 used,        0 free.    32080 cached Mem
+
+3. Connected to home network via wifi 
+
+4. wgeted install script
+
+2017-01-23 07:26:59 (4.74 MB/s) - 'CHIPinstall.sh' saved [6441/6441]
+
+5. ran script
+
+All run as expected. System rebooted 
+
+6. Connected to SSID from phone
+
+Connteced, ip haned out by dhcp. Aok
+
+7. Open browser and attemted to go to tsds.com
+
+Captive Portal redirected me to the Landing Page. Aok
+
+8. Text Chat, File  Section, Wikimedia all work Aok
+
+9.  Audio Player is not working. 
+
+10 Connected via  USB OTG
+
+After install State:
+Filesystem      Size  Used Avail Use% Mounted on
+ubi0:rootfs     3.3G  2.3G  1.1G  70% /
+
+top - 05:07:02 up 10 min,  1 user,  load average: 0.02, 0.15, 0.17
+Tasks:  93 total,   1 running,  92 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  1.0 sy,  0.0 ni, 98.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:    502748 total,   182696 used,   320052 free,        0 buffers
+KiB Swap:        0 total,        0 used,        0 free.    85232 cached Mem
+
+PS AX:
+
+  277 ?        Ss     0:00 avahi-daemon: running [AnyfestoChip.local]
+  279 ?        Ss     0:01 /usr/sbin/ubihealthd -d /dev/ubi0 -f /var/cache/ubihe
+  281 ?        Ssl    0:01 /usr/sbin/NetworkManager --no-daemon
+  282 ?        Ssl    0:01 /usr/sbin/ModemManager
+  284 ?        Ss     0:00 /usr/sbin/sshd -D
+  288 ?        Ss     0:00 /usr/sbin/cron -f
+  292 ?        Ssl    0:00 /usr/sbin/rsyslogd -n
+  297 ?        Ss     0:00 /usr/bin/dbus-daemon --system --address=systemd: --no
+  310 ?        S      0:00 avahi-daemon: chroot helper
+  313 ?        Ss     0:00 /lib/systemd/systemd-logind
+  322 ?        Ss     0:00 /sbin/rtk_hciattach -n -s 115200 ttyS1 rtk_h5
+  340 ttyGS0   Ss     0:00 /bin/login --     
+  341 tty1     Ss+    0:00 /sbin/agetty --noclear tty1 linux
+  342 ttyS0    Ss+    0:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyS0 vt10
+  367 ?        Ss     0:00 /usr/sbin/hostapd -B -P /run/hostapd.pid /etc/hostapd
+  372 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+  387 ?        Sl     0:05 /usr/bin/kiwix-serve --daemon --port=8099 --library /
+  391 ?        S<     0:00 [hci0]
+  392 ?        S<     0:00 [hci0]
+  395 ?        S<     0:00 [kworker/u3:2]
+  398 ?        Ss     0:00 /usr/lib/bluetooth/bluetoothd
+  403 ?        Ss     0:00 /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
+  405 ?        Ss     0:00 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 106:111
+  413 ?        S      0:00 /usr/sbin/dnsmasq -x /var/run/dnsmasq/dnsmasq.pid -u 
+  436 ?        S      0:00 avahi-autoipd: [usb0] bound 169.254.11.46            
+  437 ?        S      0:00 avahi-autoipd: [usb0] callout dispatcher             
+  439 ?        Ssl    0:07 kiwiirc                                              
+  441 ?        Ss     0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+  463 ?        Ss     0:00 /usr/sbin/ircd-hybrid -pidfile /var/run/ircd/ircd-hyb
+  550 ?        Ss     0:00 /lib/systemd/systemd --user
+  554 ?        S      0:00 (sd-pam)  
+  559 ttyGS0   S      0:00 -bash
+  569 ?        S      0:00 [kworker/0:0]
+  572 ?        S      0:00 [kworker/0:2]
+  573 ttyGS0   R+     0:00 ps ax
+
+
+ToDO: Why is VLC not loading? Why is the web media player suddenly not reading the m3u? 
