@@ -1,0 +1,69 @@
+Fixed systemd for VLC
+Rebooted
+
+ 246 ?        Ss     0:00 avahi-daemon: running [AnyfestoChip.local]
+  248 ?        Ss     0:01 /usr/sbin/ubihealthd -d /dev/ubi0 -f /var/cache/ubihe
+  252 ?        Ssl    0:01 /usr/sbin/NetworkManager --no-daemon
+  253 ?        Ssl    0:01 /usr/sbin/ModemManager
+  254 ?        Ss     0:00 /usr/sbin/sshd -D
+  256 ?        Ss     0:00 /usr/sbin/cron -f
+  258 ?        Ssl    0:00 /usr/sbin/rsyslogd -n
+  262 ?        Ss     0:00 /usr/bin/dbus-daemon --system --address=systemd: --no
+  264 ?        Sl     3:09 /usr/bin/vlc -I dummy -I http --http-password changem
+  273 ?        S      0:00 avahi-daemon: chroot helper
+  279 ?        Ss     0:00 /lib/systemd/systemd-logind
+  284 ?        Ss     0:00 /sbin/rtk_hciattach -n -s 115200 ttyS1 rtk_h5
+  297 tty1     Ss+    0:00 /sbin/agetty --noclear tty1 linux
+  302 ttyS0    Ss+    0:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyS0 vt10
+  307 ?        S      0:00 [RTW_XMIT_THREAD]
+  308 ?        S      0:00 [RTW_CMD_THREAD]
+  309 ?        S      0:00 [RTWHALXT]
+  310 ?        S      0:00 [RTWHALXT]
+  333 ?        Ss     0:00 /usr/sbin/hostapd -B -P /run/hostapd.pid /etc/hostapd
+  341 ?        S      0:00 /usr/sbin/dnsmasq -x /var/run/dnsmasq/dnsmasq.pid -u 
+  359 ?        Ssl    0:00 /usr/lib/policykit-1/polkitd --no-debug
+  389 ?        S<     0:00 [hci0]
+  390 ?        S<     0:00 [hci0]
+  393 ?        S<     0:00 [kworker/u3:2]
+  397 ?        Ss     0:00 /usr/sbin/ircd-hybrid -pidfile /var/run/ircd/ircd-hyb
+  398 ?        Sl     0:00 /usr/bin/kiwix-serve --daemon --port=8099 --library /
+  401 ?        Ss     0:00 /usr/lib/bluetooth/bluetoothd
+  411 ?        Ss     0:00 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 106:111
+  446 ?        Ss     0:00 /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
+  464 ?        Ss     0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+  468 ?        S      0:00 avahi-autoipd: [usb0] bound 169.254.7.108            
+  473 ?        S      0:00 avahi-autoipd: [usb0] callout dispatcher             
+  490 ?        Ssl    0:07 kiwiirc                                              
+  594 ttyGS0   Ss     0:00 /bin/login --     
+  633 ?        S      0:00 [kworker/0:1]
+  759 ?        S      0:00 [kworker/u2:2]
+  773 ?        S      0:00 [kworker/0:3]
+ 1079 ?        S      0:00 [kworker/u2:3]
+ 1120 ?        Ss     0:00 /lib/systemd/systemd --user
+ 1124 ?        S      0:00 (sd-pam)  
+ 1131 ttyGS0   S      0:00 -bash
+ 1136 ttyGS0   R+     0:00 ps ax
+ 
+ 
+top - 06:31:33 up 13 min,  1 user,  load average: 0.24, 0.47, 0.45
+Tasks:  94 total,   1 running,  93 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 24.3 us,  0.7 sy,  0.0 ni, 74.8 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
+KiB Mem:    502748 total,   196208 used,   306540 free,        0 buffers
+KiB Swap:        0 total,        0 used,        0 free.    91040 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND     
+  264 vlc       20   0   91744  17088   8580 S 24.1  3.4   4:03.12 vlc         
+ 1179 chip      20   0    2988   1416   1100 R  0.7  0.3   0:00.24 top         
+    1 root      20   0   23528   3140   1576 S  0.0  0.6   0:07.60 systemd     
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kthreadd 
+    
+    chip@AnyfestoChip:~$ sudo systemctl -l status vlc.service
+● vlc.service - VLC Media Server
+   Loaded: loaded (/etc/systemd/system/vlc.service; enabled)
+   Active: active (running) since Thu 2017-01-26 06:17:58 UTC; 13min ago
+  Process: 259 ExecStart=/etc/vlc/start.sh (code=exited, status=0/SUCCESS)
+ Main PID: 264 (vlc)
+   CGroup: /system.slice/vlc.service
+           └─264 /usr/bin/vlc -I dummy -I http --http-password changeme --http-host 10.11.99.1 --http-port 8088 --sout-keep --sout=#duplicate{dst=rtp{mux=ts,dst=10.11.99.1:8086},dst=gather:std{access=http,mux=mpeg1,dst=:8085},dst=display,select="novideo"} -LZ /home/chip/content/Radio/./welcome.mp3
+
+    
