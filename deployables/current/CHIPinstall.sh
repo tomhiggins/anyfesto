@@ -39,6 +39,7 @@ cd /var/www/html
 sudo rm index*.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/stream.m3u -O stream.m3u
 cd ~
 wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip 
