@@ -40,16 +40,19 @@ Results - KiwiIRC web frontend connected to HybridIRC, connected to #main.
 
 10 Connected via  USB OTG
 
+--------------------------------------------------------------------------------------------------------------
 After install State:
 Filesystem      Size  Used Avail Use% Mounted on
 ubi0:rootfs     3.3G  2.3G  1.1G  70% /
 
+--------------------------------------------------------------------------------------------------------------
 top - 05:07:02 up 10 min,  1 user,  load average: 0.02, 0.15, 0.17
 Tasks:  93 total,   1 running,  92 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.3 us,  1.0 sy,  0.0 ni, 98.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 KiB Mem:    502748 total,   182696 used,   320052 free,        0 buffers
 KiB Swap:        0 total,        0 used,        0 free.    85232 cached Mem
 
+--------------------------------------------------------------------------------------------------------------
 PS AX:
 
   277 ?        Ss     0:00 avahi-daemon: running [AnyfestoChip.local]
@@ -88,6 +91,7 @@ PS AX:
   572 ?        S      0:00 [kworker/0:2]
   573 ttyGS0   R+     0:00 ps ax
 
+--------------------------------------------------------------------------------------------------------------
 chip@AnyfestoChip:~$ sudo systemctl status kiwix.service 
 ● kiwix.service - Kiwix Wikimedia Server
    Loaded: loaded (/etc/systemd/system/kiwix.service; enabled)
@@ -99,7 +103,8 @@ chip@AnyfestoChip:~$ sudo systemctl status kiwix.service
 
 Jan 26 04:56:36 AnyfestoChip systemd[1]: Starting Kiwix Wikimedia Server...
 Jan 26 04:56:48 AnyfestoChip systemd[1]: Started Kiwix Wikimedia Server.
-
+--------------------------------------------------------------------------------------------------------------
+chip@AnyfestoChip:~$ sudo systemctl status kiwiirc.service 
 ● kiwiirc.service - KiwiIRC Web Frontend Server
    Loaded: loaded (/etc/systemd/system/kiwiirc.service; enabled)
    Active: active (running) since Thu 2017-01-26 04:57:03 UTC; 21min ago
@@ -111,7 +116,7 @@ Jan 26 04:56:48 AnyfestoChip systemd[1]: Started Kiwix Wikimedia Server.
 Jan 26 04:56:54 AnyfestoChip kiwi[280]: Starting kiwiirc daemon...
 Jan 26 04:57:03 AnyfestoChip kiwi[280]: kiwiirc daemon started. PID: 439
 Jan 26 04:57:03 AnyfestoChip systemd[1]: Started KiwiIRC Web Frontend Server.
-
+--------------------------------------------------------------------------------------------------------------
 chip@AnyfestoChip:~$ sudo systemctl -l status vlc.service
 ● vlc.service - VLC Media Server
    Loaded: loaded (/etc/systemd/system/vlc.service; enabled)
@@ -124,7 +129,24 @@ Jan 26 05:20:48 AnyfestoChip start.sh[677]: vlc is not in the sudoers file.  Thi
 Jan 26 05:20:48 AnyfestoChip systemd[1]: vlc.service: control process exited, code=exited status=1
 Jan 26 05:20:48 AnyfestoChip systemd[1]: Failed to start VLC Media Server.
 Jan 26 05:20:48 AnyfestoChip systemd[1]: Unit vlc.service entered failed state.
+--------------------------------------------------------------------------------------------------------------
+ifconfig-
 
+wlan0     Link encap:Ethernet  HWaddr a0:2c:36:23:2e:af  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:24 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wlan1     Link encap:Ethernet  HWaddr a2:2c:36:23:2e:af  
+          inet addr:10.11.99.1  Bcast:10.11.99.255  Mask:255.255.255.0
+          inet6 addr: fe80::a02c:36ff:fe23:2eaf/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4436 errors:0 dropped:35 overruns:0 frame:0
+          TX packets:2210 errors:0 dropped:2 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:502881 (491.0 KiB)  TX bytes:1407954 (1.3 MiB)
 
 
 ToDO: Why is VLC not loading? Why is the web media player suddenly not reading the m3u? 
