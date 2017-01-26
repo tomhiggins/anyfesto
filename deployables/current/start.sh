@@ -1,6 +1,4 @@
 #!/bin/sh  
-ifconfig wlan0 down
-ifconfig wlan1 up
 VLC_PORT=8088
 VLC_USER=vlc
 VLC_IP=10.11.99.1
