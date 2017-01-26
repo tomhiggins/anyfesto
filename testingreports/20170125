@@ -19,21 +19,23 @@ KiB Swap:        0 total,        0 used,        0 free.    32080 cached Mem
 
 4. wgeted install script
 
-2017-01-23 07:26:59 (4.74 MB/s) - 'CHIPinstall.sh' saved [6441/6441]
-
 5. ran script
 
-All run as expected. System rebooted 
+Results - All run as expected. System rebooted 
 
 6. Connected to SSID from phone
 
-Connteced, ip haned out by dhcp. Aok
+Results - Connteced, ip handed out by dhcp. Aok
 
 7. Open browser and attemted to go to tsds.com
 
-Captive Portal redirected me to the Landing Page. Aok
+Results - Captive Portal redirected me to the Landing Page. Aok
 
 8. Text Chat, File  Section, Wikimedia all work Aok
+
+Results - KiwiIRC web frontend connected to HybridIRC, connected to #main. 
+          File Section able to browse though files.
+          Wikimedia able to load and use Wikictionary
 
 9.  Audio Player is not working. 
 
