@@ -162,5 +162,6 @@ sudo update-rc.d isc-dhcp-server enable
 sudo nmcli connection delete id "$(nmcli c |grep wlan0 | cut -f1 -d ' ')"
 sudo ifconfig wlan1 down        
 sudo ifconfig wlan0 down
+sudo ifconfig wlan1 up
 sudo sync 
 sudo reboot
