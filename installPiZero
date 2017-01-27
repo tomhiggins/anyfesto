@@ -49,8 +49,10 @@ sudo raspi-config
        Expand the File System 
        Finish & Reboot
 
+
+
 ===========================================================================================
-Manual Installation
+or Manual Installation
 ===========================================================================================
 =Installing the Basic Packages and Infrastructure
 sudo apt-get -y update
@@ -64,7 +66,7 @@ sudo apt-get -y install lighttpd
 sudo apt-get -y install dnsmasq
 sudo apt-get -y install isc-dhcp-server
 sudo apt-get -y install hostapd
-sudo apt-get -y install git zip unzip
+sudo apt-get -y install git zip unzip tar bzip2
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
@@ -79,6 +81,7 @@ cd /var/www/html
 sudo rm index*.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/stream.m3u -O stream.m3u
 cd ~
 wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip 
@@ -87,6 +90,44 @@ cd /var/www/html/css
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/m3uStreamPlayer.js
+chmod a+rx *
+
+
+=Setup Network and Captive Portal 
+cd ~
+mkdir configs
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiirc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwix.service
+sudo chown root:root *
+sudo chmod a+rx *
+
+sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfaces /etc/network/interfaces 
+sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hosts /etc/hosts
+sudo mv -f hostname /etc/hostname
+sudo mv -f vlc.service /etc/systemd/system/vlc.service
+sudo mv -f kiwiirc.service /etc/systemd/system/kiwiirc.service
+sudo mv -f kiwix.service /etc/systemd/system/kiwix.service
 
 
 ==Update hostapd
@@ -98,68 +139,141 @@ sudo mv hostapd /usr/sbin
 sudo chmod 755 /usr/sbin/hostapd
 sudo /etc/init.d/hostapd  stop
 
-=Setup Network and Captive Portal 
-cd ~
-mkdir configs
-cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pidhcpd.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pidnsmasq.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostapd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/piinterfaces
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/piisc-dhcp-server
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pistart.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pilighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pivlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pihostname
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pirclocal
-sudo chown root:root *
-sudo chmod a+rx *
 
-sudo mv -f pidhcpd.conf /etc/dhcp/dhcpd.conf
-sudo mv -f pidnsmasq.conf /etc/dnsmasq.conf
-sudo mv -f pihostapd /etc/default/hostapd
-sudo mv -f pihostapd.conf /etc/hostapd/hostapd.conf 
-sudo mv -f piinterfaces /etc/network/interfaces 
-sudo mv -f piisc-dhcp-server /etc/default/isc-dhcp-server
-sudo mv -f pilighttpd.conf /etc/lighttpd/lighttpd.conf
-sudo mv -f pivlchosts /usr/share/vlc/lua/http/.hosts
-sudo mv -f pihosts /etc/hosts
-sudo mv -f pihostname /etc/hostname
-sudo mv -f pirclocal /etc/rc.local
 
 =Setup Audio Streaming using VLC
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
 sudo ln -s /etc/vlc/.hosts .hosts
-cd /home/chip/content/Radio
+cd /home/pi/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-sudo mv -f ~/configs/pistart.sh /etc/vlc/start.sh  
+sudo mv -f ~/configs/start.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 
+=Setup Text Chat ircd-hybrid and kiwiirc web 
+sudo apt-get install ircd-hybrid
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.motd
+sudo chown root:root *
+sudo chmod a+rx *
+sudo mv -f ircd.conf /etc/ircd-hybrid/ircd.conf
+sudo mv -f ircd.motd /etc/ircd-hybrid/ircd.motd   
+sudo apt-get install npm
+cd ~
+git clone https://github.com/prawnsalad/KiwiIRC.git
+cd KiwiIRC
+npm install
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiconfig.js
+cp kiwiconfig.js config.js  
+sudo chmod a+rx config.js
+./kiwi build
+./kiwi start
+cd ~
+
+#Setup Kiwix WikiMedia Server
+cd ~
+wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
+tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+chmod a+rx kiwix*
+rm kiwi*bz2
+sudo mv kiwix-serve /usr/bin/kiwix-serve
+sudo mv kiwix-manage /usr/bin/kiwix-manage
+#---no usb connected device needed at this point
+mkdir /home/chip/content/kiwix
+cd /home/pi/content/kiwix
+sudo wget http://download.kiwix.org/zim/wiktionary/wiktionary_en_all_2016-12.zim
+kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/wiktionary_en_all_2016-12.zim
+sudo chmod a+rx *
+cd ~
+
+#Ready Services and Reboot
+sudo systemctl daemon-reload 
+sudo systemctl enable vlc.service
+sudo systemctl enable kiwix.service
+sudo systemctl enable kiwiirc.service
+sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
-
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
 sudo sync 
 sudo reboot
 
+-You shoud now have a base Anyfesto Install. Congrats. 
+----------------------------------------------------------------------------
+Going Further
+------------------------------------------------------------------------------------
+-To add more packages, do administration or fix what needs fixing reconnect to the CHIP either via the Headless Method outlined
+-above or by using your own method. The following will bring down your AP and reconnect you to the internet Wifi AP of your choosing.
+
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
+-Add options, new packages, make changes. 
+-When you are done with the changes 
+sudo ifconfig wlan1 down        
+sudo ifconfig wlan0 down
+sudo sync
+sudo reboot
+
+----------------------------------------------------------------------------
+Adding a USB Drive
+----------------------------------------------------------------------------
+-Connect the usb drive to the usb port
+sudo mkdir /drives
+sudo mount /dev/sda1 /drives
+sudo nano /etc/fstab                     #Add/Change the following and save
+   /dev/sda1 /drives vfat defaults 0 0
+sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
+
+-Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
+sudo ln -s /drives/(NameOfDirectory)/ /home/chip/content/
+
+-Example - for my test setup 
+  sudo ln -s /drives/SpokenWord/ /home/chip/content/
+  sudo ln -s /drives/Books/ /home/chip/content/
+  sudo ln -s /drives/Audio/ /home/chip/content/
 
 
- 
-------------------------------------------------------------------------------------------
-Optional - Install Webmin
-------------------------------------------------------------------------------------------
-sudo nano /etc/apt/sources.list
-    Add these two lines at the bottom of the list
-      deb http://download.webmin.com/download/repository sarge contrib
-      deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
-    Close and save sources.list
-wget http://www.webmin.com/jcameron-key.asc 
-sudo apt-key add jcameron-key.asc
-sudo apt-get update 
-sudo apt-get install webmin
+----------------------------------------------------------------------------
+Optional - Add Mumble Server for secure voip and chat
+----------------------------------------------------------------------------
+sudo apt-get install mumble-server
+sudo dpkg-reconfigure mumble-server
+   Autostart:  Yes
+   High Priority: No
+   SuperUser: Set the admin password
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+/usr/sbin/update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+chmod a+rx *
+cd ~
+
+
+------------------------------------------------------------------------------
+Optional - Install Additional Kiwix Zims
+------------------------------------------------------------------------------
+
+--You can find a full list of wikimedia files already in the ZIM format Kiwix 
+--uses at  http://download.kiwix.org/zim/ . Copy the url of the zim(s) you want on you Anyfesto install
+cd /home/pi/content/kiwix
+--one at a time download the zim(s) you want
+sudo wget (url of zim you want to add)
+--add it to the libraxy.xml Kiwix uses as a catalog 
+kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/(name of the zim file you downloaded)
+chmod a+rx *
+
+
 
 ------------------------------------------------------------------------------------------
 Optional - Install COPS (Calibre OPDS/HTML PHP Server)
@@ -192,71 +306,8 @@ sudo /etc/php5/cgi-bin/php.ini
      Find
          doc_root = "" 
       Change To 
-         doc_root = "/var/www/html/" 
+doc_root = "/var/www/html/"
 
-------------------------------------------------------------------------------
-Optional - Add IRCd and Web Frontend (Hybrid ircd and KiwiIRC front end https://kiwiirc.com)
-------------------------------------------------------------------------------
-sudo apt-get -y install ircd-hybrid
-cd ~
-cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircmotd 
-sudo chown root:root *
-sudo chmod a+rx *
-sudo mv -f ircd.conf /etc/ircd-hybrid/ircd.conf 
-sudo mv -f ircdmotd /etc/ircd-hybrid/ircd.motd    
-
-sudo apt-get -y install npm
-cd ~
-git clone https://github.com/prawnsalad/KiwiIRC.git
-cd KiwiIRC
-npm install
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiconfig.js
-cp kiwiconfig.js config.js  
-sudo chmod a+rx config.js
-./kiwi build
-./kiwi start
-# Add a link to http://10.11.99.1:7778 
-# Add kiwi start to start on boot
-------------------------------------------------------------------------------------------
-Optional - Add Mumble Server for secure voip and chat
-------------------------------------------------------------------------------------------
-sudo apt-get install mumble-server
-sudo dpkg-reconfigure mumble-server
-   Autostart:  Yes
-   High Priority: No
-   SuperUser: Set the admin password 
-sudo nano /etc/mumble-server.ini
-    Find welcomeText and update to whatever you would like displayed when a user joins
-    Find serverpassword and update if you would like a password for users, leave as is to  have no password for users.
-sudo /etc/init.d/mumble-server restart  
-     # Add a link in /opt/piratebox/www/index.html to the service and maybe links to the clients that you can host local
-
-------------------------------------------------------------------------------------------
-Optional - Add Kiwix to serve up Wikipedia and other wikimedia sites
-------------------------------------------------------------------------------------------
-cd ~
-wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
-bzip2 -d kiwix-server-arm.tar.bz2 
-tar xvf kiwix-server-arm.tar
-rm kiwix-server-arm.tar
-sudo cp kiwix-serve /usr/bin/kiwix-serve
-sudo cp kiwix-manage /usr/bin/kiwix-manage
-sudo mkdir /home/pi/content/kiwix
-     # You can find a list of premade data stores at http://www.kiwix.org/wiki/Content . Use non indexed ones. 
-cd /home/pi/content/kiwix
-sudo wget http://download.kiwix.org/zim/wikipedia_en_for-schools.zim  # your milage may vary
-# If you want to add several zims  wget them to /home/pi/content/kiwix and then use kiwiz-manage to create a libray file
-# For each zim add it to the library
-sudo kiwix-manage /home/pi/content/kiwix/library.xml /home/pi/content/kiwix/NameOfZimFile.zim 
-sudo nano /etc/rc.local                                           # add the line and save
-   /usr/bin/kiwix-serve --daemon --port=8099 /home/pi/content/kiwix/wikipedia_en_for-schools.zim
-   # If you are using multiple zim files use this line
-   /usr/bin/kiwix-serve --daemon --port=8099 --library /home/pi/content/kiwix/library.xml
-sudo sync
-sudo reboot
-# Add a description and link  to http://YourServersIP:8099 to the captive portal landing page so users can get to the main library page
 
 ------------------------------------------------------------------------------------------
 Optional - PiFM
@@ -267,8 +318,4 @@ git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
 sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh) ==Reboot
 sudo sync 
 sudo reboot
-
-
-====================================================================================================================
-
 
