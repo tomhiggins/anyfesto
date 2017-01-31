@@ -1,3 +1,19 @@
+January 31st 2017
+
+The CHIP install is now complete, tested and verified. Please grab a CHIP and give it a try. 
+All the issues with boot time starting of the new features has been fixed. 
+
+Next Up.... Move all these fixes over to the PI install and then work out a unified solution to mounting 
+and preparing USB storage for use with Anyfesto. 
+
+Once that is in place I will work up the inclusion of KALite, a local version of the amazing Khan Academy complete 
+with the ability of students to keep track of their leaning progress. 
+
+Thanks for all the feedback and ideas, keep on that as it helps me stay ontop of this project. 
+
+
+
+
 January 22nd 2017
 
 Good news, if you are using the CHIP then Anyfesto has been getting near daily updates with new services, obvious fixes and 
