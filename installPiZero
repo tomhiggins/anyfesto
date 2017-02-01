@@ -222,19 +222,19 @@ sudo reboot
 Adding a USB Drive
 ----------------------------------------------------------------------------
 -Connect the usb drive to the usb port
-sudo mkdir /drives
-sudo mount /dev/sda1 /drives
+sudo mkdir /media/drives
+sudo mount /dev/sda1 /media/drives
 sudo nano /etc/fstab                     #Add/Change the following and save
-   /dev/sda1 /drives vfat defaults 0 0
+   /dev/sda1 /media/drives vfat defaults 0 0
 sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
 
 -Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
-sudo ln -s /drives/(NameOfDirectory)/ /home/chip/content/
+sudo ln -s /drives/(NameOfDirectory)/ /home/pi/content/
 
 -Example - for my test setup 
-  sudo ln -s /drives/SpokenWord/ /home/chip/content/
-  sudo ln -s /drives/Books/ /home/chip/content/
-  sudo ln -s /drives/Audio/ /home/chip/content/
+  sudo ln -s /drives/SpokenWord/ /home/pi/content/
+  sudo ln -s /drives/Books/ /home/pi/content/
+  sudo ln -s /drives/Audio/ /home/pi/content/
 
 
 ----------------------------------------------------------------------------
