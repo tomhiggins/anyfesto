@@ -1,9 +1,12 @@
-AnyfestoBox install on a PiZero
+AnyfestoBox install on a RaspberryPi
 (from the PiFold project on Hackaday https://hackaday.io/project/9498-pifold)
 =======================================================================================
 Parts List
+   Raspberry Pi 3 Model B - https://www.adafruit.com/products/3055 - $39.95
+   Or
    Raspberry Pi Zero v1.3 - https://www.adafruit.com/products/2885 - $ 5.00
    Tiny USB OTG Adapter - https://www.adafruit.com/products/2910 - $ 2.95
+
    16GB or Bigger Micro SD card - Many Sources - $ 5.00 - upward
    Smallest WIFI USB - https://www.adafruit.com/products/814 - $11.95
    LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
