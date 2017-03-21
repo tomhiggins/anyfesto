@@ -39,9 +39,10 @@ bash CHIPinstall.sh
 
 
 ===========================================================================================
-or Manual Installation
+or Manual Installation (do not type lines starting with a #)
 ===========================================================================================
 =Installing the Basic Packages and Infrastructure
+
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install locales
@@ -82,6 +83,7 @@ chmod a+rx *
 
 
 =Setup Network and Captive Portal 
+
 cd ~
 mkdir configs
 cd configs
@@ -119,6 +121,7 @@ sudo mv -f kiwix.service /etc/systemd/system/kiwix.service
 
 
 =Setup Audio Streaming using VLC
+
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -129,6 +132,7 @@ sudo mv -f ~/configs/start.sh /etc/vlc/start.sh
 sudo chmod a+rx /etc/vlc/start.sh
 
 =Setup Text Chat ircd-hybrid and kiwiirc web 
+
 sudo apt-get install ircd-hybrid
 cd ~
 cd configs
@@ -151,6 +155,7 @@ sudo chmod a+rx config.js
 cd ~
 
 #Setup Kiwix WikiMedia Server
+
 cd ~
 wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
 tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
@@ -166,7 +171,32 @@ kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/w
 sudo chmod a+rx *
 cd ~
 
+# Setup Mumble Server for secure voip and chat
+
+sudo apt-get install mumble-server
+sudo dpkg-reconfigure mumble-server
+   Autostart:  Yes
+   High Priority: No
+   SuperUser: Set the admin password
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+/usr/sbin/update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+chmod a+rx *
+cd ~
+
+
+
+
 #Ready Services and Reboot
+
 sudo systemctl daemon-reload 
 sudo systemctl enable vlc.service
 sudo systemctl enable kiwix.service
@@ -223,30 +253,6 @@ sudo mount -a
 sudo mv /home/chip/content /media/drives
 sudo rm -r /home/chip/content/
 sudo ln -s /media/drives/content /home/chip
-
-
-
-----------------------------------------------------------------------------
-Optional - Add Mumble Server for secure voip and chat
-----------------------------------------------------------------------------
-sudo apt-get install mumble-server
-sudo dpkg-reconfigure mumble-server
-   Autostart:  Yes
-   High Priority: No
-   SuperUser: Set the admin password
-cd ~
-cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
-chmod a+rx *
-sudo mv -f mumble-server.ini /etc/mumble-server.ini
-/usr/sbin/update-rc.d mumble-server enable
-cd ~/content
-mkdir apps
-chmod a+rx apps/
-cd apps
-wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
-chmod a+rx *
-cd ~
 
 
 ------------------------------------------------------------------------------
