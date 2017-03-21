@@ -201,22 +201,25 @@ sudo sync
 sudo reboot
 
 ----------------------------------------------------------------------------
-Adding a USB Drive
+Adding a USB Drive (vfat formated, which is the default for most USB storage)
+By adding a USB storage drive you can 
+1) free up the onboard memory of your PI
+2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
+   to another computer
+After installing the USB drive any files and directories on it will show up 
+in you File Share section from the web page and once rebooted any mp3 files
+will be added to the VLC Audio Stream playlist. 
 ----------------------------------------------------------------------------
--Connect the usb drive to the usb port
-sudo mkdir /drives
-sudo mount /dev/sda1 /drives
-sudo nano /etc/fstab                     #Add/Change the following and save
-   /dev/sda1 /drives vfat defaults 0 0
-sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
+-Connect the USB drive to the USB port
 
--Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
-sudo ln -s /drives/(NameOfDirectory)/ /home/chip/content/
+sudo mkdir /media/drives
+sudo mount /dev/sda1 /media/drives
+sudo sh -c 'echo "/dev/sda1 /media/drives vfat uid=nobody,gid=nogroup,umask=0,noatime,rw,user 0 0" >> /etc/fstab'
+sudo mount -a 
+sudo mv /home/pi/content /media/drives
+sudo rm -r /home/pi/content/
+sudo ln -s /drives/content /home/pi
 
--Example - for my test setup 
-  sudo ln -s /drives/SpokenWord/ /home/chip/content/
-  sudo ln -s /drives/Books/ /home/chip/content/
-  sudo ln -s /drives/Audio/ /home/chip/content/
 
 
 ----------------------------------------------------------------------------
