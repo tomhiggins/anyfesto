@@ -61,7 +61,7 @@ mkdir configs
 cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpdpi.conf 
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasqpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfacespi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
@@ -78,7 +78,7 @@ sudo chmod a+rx *
 
 sudo mv -f dhcpdpi.conf /etc/dhcp/dhcpd.conf
 sudo mv -f dnsmasqpi.conf /etc/dnsmasq.conf
-sudo mv -f hostapdpi /etc/default/hostapd
+sudo mv -f hostapd /etc/default/hostapd
 sudo mv -f hostapdpi.conf /etc/hostapd/hostapd.conf 
 sudo mv -f interfacespi /etc/network/interfaces 
 sudo mv -f isc-dhcp-serverpi /etc/default/isc-dhcp-server
