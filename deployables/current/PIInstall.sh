@@ -67,7 +67,7 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchostspi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostspi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostnamepi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
@@ -83,7 +83,7 @@ sudo mv -f hostapdpi.conf /etc/hostapd/hostapd.conf
 sudo mv -f interfacespi /etc/network/interfaces 
 sudo mv -f isc-dhcp-serverpi /etc/default/isc-dhcp-server
 sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
-sudo mv -f vlchostspi /usr/share/vlc/lua/http/.hosts
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
 sudo mv -f hostspi /etc/hosts
 sudo mv -f hostnamepi /etc/hostname
 sudo mv -f vlcpi.service /etc/systemd/system/vlc.service
