@@ -1,3 +1,10 @@
+March 20th 2017
+
+The PI port is done (mostly) and needs testing. Much thanks to LMC on the NextThing Forum for fixing and recoding for the PI.
+Kick the tires, post up bug reports. 
+Needs work, the various Wifi setups for the PI and how Hostapd does and does not work with them. Onward. 
+
+
 January 31st 2017
 
 The CHIP install is now complete, tested and verified. Please grab a CHIP and give it a try. 
