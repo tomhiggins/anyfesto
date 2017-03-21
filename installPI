@@ -1,5 +1,4 @@
-AnyfestoBox install on a RaspberryPi
-(from the PiFold project on Hackaday https://hackaday.io/project/9498-pifold)
+Anyfesto Install on a RaspberryPi
 =======================================================================================
 Parts List
    Raspberry Pi 3 Model B - https://www.adafruit.com/products/3055 - $39.95
@@ -13,33 +12,30 @@ Parts List
    LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
    PowerBoost 1000 Charger 5V -https://www.adafruit.com/products/2465 - $19.95
    5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
+   USB Storage (optional)   - Many Sources - $ 5.00 - upward
 
 
 Hardware Setup
 ---------------------------------------------------------------------------------------------------------------
+    If you are using a PI without  WIFI built in
+       PIZero -   Connect the OTG USB adapter to the OTG UB port on the PIZero
+                  Connect the USB Wifi dongle to the OTG USB adapter
+       PI1/2/A/B- Connect the USB Wifi dongle to the USB adpadter
 
-    Connect the JST from the Battery to the JST connector on the Powerboost 1000
-    If you want to hardwire this to the PiZero
-        On the Powerboost solder a red wire to the (+) pad of the USB section and a black wire to the (-) pad
-        tbf
-    Else
-        Get a USB cable that has a microUSB connector at one end
-        Snip the other end and strip back the wires
-        On the Powerboost solder the red wire to the (+) pad of the USB section and the black wire to the (-) pad
-    (Optional) add an on/off switch to EN and GND pads on the Powerboost
-    Connect the OTG USB adapter to the OTG UB port on the PiZero
-    Connect the USB Wifi dongle to the OTG USB adapter
-    Download Raspbian “wheezy” or "jessi" https://www.raspberrypi.org/downloads/raspbian/
+    Download Raspbian Jessie Lite https://www.raspberrypi.org/downloads/raspbian/
     Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installation/installing-images/README.md
-    Insert the SD Card into the SD slot on the PiZero
+    Insert the SD Card into the SD slot on the PI
 
 Software Setup
 ---------------------------------------------------------------------------------------------------------------
 There are several options to get into your PiZero
 
     Boot with a Monitor, Keyboard set up your wifi net connection
-    Jessie boots up with SSH enabled so that you can shell in via an ethernet dongle and then set up your wifi net connection.
-    If you can/do not have an ethernet dongle or keybaord/monitor the go wi the Headless Install. You can find a detailed step by step walkthough at http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/ This is by far my fave way of initially setting up a Pi to get on my network for further installation.
+    Jessie boots up with SSH enabled so that you can shell in via an ethernet dongle and then set up your wifi net 
+     connection.
+    If you can/do not have an ethernet dongle or keybaord/monitor the go wi the Headless Install. 
+    You can find a detailed step by step walkthough at http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/ 
+    This is by far my fave way of initially setting up a PI0 to get on my network for further installation.
 
 Login (default user/pssword is pi/raspberry)
 
@@ -48,7 +44,7 @@ If the GUI pops up close out to the CLI
 sudo raspi-config
        Enable SSH Server via raspberry-config
        Change Password
-       Set Hostname to PiFold
+       Set Hostname to AnyfestoPI
        Set To Boot to the Command Line
        Expand the File System 
        Finish & Reboot
@@ -61,7 +57,7 @@ wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfes
 bash PIinstall.sh
 
 ===========================================================================================
-or Manual Installation
+or Manual Installation (do not type lines starting with a #
 ===========================================================================================
 # Install the Basic Packages and Infrastructure
 
@@ -83,6 +79,7 @@ sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
 
 # Setup the Directories and lighttpd 
+
 mkdir /home/pi/content
 mkdir /home/pi/content/Radio
 sudo usermod -d /home/pi/content/Radio vlc
@@ -104,6 +101,7 @@ sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployabl
 
 
 # Setup Network and Captive Portal 
+
 cd ~
 mkdir configs
 cd configs
@@ -138,6 +136,7 @@ sudo mv -f kiwiircpi.service /etc/systemd/system/kiwiirc.service
 sudo mv -f kiwixpi.service /etc/systemd/system/kiwix.service
 
 #Setup Audio Streaming using VLC
+
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -148,6 +147,7 @@ sudo mv -f ~/configs/startpi.sh /etc/vlc/start.sh
 sudo chmod a+rx /etc/vlc/start.sh
 
 #Setup Text Chat ircd-hybrid and kiwiirc web 
+
 sudo apt-get -y install ircd-hybrid
 cd ~
 cd configs
@@ -170,8 +170,8 @@ sudo chmod a+rx config.js
 cd ~
 
 
-
 #Setup Kiwix WikiMedia Server
+
 cd ~
 wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
 tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
@@ -186,8 +186,30 @@ kiwix-manage /home/pi/content/kiwix/library.xml add /home/chip/content/kiwix/wik
 sudo chmod a+rx *
 cd ~
 
+#Setup Mumble Server for secure voip and chat
+
+sudo apt-get install mumble-server
+sudo dpkg-reconfigure mumble-server
+   Autostart:  Yes
+   High Priority: No
+   SuperUser: Set the admin password
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+sudo /usr/sbin/update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+sudo chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+sudo chmod a+rx *
+cd ~
+
 
 #Installation Complete...Preparing To Reboot
+
 sudo /etc/init.d/hostapd  stop
 sudo systemctl daemon-reload 
 sudo systemctl enable vlc.service
@@ -201,17 +223,12 @@ sudo ifconfig wlan0 up
 sudo sync 
 sudo reboot
 
-==Update hostapd
 
-wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
-zip adafruit_hostapd_14128.zip
-sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
-sudo mv hostapd /usr/sbin
-sudo chmod 755 /usr/sbin/hostapd
-sudo /etc/init.d/hostapd  stop
+-You shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect, open up a web browser and 
+attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+of the things you can do. 
 
-
--You shoud now have a base Anyfesto Install. Congrats. 
 ----------------------------------------------------------------------------
 Going Further
 ------------------------------------------------------------------------------------
@@ -225,45 +242,44 @@ sudo sync
 sudo reboot
 
 ----------------------------------------------------------------------------
-Adding a USB Drive
+Adding a USB Drive (vfat formated, which is the default for most USB storage)
+By adding a USB storage drive you can 
+1) free up the onboard memory of your PI
+2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
+   to another computer
+After installing the USB drive any files and directories on it will show up 
+in you File Share section from the web page and once rebooted any mp3 files
+will be added to the VLC Audio Stream playlist. 
 ----------------------------------------------------------------------------
--Connect the usb drive to the usb port
+-Connect the USB drive to the USB port
+
 sudo mkdir /media/drives
 sudo mount /dev/sda1 /media/drives
-sudo nano /etc/fstab                     #Add/Change the following and save
-   /dev/sda1 /media/drives vfat defaults 0 0
-sudo mount -a                            #drive will now automount on boot. If you disconect the drive and reattach it run sudo mount -a again
-
--Adding a Direcotry on the USB Drive to the shared file listing (these will show up uner the Files selection of the Web Page)
-sudo ln -s /drives/(NameOfDirectory)/ /home/pi/content/
-
--Example - for my test setup 
-  sudo ln -s /drives/SpokenWord/ /home/pi/content/
-  sudo ln -s /drives/Books/ /home/pi/content/
-  sudo ln -s /drives/Audio/ /home/pi/content/
-
+sudo sh -c 'echo "/dev/sda1 /media/drives vfat uid=nobody,gid=nogroup,umask=0,noatime,rw,user 0 0" >> /etc/fstab'
+sudo mount -a 
+sudo mv /home/pi/content /media/drives
+sudo rm -r /home/pi/content/
+sudo ln -s /drives/content /home/pi
 
 ----------------------------------------------------------------------------
-Optional - Add Mumble Server for secure voip and chat
-----------------------------------------------------------------------------
-sudo apt-get install mumble-server
-sudo dpkg-reconfigure mumble-server
-   Autostart:  Yes
-   High Priority: No
-   SuperUser: Set the admin password
-cd ~
-cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
-chmod a+rx *
-sudo mv -f mumble-server.ini /etc/mumble-server.ini
-/usr/sbin/update-rc.d mumble-server enable
-cd ~/content
-mkdir apps
-chmod a+rx apps/
-cd apps
-wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
-chmod a+rx *
-cd ~
+Adding a USB Drive (ext4 formatted)
+One draw back of the widely used vfat format is that the largest file on it 
+can not exceed 4 GB. If you are going to use files larger than that, which many 
+ZIMs will be, you might want to use ext4
+-------------------------------------------------------------------------------------
+
+-First we check the UUID of the usb drive
+ sudo blkid -o list
+
+-Then add the following (replacing the UUID with the appropriate usbdrive UUID)
+ UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /usbdrive ext4 defaults 0
+
+- Add the "pi" user and "pi" group to the folders:
+  sudo chown pi:pi -R /usbdrive
+
+-allows access to the folders 
+ sudo setfacl -m u:www-data:rx -R content/
+
 
 
 ------------------------------------------------------------------------------
@@ -315,8 +331,36 @@ sudo /etc/php5/cgi-bin/php.ini
 doc_root = "/var/www/html/"
 
 
+
 ------------------------------------------------------------------------------------------
-Optional - PiFM
+Optional - Battery Powered
+(from the PiFold project on Hackaday https://hackaday.io/project/9498-pifold)
+------------------------------------------------------------------------------------------
+    Connect the JST from the Battery to the JST connector on the Powerboost 1000
+    If you want to hardwire this to the PiZero
+        On the Powerboost solder a red wire to the (+) pad of the USB section and a black wire to the (-) pad
+        tbf
+    Else
+        Get a USB cable that has a microUSB connector at one end
+        Snip the other end and strip back the wires
+        On the Powerboost solder the red wire to the (+) pad of the USB section and the black wire to the (-) pad
+    (Optional) add an on/off switch to EN and GND pads on the Powerboost
+
+
+------------------------------------------------------------------------------------------
+Optional - Hostapd - some wifi dongles require a differnt version of hostapd
+------------------------------------------------------------------------------------------
+
+wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
+zip adafruit_hostapd_14128.zip
+sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.old
+sudo mv hostapd /usr/sbin
+sudo chmod 755 /usr/sbin/hostapd
+sudo /etc/init.d/hostapd  stop
+
+
+------------------------------------------------------------------------------------------
+Optional - PiFM - Only works on PI1s
 ------------------------------------------------------------------------------------------
 
 git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
