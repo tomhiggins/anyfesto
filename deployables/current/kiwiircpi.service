@@ -1,0 +1,12 @@
+[Unit]
+Description=KiwiIRC Web Frontend Server
+After=network.target
+
+[Service]
+Type=forking
+User=pi
+WorkingDirectory=/home/pi/KiwiIRC
+ExecStart=/home/pi/KiwiIRC/kiwi start
+
+[Install]
+WantedBy=multi-user.target
