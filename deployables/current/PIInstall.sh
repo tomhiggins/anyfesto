@@ -110,11 +110,11 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get -y install ircd-hybrid
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircdpi.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.motd
 sudo chown root:root *
 sudo chmod a+rx *
-sudo mv -f ircd.conf /etc/ircd-hybrid/ 
+sudo mv -f ircdpi.conf /etc/ircd-hybrid/ircd.conf 
 sudo mv -f ircd.motd /etc/ircd-hybrid/ircd.motd   
 sudo apt-get -y install npm
 cd ~
