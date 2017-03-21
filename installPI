@@ -259,7 +259,7 @@ sudo sh -c 'echo "/dev/sda1 /media/drives vfat uid=nobody,gid=nogroup,umask=0,no
 sudo mount -a 
 sudo mv /home/pi/content /media/drives
 sudo rm -r /home/pi/content/
-sudo ln -s /drives/content /home/pi
+sudo ln -s /media/drives/content /home/pi
 
 ----------------------------------------------------------------------------
 Adding a USB Drive (ext4 formatted)
