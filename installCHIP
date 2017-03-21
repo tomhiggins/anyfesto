@@ -181,7 +181,11 @@ sudo ifconfig wlan1 up
 sudo sync 
 sudo reboot
 
--You shoud now have a base Anyfesto Install. Congrats. 
+-You shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect, open up a web browser and 
+attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+of the things you can do. 
+
 ----------------------------------------------------------------------------
 Going Further
 ------------------------------------------------------------------------------------
