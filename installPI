@@ -53,7 +53,12 @@ sudo raspi-config
        Expand the File System 
        Finish & Reboot
 
+===========================================================================================
+Scripted Installation
+===========================================================================================
 
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/PIinstall.sh
+bash PIinstall.sh
 
 ===========================================================================================
 or Manual Installation
