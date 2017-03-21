@@ -7,7 +7,7 @@
 # Install the Basic Packages and Infrastructure
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Starting the AnyfestoCHIP Install...."
+echo "Starting the AnyfestoPI Install...."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installing the Basic Packages and Infrastructure."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -50,8 +50,7 @@ sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployabl
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
 
-#
-Setup Network and Captive Portal 
+# Setup Network and Captive Portal 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
