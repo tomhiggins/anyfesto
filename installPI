@@ -232,8 +232,9 @@ of the things you can do.
 ----------------------------------------------------------------------------
 Going Further
 ------------------------------------------------------------------------------------
--To add more packages, do administration or fix what needs fixing reconnect to the CHIP either via the Headless Method outlined
--above or by using your own method. The following will bring down your AP and reconnect you to the internet Wifi AP of your choosing.
+-To add more packages, do administration or fix what needs fixing reconnect to the PI either via the Headless Method outlined
+ above or by using your own method. The following will bring down your AP and reconnect you to the internet Wifi AP of your
+ choosing.
 
 -Add options, new packages, make changes. 
 -When you are done with the changes 
@@ -260,26 +261,6 @@ sudo mount -a
 sudo mv /home/pi/content /media/drives
 sudo rm -r /home/pi/content/
 sudo ln -s /media/drives/content /home/pi
-
-----------------------------------------------------------------------------
-Adding a USB Drive (ext4 formatted)
-One draw back of the widely used vfat format is that the largest file on it 
-can not exceed 4 GB. If you are going to use files larger than that, which many 
-ZIMs will be, you might want to use ext4
--------------------------------------------------------------------------------------
-
--First we check the UUID of the usb drive
- sudo blkid -o list
-
--Then add the following (replacing the UUID with the appropriate usbdrive UUID)
- UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /usbdrive ext4 defaults 0
-
-- Add the "pi" user and "pi" group to the folders:
-  sudo chown pi:pi -R /usbdrive
-
--allows access to the folders 
- sudo setfacl -m u:www-data:rx -R content/
-
 
 
 ------------------------------------------------------------------------------
