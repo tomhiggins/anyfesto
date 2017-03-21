@@ -48,9 +48,10 @@ cd /var/www/html/css
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/m3uStreamPlayer.js
 
-#
-Setup Network and Captive Portal 
+
+#Setup Network and Captive Portal 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -58,7 +59,7 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
 mkdir configs
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
+wget dhcpd.conf 
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
