@@ -37,6 +37,8 @@ There are several options to get into your PI
     You can find a detailed step by step walkthough at http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/ 
     This is by far my fave way of initially setting up a PI0 to get on my network for further installation.
 
+Power up the PI
+
 Login (default user/pssword is pi/raspberry)
 
 If the GUI pops up close out to the CLI
@@ -58,7 +60,7 @@ wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfes
 bash PIinstall.sh
 
 ===========================================================================================
-or Manual Installation (do not type lines starting with a #
+or Manual Installation (do not type lines starting with a #)
 ===========================================================================================
 # Install the Basic Packages and Infrastructure
 
