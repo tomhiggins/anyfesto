@@ -28,18 +28,19 @@ Hardware Setup
 
 Software Setup
 ---------------------------------------------------------------------------------------------------------------
-There are several options to get into your PiZero
+There are several options to get into your PI
 
-    Boot with a Monitor, Keyboard set up your wifi net connection
-    Jessie boots up with SSH enabled so that you can shell in via an ethernet dongle and then set up your wifi net 
+    1. Boot with a Monitor, Keyboard and Ethernet connection to your lan 
+    2. Jessie boots up with SSH enabled so that you can shell in via an ethernet and then set up your wifi net 
      connection.
-    If you can/do not have an ethernet dongle or keybaord/monitor the go wi the Headless Install. 
+    3. If you can/do not have an ethernet dongle or keybaord/monitor the go wi the Headless Install. 
     You can find a detailed step by step walkthough at http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/ 
     This is by far my fave way of initially setting up a PI0 to get on my network for further installation.
 
 Login (default user/pssword is pi/raspberry)
 
 If the GUI pops up close out to the CLI
+
 
 sudo raspi-config
        Enable SSH Server via raspberry-config
@@ -232,13 +233,9 @@ of the things you can do.
 ----------------------------------------------------------------------------
 Going Further
 ------------------------------------------------------------------------------------
--To add more packages, do administration or fix what needs fixing reconnect to the PI either via the Headless Method outlined
- above or by using your own method. The following will bring down your AP and reconnect you to the internet Wifi AP of your
- choosing.
+-To add more packages, do administration or fix what needs fixing reconnect to the PI by one of the methods listed 
+ at the begining of these instructions making sure to undo any changes made to the network config files. 
 
--Add options, new packages, make changes. 
--When you are done with the changes 
-sudo ifconfig wlan0 down
 sudo sync
 sudo reboot
 
