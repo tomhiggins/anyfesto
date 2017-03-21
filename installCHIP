@@ -216,9 +216,9 @@ sudo mkdir /media/drives
 sudo mount /dev/sda1 /media/drives
 sudo sh -c 'echo "/dev/sda1 /media/drives vfat uid=nobody,gid=nogroup,umask=0,noatime,rw,user 0 0" >> /etc/fstab'
 sudo mount -a 
-sudo mv /home/pi/content /media/drives
-sudo rm -r /home/pi/content/
-sudo ln -s /drives/content /home/pi
+sudo mv /home/chip/content /media/drives
+sudo rm -r /home/chip/content/
+sudo ln -s /media/drives/content /home/chip
 
 
 
