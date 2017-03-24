@@ -13,6 +13,11 @@ Features To Add-
    - Add an option for user Upload area away from RO content
 - Ability to change MAC address   (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
 - An Emergency Scrub method 
+- Harden 
+   -disable root account
+   -disable ssh access for root user
+   -disable ports
+   -readonly as much as possible
 
 
 =Services/Content To Add
