@@ -5,7 +5,7 @@ auto lo
 
 auto wlan0
 allow-hotplug wlan0
-iface wlan1 inet static
+iface wlan0 inet static
   hostapd /etc/hostapd.conf
   address 10.11.99.1
   netmask 255.255.255.0
