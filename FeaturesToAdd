@@ -14,7 +14,9 @@ Features To Add-
 - Ability to change MAC address   (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
 - An Emergency Scrub method 
 - Harden 
-   -disable root account
+   -disable root password and console access
+	     sudo passwd -l root
+	     sudo sh -c "echo > /etc/securetty"
    -disable ssh access for root user
    -disable ports
    -readonly as much as possible
