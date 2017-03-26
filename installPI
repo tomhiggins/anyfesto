@@ -283,8 +283,8 @@ Optional - Install COPS (Calibre OPDS/HTML PHP Server)
 sudo apt-get install php5-gd php5-sqlite php5-cgi
 sudo mkdir /var/www/html/cops
 cd /var/www/html/cops
-sudo wget https://github.com/seblucas/cops/releases/download/1.0.0RC3/cops-1.0.0RC3.zip
-sudo unzip cops-1.0.0RC3.zip
+sudo wget hhttps://github.com/seblucas/cops/releases/download/1.0.1/cops-1.0.1.zip
+sudo unzip cops-1.0.1.zip
 cp config_local.php.example config_local.php  
 sudo nano config_local.php
       $config['calibre_directory'] : Path to your Calibre directory.
