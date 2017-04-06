@@ -1,6 +1,5 @@
-..-------------------------------------------------------..
-..        ANYFESTO - A platform from which to speak      ..
-..-------------------------------------------------------..
+#ANYFESTO - A platform from which to speak 
+
 
 The Raspberry Pi/CHIP as total communication device: Audio streamer, file server, p2p communicator, education server and more.  
 Intallation guides and eventual automated scripts for several low cost hardware setups.
