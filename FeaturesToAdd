@@ -1,8 +1,9 @@
 Features To Add-
 ------------------------------------------------------------------------
 =Installation/ Maintenance 
-  X Simple script to run for installation
-  - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia) 
+  X Simple script to run for installation.
+  - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia). 
+  - Update/Upgrade when internet connection is detected.
 
 =Networking
 - 2nd wifi device setup for back haul/mesh/etc 
