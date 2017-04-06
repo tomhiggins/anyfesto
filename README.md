@@ -18,21 +18,34 @@ This project draws on the work of many great projects.
 **Software**
 
 Debian Linux - https://www.debian.org/
+
 Raspbian Linux-	http://www.raspbian.org/
+
 VLC - 		https://github.com/videolan/vlc
+
 IRCd-Hybrib - 	http://www.ircd-hybrid.org/
+
 KiwiIRC - https://kiwiirc.com/
+
 Bootstrap - http://getbootstrap.com/
+
 Mumble - https://wiki.mumble.info/wiki/Main_Page
+
 Kiwix - http://www.kiwix.org/
+
 KALite - https://learningequality.org/ka-lite/
+
 WebChess  - 	http://sourceforge.net/apps/mediawiki/webchess/
+
 m3uStreamPlayer - https://github.com/opi/m3uStreamPlayer
+
 PIrateRadio - 	https://github.com/Make-Magazine/PirateRadio
 
 **Hardware**
 
 RaspberryPi - https://www.raspberrypi.org/
+
 CHIP - https://getchip.com/
+
 Adafruit - https://www.adafruit.com/
  
