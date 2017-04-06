@@ -1,4 +1,4 @@
-# ANYFESTO - A platform from which to speak 
+#ANYFESTO - A platform from which to speak 
 
 
 The Raspberry Pi/CHIP as total communication device: Audio streamer, file server, p2p communicator, education server and more.  
@@ -15,7 +15,7 @@ Anyfesto by Tom Higgins is licensed under a Creative Commons Attribution-NonComm
 
 This project draws on the work of many great projects.
 ---------------------------------------------------------
-Software
+**Software**
 --------------
 
 Debian Linux - https://www.debian.org/
