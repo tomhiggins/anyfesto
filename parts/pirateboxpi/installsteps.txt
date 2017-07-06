@@ -1,1 +1,0 @@
-See https://github.com/tomhiggins/anyfesto/blob/master/install for uptodate install
