@@ -5,6 +5,7 @@ Features To Add-
   - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia). 
   - Update/Upgrade when internet connection is detected.
   - Ability to easily add to the playlist for the web based player
+  - Get the installer to change the default passowrd in start.sh for VLC server
   
 
 =Networking
