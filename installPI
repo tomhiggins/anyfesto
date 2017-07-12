@@ -60,10 +60,15 @@ Scripted Installation
 wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/PIinstall.sh
 bash PIinstall.sh
 
--Once it s has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+-Once it has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
 another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect, open up a web browser and 
 attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
+
+-Add any additonal audio you want played and shared into /home/chip/content/Radio  Reboot and the new audio will be added to the
+playlist
+
+-Add any content you want to share into /home/chip/content
 
 -To add USB drives, more packages, do administration or fix what needs fixing
 head down to the Going Further section below 
