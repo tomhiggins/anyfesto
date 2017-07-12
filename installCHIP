@@ -42,6 +42,11 @@ another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead 
 attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
 
+-Add any additonal audio you want played and shared into /home/chip/content/Radio  Reboot and the new audio will be added to the
+playlist
+
+-Add any content you want to share into /home/chip/content
+
 -To add USB drives, more packages, do administration or fix what needs fixing
  head down to the Going Further section below 
 
