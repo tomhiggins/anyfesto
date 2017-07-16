@@ -145,7 +145,7 @@ sudo mv kiwix-manage /usr/bin/kiwix-manage
 mkdir /home/pi/content/kiwix
 cd /home/pi/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary_en_simple_all.zim
-kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_simple_all.zim
+kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/wiktionary_en_simple_all.zim
 sudo chmod a+rx *
 cd ~
 
@@ -153,7 +153,7 @@ cd ~
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-read -p "Press any key to reboot the CHIP."
+read -p "Press any key to reboot the PI."
 sudo /etc/init.d/hostapd  stop
 sudo systemctl daemon-reload 
 sudo systemctl enable vlc.service
