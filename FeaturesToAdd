@@ -32,4 +32,7 @@ Features To Add-
   - LibriVox - https://librivox.org/
   - NumberStation (run a number station to send private msgs) - https://linuxcoffee.com/numbers/
   X Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
+  
+=Power Saving
+  - On PI's turn off HDMI port (Add line  /usr/bin/tvservice -o  to  /etc/rc.local to have HDMI turned off at bootup. -p to reenable)
 
