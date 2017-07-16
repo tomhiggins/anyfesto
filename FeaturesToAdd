@@ -35,4 +35,20 @@ Features To Add-
   
 =Power Saving
   - On PI's turn off HDMI port (Add line  /usr/bin/tvservice -o  to  /etc/rc.local to have HDMI turned off at bootup. -p to reenable)
-
+  - Turn off the LEDs
+      On PI 0's
+         echo none | sudo tee /sys/class/leds/led0/trigger
+         echo 1 | sudo tee /sys/class/leds/led0/brightness
+         To /boot/config.txt add
+	    dtparam=act_led_trigger=none 
+            dtparam=act_led_activelow=on
+      On PI's other
+        echo gpio | sudo tee /sys/class/leds/led1/trigger
+	echo 0 | sudo tee /sys/class/leds/led1/brightness
+	to /boot/config.txt add
+            dtparam=act_led_trigger=none
+            dtparam=act_led_activelow=off
+            dtparam=pwr_led_trigger=none
+            dtparam=pwr_led_activelow=off
+      
+      
