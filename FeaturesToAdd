@@ -34,7 +34,9 @@ Features To Add-
   X Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
   
 =Power Saving
-  - On PI's turn off HDMI port (Add line  /usr/bin/tvservice -o  to  /etc/rc.local to have HDMI turned off at bootup. -p to reenable)
+  - On PI's turn off HDMI port 
+       Add line  /usr/bin/tvservice -o  to  /etc/rc.local to have HDMI turned off at bootup. 
+         -p to reenable
   - Turn off the LEDs
       On PI 0's
          echo none | sudo tee /sys/class/leds/led0/trigger
