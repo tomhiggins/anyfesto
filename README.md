@@ -7,9 +7,10 @@ Intallation guides and eventual automated scripts for several low cost hardware 
 Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication.  
 Anyfesto is the toolbox to make that happen.
 
-Read the Install documents for step by step instructions on building your own. Soon after testing an automated method will be 
-made available for easier installation. 
+# Start your Journey 
+You can start yout installation by selecting either the InstallPI.sh or InstallCHIP.sh options above.
 
+# About
 Anyfesto by Tom Higgins is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 This project draws on the work of many great projects.
