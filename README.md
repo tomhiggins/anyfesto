@@ -8,7 +8,7 @@ Any manifestation of a meeting - in the schools or in the streets - is going to 
 Anyfesto is the toolbox to make that happen.
 
 # Start your Journey 
-You can start yout installation by selecting either the InstallPI.sh or InstallCHIP.sh options above.
+You can start yout installation by selecting either the **InstallPI** or **InstallCHIP** options above.
 
 # About
 Anyfesto by Tom Higgins is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
