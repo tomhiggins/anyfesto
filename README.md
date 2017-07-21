@@ -1,21 +1,24 @@
 # ANYFESTO - A platform from which to speak 
 
+Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication. Anyfesto is the toolbox to make that happen.
 
-The Raspberry Pi/CHIP as total communication device: Audio streamer, file server, p2p communicator, education server and more.  
-Intallation guides and eventual automated scripts for several low cost hardware setups.
+By using low cost hardware and proven Open Source Software the ability to build a robust communication device is now affordable and accessible both for individuals and for community wide needs.
 
-Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication.  
-Anyfesto is the toolbox to make that happen.
+Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utilizing proven Open Source Software an Anyfesto install offers audio streaming , file sharing, text and voice communications, education content and more.
+
+Kindess Shares
 
 # Start your Journey 
+
 You can start yout installation by selecting either the **InstallPI** or **InstallCHIP** options above.
 
+
 # About
+
 Anyfesto by Tom Higgins is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
+
 This project draws on the work of many great projects.
-
-
 **Software**
 
 Debian Linux - https://www.debian.org/
