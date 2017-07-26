@@ -128,7 +128,8 @@
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Streaming Audio</h2>
           <p>
-            <h3 class="widget-title">Audio Player</h3><audio src="stream.m3u" id="audio" controls="" width="120" data-playlist="stream.m3u"></audio>
+            <h3 class="widget-title">Audio Player</h3>
+	   <audio id="audio" controls="" width="120" data-playlist="stream.m3u"></audio>
             <button id="audio-next-source">Next Audio Item </button>
             <script src="js/m3uStreamPlayer.js"></script>
             <script>m3uStreamPlayer.init({selector: '#audio', debug: true});</script>
