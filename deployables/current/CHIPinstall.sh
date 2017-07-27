@@ -26,6 +26,8 @@ sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
+cd ~
+mkdir configs
 
 # Setup the Directories and lighttpd 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -136,7 +138,6 @@ echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 
 cd ~
-mkdir configs
 cd configs
 wget dhcpd.conf 
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
