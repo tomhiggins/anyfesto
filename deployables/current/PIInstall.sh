@@ -16,7 +16,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y install locales
 sudo locale-gen en_US en_US.UTF-8
 sudo apt-get -y install vlc
-sudo adduser --quiet --no-create-home --shell /bin/false --disabled-password vlc
+sudo adduser --quiet --gecos --no-create-home --shell /bin/false --disabled-password vlc
 sudo usermod -G audio,pi vlc
 sudo apt-get -y install lighttpd
 sudo apt-get -y install dnsmasq
