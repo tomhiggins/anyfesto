@@ -51,45 +51,6 @@ sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/m3uStreamPlayer.js
 
 
-#Setup Network and Captive Portal 
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up The Network, Access Point and Captive Portal"
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-
-cd ~
-mkdir configs
-cd configs
-wget dhcpd.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlc.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiirc.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwix.service
-sudo chown root:root *
-sudo chmod a+rx *
-
-sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
-sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
-sudo mv -f hostapd /etc/default/hostapd
-sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
-sudo mv -f interfaces /etc/network/interfaces 
-sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
-sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
-sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
-sudo mv -f hosts /etc/hosts
-sudo mv -f hostname /etc/hostname
-sudo mv -f vlc.service /etc/systemd/system/vlc.service
-sudo mv -f kiwiirc.service /etc/systemd/system/kiwiirc.service
-sudo mv -f kiwix.service /etc/systemd/system/kiwix.service
-
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Audio Streaming Service"
@@ -146,6 +107,46 @@ cd /home/chip/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary_en_simple_all.zim
 kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_simple_all.zim
 cd ~
+
+#Setup Network and Captive Portal 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up The Network, Access Point and Captive Portal"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+
+cd ~
+mkdir configs
+cd configs
+wget dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiirc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwix.service
+sudo chown root:root *
+sudo chmod a+rx *
+
+sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasq.conf /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapd.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfaces /etc/network/interfaces 
+sudo mv -f isc-dhcp-server /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hosts /etc/hosts
+sudo mv -f hostname /etc/hostname
+sudo mv -f vlc.service /etc/systemd/system/vlc.service
+sudo mv -f kiwiirc.service /etc/systemd/system/kiwiirc.service
+sudo mv -f kiwix.service /etc/systemd/system/kiwix.service
+
 
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
