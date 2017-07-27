@@ -115,7 +115,7 @@ cd ~
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setup Mumble Server for secure voip and chat"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-sudo apt-get install mumble-server
+sudo apt-get -y install mumble-server
 echo "When prompted answer the following questions as noted...."
 echo "   Autostart:  Yes  "
 echo "   High Priority: No   "
