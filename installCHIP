@@ -14,8 +14,7 @@ Parts List
    USB OTG cable
 ----------------------------------------
 This install assumes a fresh out of the baggie CHIP. If you want a bit more room and have no plans on using this CHIP for GUI purposes 
-go to https://docs.getchip.com/chip.html#flash-chip-with-an-os and follow the instructions to install the Headless version 
-that is a great base for servers. 
+go to https://flash.getchip.com/ and follow the instructions to install the Headless version that is a great base for servers. 
 This install has been tested on a 4.4 Headless setup. YMMV
 ----------------------------------------
 =Connect to the CHIP
