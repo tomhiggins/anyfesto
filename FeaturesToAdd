@@ -6,13 +6,13 @@ Features To Add-
   - Update/Upgrade when internet connection is detected.
   - Ability to easily add to the playlist for the web based player
   - Get the installer to change the default passowrd in start.sh for VLC server
-  - Add VOIP server (mumble) to the autoinstall scripts
+  x Add VOIP server (mumble) to the autoinstall scripts
   - A better description of services offered from the landing page
      X - link to wikimedia
      x - link to web based irc
      x - link to the file share
-     - - link to the VOIP (mumble) server
-     - - link to the audio stream (http://10.11.91.1:8085 using vlc or any streaming app)
+     x - link to the VOIP (mumble) server
+     x - link to the audio stream (http://10.11.91.1:8085 using vlc or any streaming app)
      - - link to the audio stream manager (10.11.91.1:8088) 
   
 
