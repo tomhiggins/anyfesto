@@ -27,6 +27,8 @@ sudo apt-get -y install perl sox libsox-fmt-all libav-tools
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
+cd ~
+mkdir configs
 
 # Setup the Directories and lighttpd 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -51,45 +53,6 @@ cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/m3uStreamPlayer.js
 
-
-# Setup Network and Captive Portal 
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up The Network, Access Point and Captive Portal"
-echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-
-cd ~
-mkdir configs
-cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpdpi.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasqpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfacespi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostspi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostnamepi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiircpi.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwixpi.service
-sudo chown root:root *
-sudo chmod a+rx *
-
-sudo mv -f dhcpdpi.conf /etc/dhcp/dhcpd.conf
-sudo mv -f dnsmasqpi.conf /etc/dnsmasq.conf
-sudo mv -f hostapd /etc/default/hostapd
-sudo mv -f hostapdpi.conf /etc/hostapd/hostapd.conf 
-sudo mv -f interfacespi /etc/network/interfaces 
-sudo mv -f isc-dhcp-serverpi /etc/default/isc-dhcp-server
-sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
-sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
-sudo mv -f hostspi /etc/hosts
-sudo mv -f hostnamepi /etc/hostname
-sudo mv -f vlcpi.service /etc/systemd/system/vlc.service
-sudo mv -f kiwiircpi.service /etc/systemd/system/kiwiirc.service
-sudo mv -f kiwixpi.service /etc/systemd/system/kiwix.service
 
 #Setup Audio Streaming using VLC
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -149,6 +112,67 @@ kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/wikti
 sudo chmod a+rx *
 cd ~
 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setup Mumble Server for secure voip and chat"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+sudo apt-get install mumble-server
+echo "When prompted answer the following questions as noted...."
+echo "   Autostart:  Yes  "
+echo "   High Priority: No   "
+echo "   SuperUser: Set the admin password  "
+sudo dpkg-reconfigure mumble-server
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+sudo update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+chmod a+rx *
+cd ~
+
+# Setup Network and Captive Portal 
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setting Up The Network, Access Point and Captive Portal"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpdpi.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasqpi.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfacespi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostspi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostnamepi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiircpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwixpi.service
+sudo chown root:root *
+sudo chmod a+rx *
+
+sudo mv -f dhcpdpi.conf /etc/dhcp/dhcpd.conf
+sudo mv -f dnsmasqpi.conf /etc/dnsmasq.conf
+sudo mv -f hostapd /etc/default/hostapd
+sudo mv -f hostapdpi.conf /etc/hostapd/hostapd.conf 
+sudo mv -f interfacespi /etc/network/interfaces 
+sudo mv -f isc-dhcp-serverpi /etc/default/isc-dhcp-server
+sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
+sudo mv -f hostspi /etc/hosts
+sudo mv -f hostnamepi /etc/hostname
+sudo mv -f vlcpi.service /etc/systemd/system/vlc.service
+sudo mv -f kiwiircpi.service /etc/systemd/system/kiwiirc.service
+sudo mv -f kiwixpi.service /etc/systemd/system/kiwix.service
+
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installation Complete...Preparing To Reboot"
@@ -160,6 +184,7 @@ sudo systemctl enable vlc.service
 sudo systemctl enable kiwix.service
 sudo systemctl enable kiwiirc.service
 sudo update-rc.d ircd-hybrid enable
+sudo update-rc.d mumble-server enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
 sudo ifconfig wlan0 down
