@@ -90,7 +90,6 @@ sudo chmod a+rx config.js
 cd ~
 
 
-
 #Setup Kiwix WikiMedia Server
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up Kiwix Wikimedia Server "
@@ -106,6 +105,29 @@ mkdir /home/chip/content/kiwix
 cd /home/chip/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary_en_simple_all.zim
 kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/wiktionary_en_simple_all.zim
+cd ~
+
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+echo "Setup Mumble Server for secure voip and chat"
+echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+sudo apt-get install mumble-server
+echo "When prompted answer the following questions as noted...."
+echo "   Autostart:  Yes  "
+echo "   High Priority: No   "
+echo "   SuperUser: Set the admin password  "
+sudo dpkg-reconfigure mumble-server
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+chmod a+rx *
+sudo mv -f mumble-server.ini /etc/mumble-server.ini
+sudo update-rc.d mumble-server enable
+cd ~/content
+mkdir apps
+chmod a+rx apps/
+cd apps
+wget https://f-droid.org/repo/com.morlunk.mumbleclient_73.apk
+chmod a+rx *
 cd ~
 
 #Setup Network and Captive Portal 
@@ -160,6 +182,8 @@ sudo systemctl enable kiwiirc.service
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
+sudo update-rc.d mumble-server enable
+
 sudo nmcli connection delete id "$(nmcli c |grep wlan0 | cut -f1 -d ' ')"
 sudo ifconfig wlan1 down        
 sudo ifconfig wlan0 down
