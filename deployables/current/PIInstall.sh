@@ -58,6 +58,11 @@ sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployabl
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Audio Streaming Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
+cd ~
+cd configs
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -72,8 +77,7 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Text Chat Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get -y install ircd-hybrid
-cd ~
-cd configs
+cd ~/configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircdpi.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.motd
 sudo chown root:root *
@@ -121,8 +125,7 @@ echo "   Autostart:  Yes  "
 echo "   High Priority: No   "
 echo "   SuperUser: Set the admin password  "
 sudo dpkg-reconfigure mumble-server
-cd ~
-cd configs
+cd ~/configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
 chmod a+rx *
 sudo mv -f mumble-server.ini /etc/mumble-server.ini
@@ -139,18 +142,13 @@ cd ~
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-
-cd ~
-cd configs
+cd ~/configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpdpi.conf 
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasqpi.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfacespi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostspi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostnamepi
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
