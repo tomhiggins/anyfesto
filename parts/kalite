@@ -6,3 +6,11 @@ Bringing the power of online learning to the offline world."
 
 Installation Docs - http://ka-lite.readthedocs.io/en/0.16.x/installguide/install_main.html
 
+
+sudo apt-get install python-m2crypto python-pkg-resources nginx python-psutil
+sudo wget https://learningequality.org/r/deb-pi-installer-0-17 --no-check-certificate --content-disposition
+sudo dpkg -i ka-lite-raspberry-pi*.deb
+
+kalite manage setup
+
+Videos go into /home/pi/.kalite/content
