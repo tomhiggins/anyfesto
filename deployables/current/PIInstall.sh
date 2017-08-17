@@ -63,7 +63,7 @@ cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/stream.m3u
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -72,6 +72,9 @@ cd /home/pi/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo mv -f ~/configs/startpi.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
+sudo mv /home/pi/configs/stream.m3u /var/www/html/stream.m3u
+sudo chown pi:pi /var/www/html/stream.m3u
+
 
 #Setup Text Chat ircd-hybrid and kiwiirc web 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
