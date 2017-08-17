@@ -63,6 +63,7 @@ cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
