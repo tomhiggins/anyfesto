@@ -1,3 +1,20 @@
+November 4th 2017
+I have been running a AnyfestoPI on a PIW0 for a few months now nearly everyday. Stable as a rock, everything works from the 
+install setup instructions on first boot. Yes even the audio player on the web page works. I have made several installs on PI0Ws 
+for various purposes and they are all working from the setup up instructions. One is kept in a school kids backpack and the reports
+are all good. 
+
+Thanks to commenters there are a couple of issues that I am trying to find time to squash. Some browser requests are  not 
+redirecting to the landing web page. I am looking to see if LibraryBox/PirateBox installs are having this issue. I think it
+might be something on the client's side and dns caching, but so far no proof yea or nea. More as that happens. 
+
+I have also started playing around with the idea of using Chromebooks as an install base for Anhyfesto. I was able to get
+my Chromebooks bios to allow booting into USB/SD devices so it should be possible to build on top of a base Debian much
+as we are currently doing on the PI and CHIPs.
+
+Again, finding time to do this is the real sticking point.  More as it happens.
+
+
 May 20th 2017
 PI bug squash ongoing. Aiming to make one script fit all PI needs rather than having multiple varriants to maintain.
 USBstorage setup next on the list. 
