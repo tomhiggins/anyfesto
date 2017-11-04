@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Anyfesto Install Script for the PI
+# Anyfesto Install Script for the Chromebook
 # CC 2017 by tomwsmf
-# Thanks to LMC for help in work on the PI recode. 
 
 # Install the Basic Packages and Infrastructure
 
@@ -34,10 +33,10 @@ mkdir configs
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up the Directories and Lighttp Web Server"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-mkdir /home/pi/content
-mkdir /home/pi/content/Radio
-sudo usermod -d /home/pi/content/Radio vlc
-sudo ln -s /home/pi/content /var/www/html/content   
+mkdir /home/anyfesto/content
+mkdir /home/anyfesto/content/Radio
+sudo usermod -d /home/anyfesto/content/Radio vlc
+sudo ln -s /home/anyfesto/content /var/www/html/content   
 cd /var/www/html
 sudo rm index*.html
 sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoPI-index.html -O index.html
@@ -72,8 +71,8 @@ cd /home/pi/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo mv -f ~/configs/startpi.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
-sudo mv /home/pi/configs/stream.m3u /var/www/html/stream.m3u
-sudo chown pi:pi /var/www/html/stream.m3u
+sudo mv /home/anyfesto/configs/stream.m3u /var/www/html/stream.m3u
+sudo chown anyfesto:anyfesto /var/www/html/stream.m3u
 
 
 #Setup Text Chat ircd-hybrid and kiwiirc web 
@@ -113,10 +112,10 @@ chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
 sudo mv kiwix-manage /usr/bin/kiwix-manage
-mkdir /home/pi/content/kiwix
-cd /home/pi/content/kiwix
+mkdir /home/anyfesto/content/kiwix
+cd /home/anyfesto/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary_en_simple_all.zim
-kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/wiktionary_en_simple_all.zim
+kiwix-manage /home/anyfesto/content/kiwix/library.xml add /home/anyfesto/content/kiwix/wiktionary_en_simple_all.zim
 sudo chmod a+rx *
 cd ~
 
