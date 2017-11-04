@@ -18,11 +18,13 @@ Parts List
 
 Hardware Setup
 ---------------------------------------------------------------------------------------------------------------
-    If you are using a PI without  WIFI built in
-       PIZero -   Connect the OTG USB adapter to the OTG UB port on the PIZero
+   Wifi -
+       PI0W/PI3 - Wifi is built in, you are ready to proceed
+       PI0 -      Connect the OTG USB adapter to the OTG UB port on the PIZero
                   Connect the USB Wifi dongle to the OTG USB adapter
        PI1/2/A/B- Connect the USB Wifi dongle to the USB adpadter
-
+   Operating System - 
+    From another computer...
     Download Raspbian Jessie Lite https://www.raspberrypi.org/downloads/raspbian/
     Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installation/installing-images/README.md
     Insert the SD Card into the SD slot on the PI
