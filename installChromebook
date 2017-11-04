@@ -1,8 +1,12 @@
 Yep, this is starting to build up from an idea to functional to usable. Stay tuned.
 
+11/03/17
 Some points
   I want to set this up as something you can build on a USB flaskdrive or SD card and boot into when you 
   want to use your Chromebook as a shared resource. Some Chromebooks' bios allow you to boot to usb device, some 
   do not...mine did not. This link fixed that   http://johnlewis.ie/
   
+  11/04/17
+  I ran the base install script minus some PI centric bits on a fresh debian environ living on a USB stick. Hostap is needing some 
+  loving with the hammer of justice and the directory structure needs fixing up. But, yeah, this might be doable. More as it happens.
   
