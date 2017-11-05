@@ -61,7 +61,7 @@ echo "Setting Up the Audio Streaming Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startchromebook.sh
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/stream.m3u
@@ -71,7 +71,7 @@ sudo mv .hosts /etc/vlc
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/anyfesto/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
-sudo mv -f ~/configs/startpi.sh /etc/vlc/start.sh  
+sudo mv -f ~/configs/startchromebook.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
 sudo mv /home/anyfesto/configs/stream.m3u /var/www/html/stream.m3u
 sudo chown anyfesto:anyfesto /var/www/html/stream.m3u
