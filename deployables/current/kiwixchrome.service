@@ -1,0 +1,14 @@
+
+[Unit]
+Description=Kiwix Wikimedia Server
+After=network.target
+
+[Service]
+Type=forking
+User=anyfesto
+WorkingDirectory=/home/anyfesto/content/kiwix
+ExecStart=/usr/bin/kiwix-serve --daemon --port=8099 --library /home/anyfesto/content/kiwix/library.xml
+
+
+[Install]
+WantedBy=multi-user.target
