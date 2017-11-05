@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Anyfesto Install Script for the Chromebook
+# Until this warning is removed this script is pure alpha, not
+# ready for prime time, and possibly bad for your well being. 
 # CC 2017 by tomwsmf
 
 # Install the Basic Packages and Infrastructure
