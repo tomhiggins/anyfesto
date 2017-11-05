@@ -6,7 +6,7 @@
 # Install the Basic Packages and Infrastructure
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Starting the AnyfestoPI Install...."
+echo "Starting the Anyfesto Chromebook Install...."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installing the Basic Packages and Infrastructure."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -16,7 +16,7 @@ sudo apt-get -y install locales
 sudo locale-gen en_US en_US.UTF-8
 sudo apt-get -y install vlc
 sudo adduser --quiet --gecos --no-create-home --shell /bin/false --disabled-password vlc
-sudo usermod -G audio,pi vlc
+sudo usermod -G audio,anyfesto vlc
 sudo apt-get -y install lighttpd
 sudo apt-get -y install dnsmasq
 sudo apt-get -y install isc-dhcp-server
@@ -67,7 +67,7 @@ sudo mkdir /etc/vlc
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
 sudo ln -s /etc/vlc/.hosts .hosts
-cd /home/pi/content/Radio
+cd /home/anyfesto/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
 sudo mv -f ~/configs/startpi.sh /etc/vlc/start.sh  
 sudo chmod a+rx /etc/vlc/start.sh
@@ -106,8 +106,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up Kiwix Wikimedia Server "
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
-wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
-tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+wget https://download.kiwix.org/bin/kiwix-linux-x86_64.tar.bz2
+tar xvf kiwix-linux-x86_64.tar.bz2
 chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
