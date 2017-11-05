@@ -21,6 +21,7 @@ Some points
    - Debian 9 has an issue with SUDO, I will document what needs doing to get it fixed or script a fix if I can
 
  ToDO
+   X Chromebook BIOS fix to boot from USB/SD http://johnlewis.ie/
    X Debian base
    - Make the current scripts work with the Chromebook
    - KAlite (http://ka-lite.readthedocs.io/en/latest/installguide/install_all.html#ubuntu-debian-deb)
