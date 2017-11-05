@@ -20,5 +20,8 @@ Some points
      do as you want. I'm finding this very useful. 
    - Debian 9 has an issue with SUDO, I will document what needs doing to get it fixed or script a fix if I can
 
-      
-      
+ ToDO
+   X Debian base
+   - Make the current scripts work with the Chromebook
+   - KAlite (http://ka-lite.readthedocs.io/en/latest/installguide/install_all.html#ubuntu-debian-deb)
+   - Ability to add a second wifi radio and get internet connection but  wall it off from captiveportal users
