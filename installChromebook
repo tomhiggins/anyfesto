@@ -2,7 +2,7 @@ Yep, this is starting to build up from an idea to functional to usable. Stay tun
 
 11/03/17
 Some points
-  I want to set this up as something you can build on a USB flaskdrive or SD card and boot into when you 
+  I want to set this up as something you can build on a USB flash drive or SD card and boot into when you 
   want to use your Chromebook as a shared resource. Some Chromebooks' bios allow you to boot to usb device, some 
   do not...mine did not. This link fixed that   http://johnlewis.ie/
   
@@ -10,3 +10,15 @@ Some points
   I ran the base install script minus some PI centric bits on a fresh debian environ living on a USB stick. Hostap is needing some 
   loving with the hammer of justice and the directory structure needs fixing up. But, yeah, this might be doable. More as it happens.
   
+11/05/17
+   Some things of note:
+   -I am using Debian 9 to install the OS onto a USB flash drive. You can use an SD or even a USB HD. 
+   - When installing Debian 9 create a user named  "anyfesto" The scripts are set up for that username
+   - As you are installing Debain 9 you can choose whatever GUI you want for your desktop. I like XFCE as
+      it is slim yet expressive. Your milage will vary, the choice of GUIS will be offered to during install
+   - And yes this means while your Chromebook is booked into this you will have a full Desktop Linux to
+     do as you want. I'm finding this very useful. 
+   - Debian 9 has an issue with SUDO, I will document what needs doing to get it fixed or script a fix if I can
+
+      
+      
