@@ -1,15 +1,21 @@
-Yep, this is starting to build up from an idea to functional to usable. Stay tuned.
+ToDO
+   X Chromebook BIOS fix to boot from USB/SD http://johnlewis.ie/
+   X Debian base....on second thought Ubuntu base plus desktop
+   X Make the current scripts work with the Chromebook
+   - KAlite (http://ka-lite.readthedocs.io/en/latest/installguide/install_all.html#ubuntu-debian-deb)
+   - Ability to add a second wifi radio and get internet connection but  wall it off from captiveportal users
 
-11/03/17
-Some points
-  I want to set this up as something you can build on a USB flash drive or SD card and boot into when you 
-  want to use your Chromebook as a shared resource. Some Chromebooks' bios allow you to boot to usb device, some 
-  do not...mine did not. This link fixed that   http://johnlewis.ie/
-  
-  11/04/17
-  I ran the base install script minus some PI centric bits on a fresh debian environ living on a USB stick. Hostap is needing some 
-  loving with the hammer of justice and the directory structure needs fixing up. But, yeah, this might be doable. More as it happens.
-  
+
+01/19/18
+  After several failed starts with Deban I decided to try a Ubuntu Istall
+  Full desktop, after all we are going to want to be using our snazzy Chromebooks
+  while we serve up the local content goodness. And so, Ubuntu Live booted on my 
+  Chromebook and did an install onto a second usb stick...
+  I was them able to reork the scripts to mostly bring the system up as both a desktop and a
+  and all dancing all serving Anyfesto box. Hostap worked, irc, mumble, lighthhtpd all worked. 
+  VLC took a little futzing with but I think that is mostly good no. 
+  I should have a full step by step for this soon(ish)
+
 11/05/17
    Some things of note:
    -I am using Debian 9 to install the OS onto a USB flash drive. You can use an SD or even a USB HD. 
@@ -20,9 +26,20 @@ Some points
      do as you want. I'm finding this very useful. 
    - Debian 9 has an issue with SUDO, I will document what needs doing to get it fixed or script a fix if I can
 
- ToDO
-   X Chromebook BIOS fix to boot from USB/SD http://johnlewis.ie/
-   X Debian base
-   - Make the current scripts work with the Chromebook
-   - KAlite (http://ka-lite.readthedocs.io/en/latest/installguide/install_all.html#ubuntu-debian-deb)
-   - Ability to add a second wifi radio and get internet connection but  wall it off from captiveportal users
+
+  11/04/17
+  I ran the base install script minus some PI centric bits on a fresh debian environ living on a USB stick. Hostap is needing some 
+  loving with the hammer of justice and the directory structure needs fixing up. But, yeah, this might be doable. More as it happens.
+
+
+11/03/17
+Yep, this is starting to build up from an idea to functional to usable. Stay tuned.
+Some points
+  I want to set this up as something you can build on a USB flash drive or SD card and boot into when you 
+  want to use your Chromebook as a shared resource. Some Chromebooks' bios allow you to boot to usb device, some 
+  do not...mine did not. This link fixed that   http://johnlewis.ie/
+  
+  
+
+ 
+ 
