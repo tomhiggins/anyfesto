@@ -70,7 +70,7 @@ sudo reboot
 ----------------------------------------------------------------------------
 Adding a USB Drive (vfat formated, which is the default for most USB storage)
 By adding a USB storage drive you can 
-1) free up the onboard memory of your PI
+1) free up the onboard memory of your CHIP
 2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
    to another computer
 After installing the USB drive any files and directories on it will show up 
