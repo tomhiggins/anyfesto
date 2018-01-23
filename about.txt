@@ -31,11 +31,12 @@ Tasks it can do
 - admin the systemvia a web browser
 - broadcast FM  (working with an external FM Transmitter)
 - browse Calibre libraries
+- chat text private
+- stream audio via a web browser
 
 Tasks it will do
 - broadcast bluetooth
 - upload file
-- chat text private
-- stream audio via a web browser
+
 
 
