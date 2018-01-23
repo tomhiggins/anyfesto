@@ -7,13 +7,13 @@ ToDO
 
 
 01/19/18
-  After several failed starts with Deban I decided to try a Ubuntu Istall
+  After several failed starts with Debian I decided to try a Ubuntu Install
   Full desktop, after all we are going to want to be using our snazzy Chromebooks
   while we serve up the local content goodness. And so, Ubuntu Live booted on my 
   Chromebook and did an install onto a second usb stick...
-  I was them able to reork the scripts to mostly bring the system up as both a desktop and a
+  I was then able to rework the scripts to mostly bring the system up as both a desktop and a
   and all dancing all serving Anyfesto box. Hostap worked, irc, mumble, lighthhtpd all worked. 
-  VLC took a little futzing with but I think that is mostly good no. 
+  VLC took a little futzing with but I think that is mostly good now. 
   I should have a full step by step for this soon(ish)
 
 11/05/17
