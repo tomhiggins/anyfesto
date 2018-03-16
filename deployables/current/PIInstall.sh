@@ -61,7 +61,7 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
 cd configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startpi.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
+wget https://raw.githubusercontent.com/mauricecyril/anyfesto/master/deployables/current/lighttpd.conf
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/stream.m3u
 sudo mkdir /etc/vlc 
