@@ -13,30 +13,34 @@ Things needed
   or 
 - CHIP
 - SD card
-- USB Wifi
+- USB Wifi (optional)
 - US storage (optional)
+- Wall power
 - Battery pack and charger (optional)
 - Speaker (optinal)
 - Mic (optional)
 
 Tasks it can do
-- browse localcontent
-- chat text public
-- chat voice public
-- chat voice private
-- download file
-- stream video
-- stream audio
+- allow users to connect to it
+- serve local content
+  - wikimedia via kiwix
+  - ebooks via web server
+  - images via web server
+  - audio/video via web server
+  - programs and apps via web server
+- chat text public 
+- chat text private
+- chat voice public via mumble
+- chat voice private via mumble
+- stream audio/video to a client app (vlc, etc)
+- stream audio/video to a web browser
 - admin the streams via a client app (vlc remote)
-- admin the systemvia a web browser
+- admin the system via a web browser
 - broadcast FM  (working with an external FM Transmitter)
 - browse Calibre libraries
-- chat text private
-- stream audio via a web browser
 
 Tasks it will do
 - broadcast bluetooth
-- upload file
-
+- mesh with other Anyfesto installs
 
 
