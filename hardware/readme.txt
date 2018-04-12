@@ -14,7 +14,8 @@ SD Card-------------------------------------------------------------------------
 Power-Battery-------------------------------------------------------------------------------------
 Lithium Ion - 3.7V 6600mAh         https://www.adafruit.com/products/353                $29.50 
 USB Battery Pack 10000mAh -        http://www.adafruit.com/products/1566                $39.95 
-Solar Charger 15000mAh USB Battery                                                      $21.00
+Solar Charger 15000mAh USB Battery 
+ https://www.amazon.com/X-DRAGON-15000mAh-Portable-Dustproof-Shockproof/dp/B0716HSX45/  $21.00
 4xAA Battey holder w/switch- 	   http://www.adafruit.com/products/830                 $ 2.95   
 4XAA 2400mAh Rechargeables                                                              $ 9.99
      
