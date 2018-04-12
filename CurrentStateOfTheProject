@@ -1,3 +1,18 @@
+April 11th 2018
+After finally getting settled into my new digs in early March..my apt burnt to the ground. Thankfully the code was kept warm 
+and safe here and in other places. The test hardware and Anyfesto Boxes that were being worked on, 4 Pi 0w's, 3 CHIPs, 2 Pi 3's,
+were lost to the flames. Also my desktop and the tangle of cables, power units, batteries and sd cards....clothes and food..you 
+get the gist. I got out with the clothes on my back and my go-bag. 
+Thanks to the kindness of friends and droogies I have regained some of what was lost. Because of them I can say that less than a 
+month after the flames I have enough pieces to start rebuilding some testing units.
+
+Right before the fire I had set up the first node of a local Anyfesto network here in my new town. No meshing or the like just yet but that is one of the things I would love to tackle this year. These will be to shake down what is already in place, work on things like making the setup keep less logs/data that could be used to track a user, and in general get the core of things rock solid.
+
+If you are running a build please post up your testing reports. What works, what failed on setup, what is being logged that should not, how you moded it for your own needs. 
+
+Until next report, keep on sharing.   
+
+
 January 19th 2018
 Another year and here we are. More life in the way of deving, a move across the states took me away from dev work but I did
 have a chance to try some new things out on the road. My Pi0W Anyfesto has been a trusty companion; I have not been without
