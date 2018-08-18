@@ -40,6 +40,7 @@ Features To Add-
   - LibriVox - https://librivox.org/
   - NumberStation (run a number station to send private msgs) - https://linuxcoffee.com/numbers/
   X Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
+  - Emularity baked in, mame/dosbox/amiga with abiity to add roms/software https://github.com/db48x/emularity
   
 =Power Saving
   - On PI's turn off HDMI port 
