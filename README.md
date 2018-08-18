@@ -6,7 +6,16 @@ By using low cost hardware and proven Open Source Software the ability to build 
 
 Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utilizing proven Open Source Software an Anyfesto install offers audio streaming , file sharing, text and voice communications, education content and more.
 
-Kindess Shares
+### The base Anyfesto install now includes these features on bootup
+
+* Wifi based Captive Portal
+* Web Server
+* Kiwix Wikimedia Server
+* IRC server and Web Frontend
+* Audio Streaming Server
+* Mumble Voip Server
+* SSH Server
+
 
 # Start your Journey 
 
