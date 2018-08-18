@@ -1,3 +1,13 @@
+August 18th 2018
+Promising news on getting one of the original features back in the default build. Having an FM station in my pocket was one of the 
+things that was a key part of the first ideas for the Anyfesto Box. On the original PIs pifm worked a charm, yes it was noisy
+but getting the signal out in some cases is a dirty business. Filters an the like could be added of course. With the newer PIs 
+came problems with bit banging and timing issues on the new chips... so sadly I put the FM code in the Optional section. 
+Some new code I have seen claims to get around these issues. I am going to try and get some time to see if I can get it working on
+the PI3 and the PI0W. If it works out then  pop up stations ahoy. 
+Here is the link to the code https://github.com/somu1795/fm_transmitter and here to a video that uses it and adds a nice
+filter to the build. https://www.youtube.com/watch?v=gcPjkBDdURI
+
 April 11th 2018
 After finally getting settled into my new digs in early March..my apt burnt to the ground. Thankfully the code was kept warm 
 and safe here and in other places. The test hardware and Anyfesto Boxes that were being worked on, 4 Pi 0w's, 3 CHIPs, 2 Pi 3's,
