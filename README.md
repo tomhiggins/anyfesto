@@ -11,7 +11,7 @@ Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utiliz
 * Wifi based Captive Portal
 * Web Server
 * Kiwix Wikimedia Server
-* IRC server and Web Frontend
+* IRC Server and Web Frontend
 * Audio Streaming Server
 * Mumble Voip Server
 * SSH Server
