@@ -1,6 +1,7 @@
 Features To Add-
 ------------------------------------------------------------------------
 =Installation/ Maintenance 
+  - Update to Raspian Buster
   X Simple script to run for installation.
   - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia). 
   - Update/Upgrade when internet connection is detected.
@@ -17,6 +18,11 @@ Features To Add-
   
 
 =Networking
+- Ability to Stat/Change to conect to existing networks
+   - Turn off dhcpd
+   - if via ethernet then DHCP
+   - if via wifi then select ssid and auth then dhcp
+   turn on auto discovery and advertize
 - 2nd wifi device setup for back haul/mesh/etc 
 
 =Security
