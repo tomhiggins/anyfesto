@@ -1,3 +1,15 @@
+July 19th 2019
+Things that need doing to get this refreshed and ready for the next phase
+  - update to raspian buster
+  - bug squash
+My focus for the next round comes form things people have asked me to include
+   - make an Anyfesto install be able to attach to an existing network. There will not be two versions but raher two modes that
+     the install can be in. Mode Classic, the island in the sun stand alone captive portal Anyfest box. Mode the second, connected to an already
+     existing network with lots of broadcast to make it discoverable..or not... such that Anyfesto spreads to where you need it rather than forcing
+     folks to come to it.  Dealers choices, change at will with a quick script run. 
+     - make the configs easier to set up and maintain
+
+
 August 18th 2018
 Promising news on getting one of the original features back in the default build. Having an FM station in my pocket was one of the 
 things that was a key part of the first ideas for the Anyfesto Box. On the original PIs pifm worked a charm, yes it was noisy
