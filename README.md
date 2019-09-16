@@ -1,16 +1,18 @@
-# ANYFESTO - A platform from which to speak 
+# ANYFESTO - A platform from which to speak
 
 Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication. Anyfesto is the toolbox to make that happen.
 
+Your Anyfesto server is discoverable as a Wifi access point, with web navigation leading users to your content.
+
 By using low cost hardware and proven Open Source Software the ability to build a robust communication device is now affordable and accessible both for individuals and for community wide needs.
 
-Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utilizing proven Open Source Software an Anyfesto install offers audio streaming , file sharing, text and voice communications, education content and more.
+Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utilizing proven Open Source Software an Anyfesto install appears to users as a Wifi access point, offering audio streaming, file sharing, text and voice communications, education content and more.
 
 ### The base Anyfesto install now includes these features on bootup
 
-* Wifi based Captive Portal
-* Web Server
-* Kiwix Wikimedia Server
+* Wifi Access Point (captive portal)
+* Following Wifi connect users are redirected to the built-in Web Server
+* Web pages powered by Kiwix Wikimedia Server
 * IRC Server and Web Frontend
 * Audio Streaming Server
 * Mumble Voip Server
@@ -19,7 +21,7 @@ Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utiliz
 
 # Start your Journey 
 
-You can start yout installation by selecting either the **InstallPI** or **InstallCHIP** options above.
+You can start your installation by selecting either the **InstallPI** or **InstallCHIP** options above.
 
 
 # About
