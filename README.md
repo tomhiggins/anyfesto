@@ -8,7 +8,7 @@ Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utiliz
 
 ### The base Anyfesto install now includes these features on bootup
 
-* Wifi based Captive Portal
+* Wifi based Access Point with Captive Portal
 * Web Server
 * Kiwix Wikimedia Server
 * IRC Server and Web Frontend
