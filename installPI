@@ -1,6 +1,7 @@
 Anyfesto Install on a RaspberryPi
 =======================================================================================
 Parts List
+   Raspberry Pi 4 Model B 4gb - https://www.adafruit.com/product/4296 - $55.00
    Raspberry Pi 3 Model B - https://www.adafruit.com/products/3055 - $39.95
    Raspberry Pi 0 W - https://www.adafruit.com/products/3400 - $10.00
    Or
@@ -25,7 +26,7 @@ Hardware Setup
        PI1/2/A/B- Connect the USB Wifi dongle to the USB adpadter
    Operating System - 
     From another computer...
-    Download Raspbian Jessie Lite https://www.raspberrypi.org/downloads/raspbian/
+    Download Raspberry PI OS Lite https://www.raspberrypi.org/downloads/raspberry-pi-os/
     Install Raspberry On SD Card https://www.raspberrypi.org/documentation/installation/installing-images/README.md
     Insert the SD Card into the SD slot on the PI
 
