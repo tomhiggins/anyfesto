@@ -46,9 +46,9 @@ Mumble - https://wiki.mumble.info/wiki/Main_Page
 
 Kiwix - http://www.kiwix.org/
 
-KALite - https://learningequality.org/ka-lite/
+Kolibri - https://learningequality.org/kolibri/
 
-WebChess  - 	http://sourceforge.net/apps/mediawiki/webchess/
+Tor Project - https://www.torproject.org/
 
 m3uStreamPlayer - https://github.com/opi/m3uStreamPlayer
 
