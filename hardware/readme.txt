@@ -2,8 +2,7 @@ Build Your  Anyfesto Install
 
 Base System--------------------------------------------------------------------------------------
 
-CHIP -  1GHz Processor- 512 MB Ram - 4GB Onboard Stoarge - Built In Charger/Battery Circuit
-        Built In 802.11 b/g/n   https://getchip.com/pages/chip                         $ 9.00
+
 Raspberry Pi 3 Model B+ 1GB ram https://www.adafruit.com/product/3775                  $35.00
 Raspberry Pi Zero W             https://www.adafruit.com/product/3400                  $10.00
          Both Pis listed above come with built in Wifi and BluetoothLE
@@ -51,4 +50,9 @@ Misc Parts----------------------------------------------------------------------
 USB wifi 802.11b/g/n          	http://www.adafruit.com/product/1030                   $19.95 
 Tiny USB OTG Adapter            https://www.adafruit.com/products/2910                 $ 2.95
 PowerBoost 1000 Charger 5V      https://www.adafruit.com/products/2465                 $19.95
+-------------------------------------------------------------------------------------------------
+
+No Longer Available------------------------------------------------------------------------------
+CHIP -  1GHz Processor- 512 MB Ram - 4GB Onboard Stoarge - Built In Charger/Battery Circuit
+        Built In 802.11 b/g/n   https://getchip.com/pages/chip                         $ 9.00
 -------------------------------------------------------------------------------------------------
