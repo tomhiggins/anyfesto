@@ -8,7 +8,7 @@
 * SD card
 * USB Wifi
 * US storage (optional)
-* Battery oack and charger (optional)
+* Battery pack and charger (optional)
 * Speaker (optinal)
 * Mic (optional)
 
