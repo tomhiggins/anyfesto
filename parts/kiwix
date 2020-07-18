@@ -10,8 +10,7 @@ Generic Instrutions for adding Kiwix to an Arm hardware device (PI/CHIP/BBB/etc)
 ------------------------------------------------------------------------------------------
 cd ~
 wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
-bzip2 -d kiwix-server-arm.tar.bz2 
-tar xvf kiwix-server-arm.tar
+tar xvf kiwix-server-arm.tar.bz2
 rm kiwix-server-arm.tar
 sudo cp kiwix-serve /usr/bin/kiwix-serve
 sudo cp kiwix-manage /usr/bin/kiwix-manage
