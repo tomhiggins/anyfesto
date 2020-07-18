@@ -1,0 +1,8 @@
+title: Anyfesto
+description: "A platform from which to speak.  Inspired by LIbrarybox, Piratebox, PiFM and the ideas of sharing with others. "
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
