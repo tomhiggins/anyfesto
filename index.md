@@ -13,16 +13,10 @@
 * Mic (optional)
 
 **Tasks it can do**
-* browse localcontent
-* chat public
-* download file
-* stream video
-* stream audio
-* admin the streams via a web browser
-* admin the systemvia a web browser
-
-**Tasks it will do**
-* broadcast FM 
-* broadcast bluetooth
-* upload file
-* chat private
+* Act as a wifi host and cative portal
+* Browse local content
+* Text chat
+* Voice chat
+* Share files
+* Stream video
+* Stream audio
