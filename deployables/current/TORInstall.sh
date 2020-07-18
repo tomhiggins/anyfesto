@@ -103,7 +103,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up Kiwix Wikimedia Server "
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
-wget https://download.kiwix.org/release/kiwix-xulrunner/0.9/kiwix-server-0.9-linux-armv5tejl.tar.bz2ar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-armhf.tar.gz
+tar xvf kiwix-tools_linux-armhf.tar --directory /home/pi/
 chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
