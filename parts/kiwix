@@ -9,9 +9,8 @@ at http://www.kiwix.org/wiki/Content_in_all_languages
 Generic Instrutions for adding Kiwix to an Arm hardware device (PI/CHIP/BBB/etc)
 ------------------------------------------------------------------------------------------
 cd ~
-wget https://download.kiwix.org/bin/kiwix-server-arm.tar.bz2
-tar xvf kiwix-server-arm.tar.bz2
-rm kiwix-server-arm.tar
+wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-armhf.tar.gz
+tar xvf kiwix-tools_linux-armhf.tar.gz
 sudo cp kiwix-serve /usr/bin/kiwix-serve
 sudo cp kiwix-manage /usr/bin/kiwix-manage
 sudo mkdir /media/usb/kiwix        #change this to where you local content is kept. Zims can be large, make sure you have the space. 
