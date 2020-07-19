@@ -134,7 +134,7 @@ sudo nano config_local.php
       $config['calibre_directory'] : Path to your Calibre directory.
       $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
 sudo chmod -R  755 *
-sudo /etc/lighttpd/lighttpd.conf
+sudo nano /etc/lighttpd/lighttpd.conf
       Find
             $HTTP["url"] =~ "^/cgi-bin/" {
   	             cgi.assign = ( ".py" => "/usr/bin/python" )
@@ -148,7 +148,7 @@ sudo /etc/lighttpd/lighttpd.conf
       Change To
             static-file.exclude-extensions = ( ".pl", ".fcgi" , ".cgi" , ".py" ) 
 
-sudo /etc/php5/cgi-bin/php.ini
+sudo nano /etc/php5/cgi-bin/php.ini
      Find
          doc_root = "" 
       Change To 
