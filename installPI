@@ -20,10 +20,10 @@ Parts List
 Hardware Setup
 ---------------------------------------------------------------------------------------------------------------
    Wifi -
-       PI0W/PI3 - Wifi is built in, you are ready to proceed
-       PI0 -      Connect the OTG USB adapter to the OTG UB port on the PIZero
-                  Connect the USB Wifi dongle to the OTG USB adapter
-       PI1/2/A/B- Connect the USB Wifi dongle to the USB adpadter
+       PI0W/PI3/PI4 - Wifi is built in, you are ready to proceed
+       PI0 -          Connect the OTG USB adapter to the OTG UB port on the PIZero
+                      Connect the USB Wifi dongle to the OTG USB adapter
+       PI1/2/A/B-     Connect the USB Wifi dongle to the USB adpadter
    Operating System - 
     From another computer...
     Download Raspberry PI OS Lite https://www.raspberrypi.org/downloads/raspberry-pi-os/
@@ -126,8 +126,8 @@ Optional - Install COPS (Calibre OPDS/HTML PHP Server)
 sudo apt-get install php5-gd php5-sqlite php5-cgi
 sudo mkdir /var/www/html/cops
 cd /var/www/html/cops
-sudo wget hhttps://github.com/seblucas/cops/releases/download/1.0.1/cops-1.0.1.zip
-sudo unzip cops-1.0.1.zip
+sudo wget https://github.com/seblucas/cops/releases/download/1.1.3/cops-1.1.3.zip
+sudo unzip cops-1.1.3.zip
 cp config_local.php.example config_local.php  
 sudo nano config_local.php
       $config['calibre_directory'] : Path to your Calibre directory.
