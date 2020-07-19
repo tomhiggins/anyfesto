@@ -54,11 +54,4 @@ DEV :
           
                     
 
-DEPLOY :
-- gather interest to install in many places
-  -libraries
-  -housing with little or no internet connectivity
-  -schools
-  -community centers
-  -parks
   
