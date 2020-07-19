@@ -1,7 +1,7 @@
 Features To Add-
 ------------------------------------------------------------------------
 =Installation/ Maintenance 
-  - Update to Raspian Buster
+  X Update to Raspberry PI OS
   X Simple script to run for installation.
   - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia). 
   - Update/Upgrade when internet connection is detected.
