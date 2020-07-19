@@ -109,21 +109,22 @@ sudo ln -s /media/drives/content /home/pi
 Optional - Install Additional Kiwix Zims
 ------------------------------------------------------------------------------
 
---You can find a full list of wikimedia files already in the ZIM format Kiwix 
---uses at  http://download.kiwix.org/zim/ . Copy the url of the zim(s) you want on you Anyfesto install
-cd /home/pi/content/kiwix
+--You can find a full list of wikimedia files already in the ZIM format Kiwix  
+uses at https://download.kiwix.org/zim/ . 
+--Copy the url of the zim(s) you want on you Anyfesto install
+       cd /home/pi/content/kiwix
 --one at a time download the zim(s) you want
-sudo wget (url of zim you want to add)
+       sudo wget (url of zim you want to add)
 --add it to the libraxy.xml Kiwix uses as a catalog 
-kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/(name of the zim file you downloaded)
-chmod a+rx *
+       kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/(name of the zim file you downloaded)
+       chmod a+rx *
 
 
 
 ------------------------------------------------------------------------------------------
 Optional - Install COPS (Calibre OPDS/HTML PHP Server)
 ------------------------------------------------------------------------------------------
-sudo apt-get install php5-gd php5-sqlite php5-cgi
+sudo apt-get install php5-gd php5-sqlite php5-json php5-intl
 sudo mkdir /var/www/html/cops
 cd /var/www/html/cops
 sudo wget https://github.com/seblucas/cops/releases/download/1.1.3/cops-1.1.3.zip
