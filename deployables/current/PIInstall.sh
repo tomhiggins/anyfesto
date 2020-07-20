@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Anyfesto Install Script for the PI
-# CC 2017 by tomwsmf
+# CC 2017-2020 by tomwsmf
 # Thanks to LMC for help in work on the PI recode. 
 
 # Install the Basic Packages and Infrastructure
