@@ -106,35 +106,3 @@ chmod a+rx *
 
 
 
-------------------------------------------------------------------------------------------
-Optional - Install COPS (Calibre OPDS/HTML PHP Server)
-------------------------------------------------------------------------------------------
-sudo apt-get install php5-gd php5-sqlite php5-cgi
-sudo mkdir /var/www/html/cops
-cd /var/www/html/cops
-sudo wget https://github.com/seblucas/cops/releases/download/1.0.0RC3/cops-1.0.0RC3.zip
-sudo unzip cops-1.0.0RC3.zip
-cp config_local.php.example config_local.php  
-sudo nano config_local.php
-      $config['calibre_directory'] : Path to your Calibre directory.
-      $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
-sudo chmod -R  755 *
-sudo /etc/lighttpd/lighttpd.conf
-      Find
-            $HTTP["url"] =~ "^/cgi-bin/" {
-  	             cgi.assign = ( ".py" => "/usr/bin/python" )
-                } 
-      Add below
-           $HTTP["url"] =~ "^/" {
-  	            cgi.assign = ( ".php" => "/usr/bin/php-cgi" )
-                }   
-     Then Find
-            static-file.exclude-extensions = ( ".php",".pl", ".fcgi" , ".cgi" , ".py" ) 
-      Change To
-            static-file.exclude-extensions = ( ".pl", ".fcgi" , ".cgi" , ".py" ) 
-
-sudo /etc/php5/cgi-bin/php.ini
-     Find
-         doc_root = "" 
-      Change To 
-         doc_root = "/var/www/html/"
