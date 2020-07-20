@@ -129,9 +129,11 @@ sudo mkdir /var/www/html/cops
 cd /var/www/html/cops
 sudo wget https://github.com/seblucas/cops/releases/download/1.1.3/cops-1.1.3.zip
 sudo unzip cops-1.1.3.zip
-cp config_local.php.example config_local.php  
+sudo cp config_local.php.example config_local.php  
 sudo nano config_local.php
-      $config['calibre_directory'] : Path to your Calibre directory.
+    $config['calibre_directory'] = '/home/pi/content/books';
+    $config['cops_title_default'] = "Anyfesto Library";
+    
       $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
 sudo chmod -R  755 *
 sudo nano /etc/lighttpd/lighttpd.conf
