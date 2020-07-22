@@ -2,7 +2,7 @@ ToDO
    X Chromebook BIOS fix to boot from USB/SD http://johnlewis.ie/
    X Debian base....on second thought Ubuntu base plus desktop
    X Make the current scripts work with the Chromebook
-   - KAlite (http://ka-lite.readthedocs.io/en/latest/installguide/install_all.html#ubuntu-debian-deb)
+   - Kolibri
    - Ability to add a second wifi radio and get internet connection but  wall it off from captiveportal users
 
 
