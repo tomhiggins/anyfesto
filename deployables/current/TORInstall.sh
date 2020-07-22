@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Anyfesto Install Script for TOR 
-# CC 2019 by tomwsmf
+# CC 2019-2020 by tomwsmf
 
 # Install the Basic Packages and Infrastructure
 
@@ -20,6 +20,7 @@ sudo usermod -G audio,pi vlc
 sudo apt-get -y install lighttpd
 sudo apt-get -y install git zip unzip
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
+sudo apt-get -y tor
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
@@ -146,13 +147,18 @@ cd ~/configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiircpi.service
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwixpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/torrc
 sudo chown root:root *
 sudo chmod a+rx *
+
 
 sudo mv -f vlchosts /usr/share/vlc/lua/http/.hosts
 sudo mv -f vlcpi.service /etc/systemd/system/vlc.service
 sudo mv -f kiwiircpi.service /etc/systemd/system/kiwiirc.service
 sudo mv -f kiwixpi.service /etc/systemd/system/kiwix.service
+sudo mv -f torrc /etc/tor/torrc
+
+sudo service tor start
 
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -166,5 +172,6 @@ sudo systemctl enable kiwix.service
 sudo systemctl enable kiwiirc.service
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d mumble-server enable
+sudo update-rc.d tor enable
 sudo sync 
 sudo reboot
