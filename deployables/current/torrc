@@ -9,13 +9,13 @@ HiddenServiceDir /var/lib/tor/ssh/
 HiddenServicePort 22 127.0.0.1:22
 
 HiddenServiceDir /var/lib/tor/kiwix
-HiddenServicePort 80 127.0.0.1:8099
+HiddenServicePort 8099 127.0.0.1:8099
 
 HiddenServiceDir /var/lib/tor/irc
-HiddenServicePort 80 127.0.0.1:6667
+HiddenServicePort 6667 127.0.0.1:6667
 
 HiddenServiceDir /var/lib/tor/Kiwirc
-HiddenServicePort 80 127.0.0.1:7778
+HiddenServicePort 7778 127.0.0.1:7778
 
 #HiddenServiceDir /var/lib/tor/gopher/
 #HiddenServicePort 70 127.0.0.1:70
