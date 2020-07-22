@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Anyfesto Install Script for the Chromebook
-# Until this warning is removed this script is pure alpha, not
-# ready for prime time, and possibly bad for your well being. 
-# CC 2017 by tomwsmf
+# CC 2017-2020 by tomwsmf
 
 # Install the Basic Packages and Infrastructure
 
@@ -108,8 +106,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up Kiwix Wikimedia Server "
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
-wget https://download.kiwix.org/bin/kiwix-linux-x86_64.tar.bz2
-tar xvf kiwix-linux-x86_64.tar.bz2
+wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x86_64.tar.gz
+tar xvf kiwix-tools_linux-x86_64.tar.gz
 chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
