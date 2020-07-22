@@ -16,7 +16,8 @@ Scripted Installation
 ===========================================================================================
 
 Boot into your new Ubuntu OS USB
-Get up a user, password, etc
+Set up a user named anfesto with a good password
+Sign in as anyfesto 
 
 wget --no-check-certificate    https://github.com/tomhiggins/anyfesto/blob/master/deployables/current/ChromebookInstall.sh
 bash ChromebookInstall.sh
