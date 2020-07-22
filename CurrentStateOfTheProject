@@ -1,3 +1,22 @@
+July 21st 2020
+The CHIP is really really, sadly, not looking well. Production has been dead for years. Upside,... the number of SBOCs is massive and only spreading 
+up and out. Most will solidly work with a Debain build out, so that is one I am shooting to document this year 
+
+The Chromebook install works well enough in testing, I use it every now and again. If there is time I want to lock down the build as part of the Debian branch. 
+
+AnyfesTor has become the build out to make a version you can run on an already existing Network. I am looking at making the discovery methods easier on the nonTor side, ie the existing net, and then having the Tor hooks in place if you flip a switch. 
+
+AS to the Tor side...I have a running AnyfesTor up and going for the last couple of months. Not all the services are available but it is moving along.
+Some folks will want to get the hidden urls out and some will want them narrow banded, both are viable. 
+
+I have been updating the part...Kiwix, Kolbiri, etc etc all have had massive upgrades and some hammering is going on to catch up 
+
+And so it goes. My oldest install has been running now for 2 years solid. The Tor one has only been up for a few months. 
+
+Please let me know your thoughts and ideas to make this better for you and me and all. Be well, share, love, grow. 
+
+
+
 July 19th 2019
 Things that need doing to get this refreshed and ready for the next phase
   - update to raspian buster
