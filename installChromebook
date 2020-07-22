@@ -1,3 +1,48 @@
+Anyfesto Install on a Chromebook
+=======================================================================================
+Parts List
+ - A Chromebook that that can boot into a Ubuntu USB, thus not touching your ChromeOS install. 
+ - Ubuntu Desktop Live USB
+ - A blank USB stick on SD card...the more memory the better.
+ 
+ 
+Get your Chromebook able to boot USB based OS . Here is a good guide ( http://www.fascinatingcaptain.com/projects/dual-boot-chrome-os-and-linux/) 
+Boot the Chromebook with the Ubuntu Live USB
+Once in, instert the blank USB stick
+Using Ubuntu's Install program install Ubuntu onto the blank USB stick
+
+===========================================================================================
+Scripted Installation
+===========================================================================================
+
+Boot into your new Ubuntu OS USB
+Get up a user, password, etc
+
+wget --no-check-certificate    https://github.com/tomhiggins/anyfesto/blob/master/deployables/current/ChromebookInstall.sh
+bash ChromebookInstall.sh
+
+-Once it has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect from another device, open up a web browser and 
+attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+of the things you can do. 
+
+
+-Add any additonal audio you want played and shared into /home/anyfesto/content/Radio  Reboot and the new audio will be added to the
+playlist
+
+-Add any content you want to share into /home/anyfesto/content
+
+-To add USB drives, more packages, do administration or fix what needs fixing
+head down to the Going Further section below 
+----------------------------------------------------------------------------
+Going Further
+------------------------------------------------------------------------------------
+-To add more packages, do administration or fix what needs fixing reconnect to the PI by one of the methods listed 
+ at the begining of these instructions making sure to undo any changes made to the network config files. 
+
+sudo sync
+sudo reboot
+
 ToDO
    X Chromebook BIOS fix to boot from USB/SD http://johnlewis.ie/
    X Debian base....on second thought Ubuntu base plus desktop
