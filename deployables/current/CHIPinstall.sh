@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Anyfesto Install Script for the CHIP
-# CC 2017 by tomwsmf
+# CC 2017-2020 by tomwsmf
 
 # Install the Basic Packages and Infrastructure
 
