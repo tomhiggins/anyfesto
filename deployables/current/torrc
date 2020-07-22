@@ -1,0 +1,25 @@
+#SocksPort 10.11.25.151:9100 # Bind to this address:port too.
+Log notice file /var/log/tor/notices.log
+RunAsDaemon 1
+DataDirectory /var/lib/tor
+HiddenServiceDir /var/lib/tor/web/
+HiddenServicePort 80 127.0.0.1:80
+
+HiddenServiceDir /var/lib/tor/ssh/
+HiddenServicePort 22 127.0.0.1:22
+
+HiddenServiceDir /var/lib/tor/kiwix
+HiddenServicePort 80 127.0.0.1:8099
+
+HiddenServiceDir /var/lib/tor/irc
+HiddenServicePort 80 127.0.0.1:6667
+
+HiddenServiceDir /var/lib/tor/Kiwirc
+HiddenServicePort 80 127.0.0.1:7778
+
+#HiddenServiceDir /var/lib/tor/gopher/
+#HiddenServicePort 70 127.0.0.1:70
+
+#HiddenServiceDir /var/lib/tor/other_hidden_service/
+#HiddenServicePort 80 127.0.0.1:80
+#HiddenServicePort 22 127.0.0.1:22
