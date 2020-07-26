@@ -39,18 +39,18 @@ sudo usermod -d /home/anyfesto/content/Radio vlc
 sudo ln -s /home/anyfesto/content /var/www/html/content   
 cd /var/www/html
 sudo rm index*.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoPI-index.html -O index.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestopilogosm.jpg -O logo.jpg
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/stream.m3u -O stream.m3u
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/AnyfestoPI-index.html -O index.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/anyfestopilogosm.jpg -O logo.jpg
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/stream.m3u -O stream.m3u
 cd ~
 wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip 
 sudo cp -r bootstrap-3.3.7-dist/* /var/www/html/
 cd /var/www/html/css
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/m3uStreamPlayer.js
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/m3uStreamPlayer.js
 
 
 #Setup Audio Streaming using VLC
@@ -59,10 +59,10 @@ echo "Setting Up the Audio Streaming Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/startchromebook.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/stream.m3u
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/startchromebook.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/stream.m3u
 sudo mkdir /etc/vlc 
 cd /usr/share/vlc/lua/http/ 
 sudo mv .hosts /etc/vlc 
@@ -81,8 +81,8 @@ echo "Setting Up the Text Chat Service"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get -y install ircd-hybrid
 cd ~/configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircdpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.motd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/ircdpi.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/ircd.motd
 sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f ircdpi.conf /etc/ircd-hybrid/ircd.conf 
@@ -92,7 +92,7 @@ cd ~
 git clone https://github.com/prawnsalad/KiwiIRC.git
 cd KiwiIRC
 npm install
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiconfig.js
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/kiwiconfig.js
 cp kiwiconfig.js config.js  
 sudo chmod a+rx config.js
 ./kiwi build
@@ -129,7 +129,7 @@ echo "   High Priority: No   "
 echo "   SuperUser: Set the admin password  "
 sudo dpkg-reconfigure mumble-server
 cd ~/configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/mumble-server.ini
 chmod a+rx *
 sudo mv -f mumble-server.ini /etc/mumble-server.ini
 sudo update-rc.d mumble-server enable
@@ -146,17 +146,17 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up The Network, Access Point and Captive Portal"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~/configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpdpi.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasqpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapdpi.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfacespi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-serverpi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostspi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostnamepi
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlcpi.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiircpi.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwixpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/dhcpdpi.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/dnsmasqpi.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/hostapdpi.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/interfacespi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/isc-dhcp-serverpi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/hostspi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/hostnamepi
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/vlcpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/kiwiircpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chromebook/kiwixpi.service
 sudo chown root:root *
 sudo chmod a+rx *
 
