@@ -29,12 +29,12 @@ sudo chmod a+rw /bin/sh
 cd ~
 mkdir configs
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/start.sh
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/lighttpd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlchosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/vlc.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiirc.service
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwix.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/start.sh
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/lighttpd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/vlchosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/vlc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/kiwiirc.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/kiwix.service
 sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f lighttpd.conf /etc/lighttpd/lighttpd.conf
@@ -53,18 +53,18 @@ sudo usermod -d /home/chip/content/Radio vlc
 sudo ln -s /home/chip/content /var/www/html/content   
 cd /var/www/html
 sudo rm index*.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/AnyfestoCHiP-index.html -O index.html
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/anyfestochiplogosm.jpg -O logo.jpg
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/stream.m3u -O stream.m3u
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/AnyfestoCHiP-index.html -O index.html
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/anyfestochiplogosm.jpg -O logo.jpg
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/stream.m3u -O stream.m3u
 cd ~
 wget https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
 unzip bootstrap-3.3.7-dist.zip 
 sudo cp -r bootstrap-3.3.7-dist/* /var/www/html/
 cd /var/www/html/css
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/carousel.css
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/carousel.css
 cd /var/www/html/js
 sudo wget https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js
-sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/m3uStreamPlayer.js
+sudo wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/m3uStreamPlayer.js
 
 
 #Setup Audio Streaming using VLC
@@ -87,8 +87,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 sudo apt-get -y install ircd-hybrid
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/ircd.motd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/ircd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/ircd.motd
 sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f ircd.conf /etc/ircd-hybrid/ 
@@ -98,7 +98,7 @@ cd ~
 git clone https://github.com/prawnsalad/KiwiIRC.git
 cd KiwiIRC
 npm install
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/kiwiconfig.js
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/kiwiconfig.js
 cp kiwiconfig.js config.js  
 sudo chmod a+rx config.js
 ./kiwi build
@@ -111,8 +111,8 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Setting Up Kiwix Wikimedia Server "
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~
-wget http://download.kiwix.org/bin/stable/kiwix-server-0.9-linux-armv5tejl.tar.bz2
-tar xvf kiwix-server-0.9-linux-armv5tejl.tar.bz2 
+wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-armhf.tar.gz
+tar xvf kiwix-tools_linux-armhf.tar.gz
 chmod a+rx kiwix*
 rm kiwi*bz2
 sudo mv kiwix-serve /usr/bin/kiwix-serve
@@ -134,7 +134,7 @@ echo "   SuperUser: Set the admin password  "
 sudo dpkg-reconfigure mumble-server
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/mumble-server.ini
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/mumble-server.ini
 chmod a+rx *
 sudo mv -f mumble-server.ini /etc/mumble-server.ini
 sudo update-rc.d mumble-server enable
@@ -153,14 +153,14 @@ echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 
 cd ~
 cd configs
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dhcpd.conf 
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/dnsmasq.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostapd.conf
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/interfaces
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/isc-dhcp-server
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hosts
-wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/hostname
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/dhcpd.conf 
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/dnsmasq.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/hostapd
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/hostapd.conf
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/interfaces
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/isc-dhcp-server
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/hosts
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/hostname
 sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f dhcpd.conf /etc/dhcp/dhcpd.conf

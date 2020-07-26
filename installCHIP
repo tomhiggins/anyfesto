@@ -36,15 +36,15 @@ This install has been tested on a 4.4 Headless setup. YMMV
 Scripted Installation
 ===========================================================================================
 
-wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/CHIPinstall.sh
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/chip/CHIPinstall.sh
 bash CHIPinstall.sh
 
--Once it  has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+-Once it  has rebooted you should now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
 another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect, open up a web browser and 
-attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+attempt to go to a real or made up website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
 
--Add any additonal audio you want played and shared into /home/chip/content/Radio  Reboot and the new audio will be added to the
+-Add any additional audio you want played and shared into /home/chip/content/Radio  Reboot and the new audio will be added to the
 playlist
 
 -Add any content you want to share into /home/chip/content
@@ -71,10 +71,10 @@ sudo sync
 sudo reboot
 
 ----------------------------------------------------------------------------
-Adding a USB Drive (vfat formated, which is the default for most USB storage)
+Adding a USB Drive (vfat formatted, which is the default for most USB storage)
 By adding a USB storage drive you can 
 1) free up the onboard memory of your CHIP
-2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
+2) quickly add/delete content from your Anyfesto install by moving the USB drive 
    to another computer
 After installing the USB drive any files and directories on it will show up 
 in you File Share section from the web page and once rebooted any mp3 files
@@ -100,7 +100,7 @@ Optional - Install Additional Kiwix Zims
 cd /home/chip/content/kiwix
 --one at a time download the zim(s) you want
 sudo wget (url of zim you want to add)
---add it to the libraxy.xml Kiwix uses as a catalog 
+--add it to the library.xml Kiwix uses as a catalog 
 kiwix-manage /home/chip/content/kiwix/library.xml add /home/chip/content/kiwix/(name of the zim file you downloaded)
 chmod a+rx *
 
