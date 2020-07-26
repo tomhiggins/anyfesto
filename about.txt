@@ -10,8 +10,6 @@ Anyfesto is a shared information/communications platform  built on low cost hard
 
 Things needed 
 - Raspberry Pi
-  or 
-- CHIP
 - SD card
 - USB Wifi (optional)
 - US storage (optional)

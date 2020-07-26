@@ -60,7 +60,7 @@ sudo raspi-config
 Scripted Installation
 ===========================================================================================
 
-wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/PIInstall.sh
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/PIInstall.sh
 bash PIInstall.sh
 
 -Once it has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 

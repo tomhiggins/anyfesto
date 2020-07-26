@@ -1,0 +1,12 @@
+[Unit]
+Description=KiwiIRC Web Frontend Server
+After=network.target
+
+[Service]
+Type=forking
+User=anyfesto
+WorkingDirectory=/home/anyfesto/KiwiIRC
+ExecStart=/home/anyfesto/KiwiIRC/kiwi start
+
+[Install]
+WantedBy=multi-user.target
