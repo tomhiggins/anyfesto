@@ -19,7 +19,7 @@ Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utiliz
 
 # Start your Journey 
 
-You can start yout installation by selecting either the **InstallPI** or **InstallCHIP** options above.
+You can start your installation by selecting either the **InstallPI** or **InstallCHIP** options above.
 
 
 # About
@@ -32,11 +32,11 @@ This project draws on the work of many great projects.
 
 Debian Linux - https://www.debian.org/
 
-Raspbian Linux-	http://www.raspbian.org/
+Raspberry PI OS-	http://www.raspbian.org/
 
 VLC - 		https://github.com/videolan/vlc
 
-IRCd-Hybrib - 	http://www.ircd-hybrid.org/
+IRCd-Hybrid - 	http://www.ircd-hybrid.org/
 
 KiwiIRC - https://kiwiirc.com/
 
