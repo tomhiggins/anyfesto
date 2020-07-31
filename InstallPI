@@ -40,8 +40,8 @@ There are several options to get into your PI
     2. Boots up with SSH enabled so that you can shell in via an ethernet and then set up your wifi net 
      connection.
     3. If you can/do not have an ethernet dongle or keybaord/monitor the go with the Headless Install. 
-    You can find a detailed step by step walkthough at http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/ 
-    This is by far my fave way of initially setting up a PI0 to get on my network for further installation.
+    You can find a detailed step by step walkthough at https://raspberrytips.com/raspberry-pi-wifi-setup/
+ 
 
 Power up the PI
 
