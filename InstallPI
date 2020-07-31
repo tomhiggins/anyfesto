@@ -45,22 +45,39 @@ There are several options to get into your PI
 
 Power up the PI
 
+(If you set this up to run headless check your network for a device called "raspberrypi" and ssh to it's IP)
+
 Login (default user/pssword is pi/raspberry)
 
-If the GUI pops up close out to the CLI
+If the GUI pops up close out to the Command Line (also called the CLI)
 
 
 sudo raspi-config
-       Enable SSH Server via raspberry-config
+  In this order do the following....
+       Update
+       Advanced Options
+          Expand Filesystem
        Change Password
-       Set Hostname to AnyfestoPI
-       Set To Boot to the Command Line
+       Localization Options
+          Set Localization
+          Set TimeZone 
+          Set Keyboard Options
+       Boot Options
+           Desktop/CLI
+             Set to Command Line
+       Network Options
+          Set Hostname to AnyfestoPI
+       Interface Options
+           SSH Enable
        Expand the File System 
        Finish & Reboot
+       
+ Log back into the PI but now with your new password      
 
 ===========================================================================================
 Scripted Installation
 ===========================================================================================
+CUt and paste the following line into the Command Line...
 
 wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/PIInstall.sh
 bash PIInstall.sh
