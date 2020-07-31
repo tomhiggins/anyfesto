@@ -1,6 +1,7 @@
 Anyfesto Install on a RaspberryPi
 =======================================================================================
-Parts List
+Here is a current list of RaspberryPis you might use...
+
    Raspberry Pi 4 Model B 4gb - https://www.adafruit.com/product/4296 - $55.00
    Raspberry Pi 3 Model B - https://www.adafruit.com/products/3055 - $39.95
    Raspberry Pi 0 W - https://www.adafruit.com/products/3400 - $10.00
@@ -10,10 +11,15 @@ Parts List
    Tiny USB OTG Adapter - https://www.adafruit.com/products/2910 - $ 2.95
    Smallest WIFI USB - https://www.adafruit.com/products/814 - $11.95
 
+Here are some items you will need....
    16GB or Bigger Micro SD card - Many Sources - $ 5.00 - upward
-   LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
+      (the bigger the GB the more content you can store on the SD)
+   5V 2.4A Power  and 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
+    (note that the new PIs use USB C)
+ 
+Here are some items you might need....
+LIon Battery 3.7V 2500mAh - https://www.adafruit.com/products/328 - $29.50
    PowerBoost 1000 Charger 5V -https://www.adafruit.com/products/2465 - $19.95
-   5V 2.4A 6' MicroUSB Cable - https://www.adafruit.com/products/1995 - $ 7.95 
    USB Storage (optional)   - Many Sources - $ 5.00 - upward
 
 
@@ -39,19 +45,18 @@ There are several options to get into your PI
     1. Boot with a Monitor, Keyboard and Ethernet connection to your lan 
     2. Boots up with SSH enabled so that you can shell in via an ethernet and then set up your wifi net 
      connection.
-    3. If you can/do not have an ethernet dongle or keybaord/monitor the go with the Headless Install. 
-    You can find a detailed step by step walkthough at https://raspberrytips.com/raspberry-pi-wifi-setup/
+    3. If you can/do not have an ethernet dongle or keyboard/monitor the go with the Headless Install. 
+    You can find a detailed step by step walk though at https://raspberrytips.com/raspberry-pi-wifi-setup/
  
 
 Power up the PI
+     (If you set this up to run headless check your network for a device called "raspberrypi" and ssh to it's IP)
 
-(If you set this up to run headless check your network for a device called "raspberrypi" and ssh to it's IP)
+-Login (default user/password is pi/raspberry)
 
-Login (default user/pssword is pi/raspberry)
+-If the GUI pops up close out to the Command Line (also called the CLI)
 
-If the GUI pops up close out to the Command Line (also called the CLI)
-
-
+-From the Command Line type
 sudo raspi-config
   In this order do the following....
        Update
@@ -72,19 +77,19 @@ sudo raspi-config
        Expand the File System 
        Finish & Reboot
        
- Log back into the PI but now with your new password      
+ -Log back into the PI but now with your new password      
 
 ===========================================================================================
 Scripted Installation
 ===========================================================================================
-CUt and paste the following line into the Command Line...
+-Cut and paste the following line into the Command Line and hit enter...
 
 wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/PIInstall.sh
 bash PIInstall.sh
 
--Once it has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+-Once it has rebooted you should now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
 another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect, open up a web browser and 
-attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+attempt to go to a real or made up website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
 
 -Add any additonal audio you want played and shared into /home/pi/content/Radio  Reboot and the new audio will be added to the
@@ -94,6 +99,8 @@ playlist
 
 -To add USB drives, more packages, do administration or fix what needs fixing
 head down to the Going Further section below 
+
+
 ----------------------------------------------------------------------------
 Going Further
 ------------------------------------------------------------------------------------
