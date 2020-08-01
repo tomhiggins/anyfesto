@@ -111,8 +111,8 @@ wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-armhf.tar.
 tar xvf kiwix-tools_linux-armhf.tar.gz
 chmod a+rx kiwix*
 rm kiwi*bz2
-sudo mv kiwix-serve /usr/bin/kiwix-serve
-sudo mv kiwix-manage /usr/bin/kiwix-manage
+sudo mv kiwix*/kiwix-serve /usr/bin/kiwix-serve
+sudo mv kiwix*/kiwix-manage /usr/bin/kiwix-manage
 mkdir /home/pi/content/kiwix
 cd /home/pi/content/kiwix
 sudo wget http://download.kiwix.org/zim/wiktionary_en_simple_all.zim
