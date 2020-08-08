@@ -7,7 +7,7 @@ The Quick Method
 -SSH in
 -Cut and paste the following line into the Command Line and hit enter...
 
-wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/PIInstall.sh
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/Localfesto/PIInstall.sh
 bash PIInstall.sh
 
 -Jump down to the After The Reboot section
@@ -101,7 +101,7 @@ Scripted Installation
 ===========================================================================================
 -Cut and paste the following line into the Command Line and hit enter...
 
-wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/PIInstall.sh
+wget --no-check-certificate  https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/Localfesto/PIInstall.sh
 bash PIInstall.sh
 
 ===========================================================================================
