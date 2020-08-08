@@ -4,6 +4,10 @@
 -Attach To A Network
   -wifi ssid
   -ethernet
+  
 -Offer Services
+
 -Advertise
   -avahi/mdns/zeroconf  
+  
+  
