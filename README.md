@@ -1,14 +1,11 @@
 # ANYFESTO - A platform from which to speak 
 
-Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication. Anyfesto is the toolbox to make that happen.
+The Anyfesto Project helps you make easy to setup devices to share your voice, music, knowledge, and passions with others.
 
-By using low cost hardware and proven Open Source Software the ability to build a robust communication device is now affordable and accessible both for individuals and for community wide needs.
+By using low cost hardware and proven Open Source Software the ability to build a robust communication device is now affordable and accessible both for individuals and for community wide needs. The Anyfesto Project wants to make this easy to be set up, deployed and accessed by all. 
 
-Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utilizing proven Open Source Software an Anyfesto install offers audio streaming , file sharing, text and voice communications, education content and more.
+### The base install now includes these features on bootup
 
-### The base Anyfesto install now includes these features on bootup
-
-* Wifi based Access Point with Captive Portal
 * Web Server
 * Kiwix Wikimedia Server
 * IRC Server and Web Frontend
@@ -16,10 +13,19 @@ Anyfesto uses Raspberry Pi/CHIP computers as total communication devices. Utiliz
 * Mumble Voip Server
 * SSH Server
 
+* The Anyfesto option 
+  * ceates your own local network others can connect to via wifi
+  * uses a Captive Portal to direct uses web requests to your main web page
+  * not being connected to the Internet folks are not exosed to many issues found on it
+
+* The Localfesto option 
+  * attaches to an existing network
+  * advertises it's services and offerings for others to find
+  * can access the Internet where available
 
 # Start your Journey 
 
-You can start your installation by selecting either the **InstallPI** or **InstallCHIP** options above.
+You can start your installation by selecting either the **InstallAnyfesto** **InstallLocalfesto** options above.
 
 
 # About
