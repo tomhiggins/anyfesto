@@ -1,7 +1,7 @@
 #!/bin/sh  
 VLC_PORT=8088
 VLC_USER=vlc
-VLC_IP=10.11.99.1
+VLC_IP="$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/')"
 VLC_PASWD=changeme
 find /home/pi/content/Radio -name '*.mp3'>/home/pi/content/playlist.m3u
 chmod a+rwx /home/pi/content/playlist.m3u
