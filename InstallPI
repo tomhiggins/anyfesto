@@ -51,6 +51,8 @@ There are several options to get into your PI
 
 Power up the PI
      (If you set this up to run headless check your network for a device called "raspberrypi" and ssh to it's IP)
+     (Or run this from a linux cli on your network    sudo nmap -sS -p 22 10.11.25.0/24  and look for RaspberryPi
+       Replace 10.11.25.0/24 with the local address space on your network.)
 
 -Login (default user/password is pi/raspberry)
 
