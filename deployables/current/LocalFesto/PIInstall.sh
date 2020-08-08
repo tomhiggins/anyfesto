@@ -20,6 +20,7 @@ sudo usermod -G audio,pi vlc
 sudo apt-get -y install lighttpd
 sudo apt-get -y install git zip unzip
 sudo apt-get -y install perl sox libsox-fmt-all libav-tools
+sudo apt-get -y install avahi-daemon avahi-discover libnss-mdns netatalk
 sudo rm /bin/sh
 sudo ln /bin/bash /bin/sh
 sudo chmod a+rw /bin/sh
