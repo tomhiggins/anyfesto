@@ -65,8 +65,7 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/vlchosts
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/pi/stream.m3u
 sudo mkdir /etc/vlc 
-cd /usr/share/vlc/lua/http/ 
-sudo mv .hosts /etc/vlc 
+sudo mv vlchosts /etc/vlc/.hosts 
 sudo ln -s /etc/vlc/.hosts .hosts
 cd /home/pi/content/Radio
 wget https://archive.org/download/Old_Radio_Public_Service_Announcements/OldRadio_Pub--Jack_Benny_Tolerance1.mp3  -O welcome.mp3
