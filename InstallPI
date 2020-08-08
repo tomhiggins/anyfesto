@@ -124,7 +124,7 @@ head down to the Going Further section below
 
 ----------------------------------------------------------------------------
 Going Further
-------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
 -To add more packages, do administration or fix what needs fixing reconnect to the PI by one of the methods listed 
  at the begining of these instructions making sure to undo any changes made to the network config files. 
 
@@ -133,14 +133,13 @@ sudo reboot
 
 ----------------------------------------------------------------------------
 Adding a USB Drive (vfat formated, which is the default for most USB storage)
+----------------------------------------------------------------------------
 By adding a USB storage drive you can 
+
 1) free up the onboard memory of your PI
 2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
    to another computer
-After installing the USB drive any files and directories on it will show up 
-in you File Share section from the web page and once rebooted any mp3 files
-will be added to the VLC Audio Stream playlist. 
-----------------------------------------------------------------------------
+
 -Connect the USB drive to the USB port
 
 sudo mkdir /media/drives
@@ -165,43 +164,6 @@ uses at https://download.kiwix.org/zim/ .
 --add it to the libraxy.xml Kiwix uses as a catalog 
        kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/(name of the zim file you downloaded)
        chmod a+rx *
-
-
-
-------------------------------------------------------------------------------------------
-Optional - Install COPS (Calibre OPDS/HTML PHP Server)
-------------------------------------------------------------------------------------------
-sudo apt-get install php5-gd php5-sqlite php5-json php5-intl
-sudo mkdir /var/www/html/cops
-cd /var/www/html/cops
-sudo wget https://github.com/seblucas/cops/releases/download/1.1.3/cops-1.1.3.zip
-sudo unzip cops-1.1.3.zip
-sudo cp config_local.php.example config_local.php  
-sudo nano config_local.php
-    $config['calibre_directory'] = '/home/pi/content/books';
-    $config['cops_title_default'] = "Anyfesto Library";
-    
-      $config['cops_use_url_rewriting'] : If you want to enable URL rewriting.
-sudo chmod -R  755 *
-sudo nano /etc/lighttpd/lighttpd.conf
-      Find
-            $HTTP["url"] =~ "^/cgi-bin/" {
-  	             cgi.assign = ( ".py" => "/usr/bin/python" )
-                } 
-      Add below
-           $HTTP["url"] =~ "^/" {
-  	            cgi.assign = ( ".php" => "/usr/bin/php-cgi" )
-                }   
-     Then Find
-            static-file.exclude-extensions = ( ".php",".pl", ".fcgi" , ".cgi" , ".py" ) 
-      Change To
-            static-file.exclude-extensions = ( ".pl", ".fcgi" , ".cgi" , ".py" ) 
-
-sudo nano /etc/php5/cgi-bin/php.ini
-     Find
-         doc_root = "" 
-      Change To 
-doc_root = "/var/www/html/"
 
 
 
@@ -232,15 +194,7 @@ sudo chmod 755 /usr/sbin/hostapd
 sudo /etc/init.d/hostapd  stop
 
 
-------------------------------------------------------------------------------------------
-Optional - PiFM - Only works on PI1s
-------------------------------------------------------------------------------------------
 
-git clone https://github.com/rm-hull/pifm cd pifm sudo make mkfifo /tmp/radio
-(tie vlc output to /tmp/radio (still banging on the code))
-sudo ./pifm /tmp/radio 88.3 44100  (note to self, add this to /etc/vlc/start.sh) ==Reboot
-sudo sync 
-sudo reboot
 
 
 
