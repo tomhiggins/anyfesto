@@ -8,6 +8,6 @@
 -Offer Services
 
 -Advertise
-  -avahi/mdns/zeroconf  
+  -avahi/mdns/zeroconf
   
   
