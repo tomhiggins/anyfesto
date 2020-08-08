@@ -8,7 +8,7 @@ Parts List
  
 Get your Chromebook able to boot USB based OS . Here is a good guide ( http://www.fascinatingcaptain.com/projects/dual-boot-chrome-os-and-linux/) 
 Boot the Chromebook with the Ubuntu Live USB
-Once in, instert the blank USB stick
+Once in, insert the blank USB stick
 Using Ubuntu's Install program install Ubuntu onto the blank USB stick
 
 ===========================================================================================
@@ -16,19 +16,19 @@ Scripted Installation
 ===========================================================================================
 
 Boot into your new Ubuntu OS USB
-Set up a user named anfesto with a good password
+Set up a user named anyfesto with a good password
 Sign in as anyfesto 
 
 wget --no-check-certificate    https://github.com/tomhiggins/anyfesto/blob/master/deployables/current/chromebook/ChromebookInstall.sh
 bash ChromebookInstall.sh
 
--Once it has rebooted you shoud now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
+-Once it has rebooted you should now have a base Anyfesto Install. Congrats.  When you reboot it you should be able to see it from 
 another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead and connect from another device, open up a web browser and 
-attempt to go to a real or madeup website. You will be redirected to the main webpage which will tell you about some
+attempt to go to a real or made up website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
 
 
--Add any additonal audio you want played and shared into /home/anyfesto/content/Radio  Reboot and the new audio will be added to the
+-Add any  audio you want played and shared into /home/anyfesto/content/Radio  Reboot and the new audio will be added to the
 playlist
 
 -Add any content you want to share into /home/anyfesto/content
@@ -39,7 +39,7 @@ head down to the Going Further section below
 Going Further
 ------------------------------------------------------------------------------------
 -To add more packages, do administration or fix what needs fixing reconnect to the PI by one of the methods listed 
- at the begining of these instructions making sure to undo any changes made to the network config files. 
+ at the start of these instructions making sure to undo any changes made to the network config files. 
 
 sudo sync
 sudo reboot
@@ -49,7 +49,7 @@ ToDO
    X Debian base....on second thought Ubuntu base plus desktop
    X Make the current scripts work with the Chromebook
    - Kolibri
-   - Ability to add a second wifi radio and get internet connection but  wall it off from captiveportal users
+   - Ability to add a second wifi radio and get internet connection but  wall it off from captive portal users
 
 
 01/19/18
@@ -66,8 +66,8 @@ ToDO
    Some things of note:
    -I am using Debian 9 to install the OS onto a USB flash drive. You can use an SD or even a USB HD. 
    - When installing Debian 9 create a user named  "anyfesto" The scripts are set up for that username
-   - As you are installing Debain 9 you can choose whatever GUI you want for your desktop. I like XFCE as
-      it is slim yet expressive. Your milage will vary, the choice of GUIS will be offered to during install
+   - As you are installing Debian 9 you can choose whatever GUI you want for your desktop. I like XFCE as
+      it is slim yet expressive. Your milage will vary, the choice of GUIs will be offered to during install
    - And yes this means while your Chromebook is booked into this you will have a full Desktop Linux to
      do as you want. I'm finding this very useful. 
    - Debian 9 has an issue with SUDO, I will document what needs doing to get it fixed or script a fix if I can

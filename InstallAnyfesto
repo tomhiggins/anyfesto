@@ -21,7 +21,7 @@ Here is a current list of RaspberryPis you might use...
    Raspberry Pi 3 Model B - https://www.adafruit.com/products/3055 - $39.95
    Raspberry Pi 0 W - https://www.adafruit.com/products/3400 - $10.00
    Or
-   Raspbery Pi OG or 2 a or b  - https://www.adafruit.com/category/105 
+   Raspberry Pi OG or 2 a or b  - https://www.adafruit.com/category/105 
    Raspberry Pi Zero v1.3 - https://www.adafruit.com/products/2885 - $ 5.00
    Tiny USB OTG Adapter - https://www.adafruit.com/products/2910 - $ 2.95
    Smallest WIFI USB - https://www.adafruit.com/products/814 - $11.95
@@ -44,7 +44,7 @@ Hardware Setup
        PI0W/PI3/PI4 - Wifi is built in, you are ready to proceed
        PI0 -          Connect the OTG USB adapter to the OTG UB port on the PIZero
                       Connect the USB Wifi dongle to the OTG USB adapter
-       PI1/2/A/B-     Connect the USB Wifi dongle to the USB adpadter
+       PI1/2/A/B-     Connect the USB Wifi dongle to the USB adapter
 
 
 Software Setup
@@ -113,7 +113,7 @@ another Wifi connected device broadcasting a SSID with Anyfesto in it. Go ahead 
 attempt to go to a real or made up website. You will be redirected to the main webpage which will tell you about some
 of the things you can do. 
 
--Add any additonal audio you want played and shared into /home/pi/content/Radio  Reboot and the new audio will be added to the
+-Add any  audio you want played and shared into /home/pi/content/Radio  Reboot and the new audio will be added to the
 playlist
 
 -Add any content you want to share into /home/pi/content
@@ -126,18 +126,18 @@ head down to the Going Further section below
 Going Further
 ----------------------------------------------------------------------------
 -To add more packages, do administration or fix what needs fixing reconnect to the PI by one of the methods listed 
- at the begining of these instructions making sure to undo any changes made to the network config files. 
+ at the beginning of these instructions making sure to undo any changes made to the network config files. 
 
 sudo sync
 sudo reboot
 
 ----------------------------------------------------------------------------
-Adding a USB Drive (vfat formated, which is the default for most USB storage)
+Adding a USB Drive (vfat formatted, which is the default for most USB storage)
 ----------------------------------------------------------------------------
 By adding a USB storage drive you can 
 
 1) free up the onboard memory of your PI
-2) quickly add/delete content from your Anyfesto install bymoving the USB drive 
+2) quickly add/delete content from your Anyfesto install by moving the USB drive 
    to another computer
 
 -Connect the USB drive to the USB port
@@ -161,7 +161,7 @@ uses at https://download.kiwix.org/zim/ .
        cd /home/pi/content/kiwix
 --one at a time download the zim(s) you want
        sudo wget (url of zim you want to add)
---add it to the libraxy.xml Kiwix uses as a catalog 
+--add it to the library.xml Kiwix uses as a catalog 
        kiwix-manage /home/pi/content/kiwix/library.xml add /home/pi/content/kiwix/(name of the zim file you downloaded)
        chmod a+rx *
 
@@ -172,7 +172,7 @@ Optional - Battery Powered
 (from the PiFold project on Hackaday https://hackaday.io/project/9498-pifold)
 ------------------------------------------------------------------------------------------
     Connect the JST from the Battery to the JST connector on the Powerboost 1000
-    If you want to hardwire this to the PiZero
+    If you want to hard wire this to the PiZero
         On the Powerboost solder a red wire to the (+) pad of the USB section and a black wire to the (-) pad
         tbf
     Else
@@ -183,7 +183,7 @@ Optional - Battery Powered
 
 
 ------------------------------------------------------------------------------------------
-Optional - Hostapd - some wifi dongles require a differnt version of hostapd
+Optional - Hostapd - some wifi dongles require a different version of hostapd
 ------------------------------------------------------------------------------------------
 
 wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
