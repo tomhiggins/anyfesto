@@ -2,7 +2,9 @@
 
 The Anyfesto Project helps you make easy to setup devices to share your voice, music, knowledge, and passions with others.
 
-By using low cost hardware and proven Open Source Software the ability to build a robust communication device is now affordable and accessible both for individuals and for community wide needs. The Anyfesto Project wants to make this easy to be set up, deployed and accessed by all. 
+Low cost hardware and proven Open Source Software makes building a robust communications device affordable and accessible to individuals and community  needs. 
+
+The Anyfesto Project wants to make this easy to set up, deploy and be access by all. 
 
 ### The base install now includes these features on bootup
 
@@ -13,19 +15,19 @@ By using low cost hardware and proven Open Source Software the ability to build 
 * Mumble Voip Server
 * SSH Server
 
-* The Anyfesto option 
+* **The Anyfesto option** 
   * ceates your own local network others can connect to via wifi
   * uses a Captive Portal to direct uses web requests to your main web page
   * not being connected to the Internet folks are not exosed to many issues found on it
 
-* The Localfesto option 
+* **The Localfesto option**
   * attaches to an existing network
   * advertises it's services and offerings for others to find
   * can access the Internet where available
 
 # Start your Journey 
 
-You can start your installation by selecting either the **InstallAnyfesto** **InstallLocalfesto** options above.
+You can start your installation by selecting either the **InstallAnyfesto** or **InstallLocalfesto** options above.
 
 
 # About
