@@ -199,7 +199,7 @@ conf.socks_proxy.pass = null;
 
 // Default settings for the client. These may be changed in the browser
 conf.client = {
-    server: '',
+    server: '127.0.0.1',
     port:    6667,
     ssl:     false,
     channel: '#main',
