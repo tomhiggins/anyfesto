@@ -17,7 +17,7 @@ The Anyfesto Project wants to make this easy to set up, deploy and be access by 
 
 * **The Anyfesto option** 
   * ceates your own local network others can connect to via wifi
-  * uses a Captive Portal to direct uses web requests to your main web page
+  * uses a Captive Portal to direct users web requests to your main web page
   * not being connected to the Internet folks are not exosed to many issues found on it
 
 * **The Localfesto option**
