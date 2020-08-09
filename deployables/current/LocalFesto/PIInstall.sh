@@ -6,7 +6,7 @@
 # Install the Basic Packages and Infrastructure
 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Starting the AnyfestoPI Install...."
+echo "Starting the Localfesto Install...."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 echo "Installing the Basic Packages and Infrastructure."
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
@@ -140,7 +140,7 @@ cd ~
 
 # Setup Network and Captive Portal 
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
-echo "Setting Up The Network, Access Point and Captive Portal"
+echo "Setting Up The Network"
 echo "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"
 cd ~/configs
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/LocalFesto/interfacespi
@@ -148,6 +148,7 @@ wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/cu
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/LocalFesto/vlcpi.service
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/LocalFesto/kiwiircpi.service
 wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/LocalFesto/kiwixpi.service
+wget https://raw.githubusercontent.com/tomhiggins/anyfesto/master/deployables/current/LocalFesto/lighttpd.conf
 sudo chown root:root *
 sudo chmod a+rx *
 sudo mv -f interfacespi /etc/network/interfaces 
