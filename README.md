@@ -4,8 +4,6 @@ The Anyfesto Project helps you make easy to setup devices to share your voice, m
 
 Low cost hardware and proven Open Source Software makes building a robust communications device affordable and accessible to individuals and community  needs. 
 
-The Anyfesto Project wants to make this easy to set up, deploy and be access by all. 
-
 ### The base install now includes these features on bootup
 
 * Web Server
