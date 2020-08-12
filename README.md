@@ -1,7 +1,7 @@
 # ANYFESTO - A platform from which to speak 
+##Any manifestation of a meeting - in the schools or in the streets - is going to need clear communication. Anyfesto is the toolbox to make that happen.##
 
 The Anyfesto Project helps you make easy to setup devices to share your voice, music, knowledge, and passions with others.
-
 Low cost hardware and proven Open Source Software makes building a robust communications device affordable and accessible to individuals and community  needs. 
 
 ### The base install now includes these features on bootup
