@@ -77,8 +77,6 @@ Power up the PI
 sudo raspi-config
   In this order do the following....
        Update
-       Advanced Options
-          Expand Filesystem
        Change Password
        Localization Options
           Set Localization
@@ -91,7 +89,8 @@ sudo raspi-config
           Set Hostname to AnyfestoPI
        Interface Options
            SSH Enable
-       Expand the File System 
+       Advanced Options
+          Expand Filesystem
        Finish & Reboot
        
  -Log back into the PI but now with your new password      
