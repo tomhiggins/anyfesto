@@ -186,6 +186,7 @@ sudo systemctl enable kiwix.service
 sudo systemctl enable kiwiirc.service
 sudo update-rc.d ircd-hybrid enable
 sudo update-rc.d mumble-server enable
+sudo systemctl unmask hostapd
 sudo update-rc.d hostapd enable
 sudo update-rc.d isc-dhcp-server enable 
 sudo ifconfig wlan0 down
