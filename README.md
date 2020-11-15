@@ -28,6 +28,18 @@ Low cost hardware and proven Open Source Software makes building a robust commun
 You can start your installation by selecting either the **InstallAnyfesto** or **InstallLocalfesto** options above.
 
 
+# Frequently ASked Questions
+
+**How Do I Get To The Services?**
+
+ * The main web page is on port 80
+ * The audio stream can be heard from port 8085
+ * The audio stream can be control from port 8088
+ * The Wikiedia server is on port 8099
+ * The IRC server is on port 6667
+ * The IRC Web front end is on port 7778
+ 
+
 # About
 
 Anyfesto by Tom Higgins is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
