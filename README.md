@@ -28,7 +28,7 @@ Low cost hardware and proven Open Source Software makes building a robust commun
 You can start your installation by selecting either the **InstallAnyfesto** or **InstallLocalfesto** options above.
 
 
-# Frequently ASked Questions
+# Frequently Asked Questions
 
 **How Do I Get To The Services?**
 
